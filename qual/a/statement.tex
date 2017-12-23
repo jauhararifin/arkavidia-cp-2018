@@ -1,0 +1,53 @@
+
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{listings}
+\pagenumbering{gobble}
+ 
+\begin{document}
+
+\section*{\hfil Kue Ulang Tahun\hfil}
+
+\subsection*{Deskripsi}
+\par Beberapa hari lagi Turfa akan ulang tahun. Oleh karena itu, teman-teman turfa sibuk menyiapkan kue ulang tahun untuknya. Untuk memudahkan pembuatan kue ulang tahun, Turfa mengerahkan N buah robot buatannya untuk membuat kue ulang tahun. Robot ini dinomori dari 1 hingga N. Meskipun kue ulang tahun tersebut dibuat oleh robot, rasa kue ulang tahun tersebut bisa berbeda-beda karena robot Turfa memiliki kepribadian masing-masing. Meskipun begitu, karena adanya perbedaan kemampuan dan sisa baterai, banyaknya kue ulang tahun yang dibuat oleh setiap robot berbeda-beda. Robot ke-i membuat kue sebanyak $A_i$.
+\par Karena Turfa sangat suka berbagi. Ia membagikan seluruh kue ulang tahunnya ke-N orang temannya. Sayangnya teman turfa hanya menyukai kue ulang tahun yang dibuat oleh robot tertentu. Teman Turfa yang ke-i menyukai kue ulang tahun yang dibuat oleh robot i. Untuk menjaga keharmonisan antara teman-teman Turfa, Turfa akan bersikap adil dengan memberikan kue ke semua temannya dengan sama banyak. Untuk menyamakan jumlah kue yang didapat oleh teman Turfa, Turfa memakan kue yang berlebih sendirian. Karena Turfa tidak ingin obesitas, ia ingin agar banyaknya kue yang ia makan seminimum mungkin. Bantulah Turfa untuk menentukan jumlah kue minimum yang harus ia makan agar tiap temannya mendapatkan kue sama banyak!
+
+\subsection*{Format Masukan}
+\par Baris pertama berisi sebuah bilangan yang menyatakan banyaknya kasus
+\par $T$ baris berikutnya berisi sebuah bilangan $N$ yang menyatakan banyaknya robot dan teman yang Turfa miliki diikuti dengan $N$ buah bilangan yang menyatakan banyaknya kue yang dibuat oleh robot-robot turfa. Bilangan ke-i menyatakan nilai $A_i$.
+
+\subsection*{Format Keluaran}
+
+\par Untuk setiap kasus, keluarkan sebuah bilangan yang menyatakan banyaknya kue minimum yang harus Turfa makan agar semua temannya mendapatkan kue sama banyak.
+
+\subsection*{Contoh Masukan 1}
+
+\begin{lstlisting}
+2
+5 1 2 3 4 5
+3 7 2 5
+10 7 7 7 7 7 7 7 7 7 7
+\end{lstlisting}
+
+\subsection*{Contoh Keluaran 1}
+
+\begin{lstlisting}
+10
+8
+0
+\end{lstlisting}
+
+\subsection*{Penjelasan}
+
+Pada contoh pertama, Turfa perlu memakan satu buah kue yang dibuat robot kedua, dua buah kue yang dibuat robot ketiga, tiga buah kue yang dibuat robot ke-empat dan empat buah kue yang dibuat robot kelima sehingga semua temannya mendapat satu buah kue.
+Pada contoh kedua, Turfa tidak perlu memakan kue karena semuanya telah mendapatkan tujuh buah kue.
+
+\subsection*{Batasan}
+
+\begin{itemize}
+	\item $1 \leq T \leq 100$
+	\item $1 \leq N \leq 10^5$
+	\item $1 \leq A_i \leq 10^6$
+\end{itemize}
+
+\end{document}
