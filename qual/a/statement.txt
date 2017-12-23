@@ -20,19 +20,12 @@ Untuk setiap kasus, keluarkan sebuah bilangan yang menyatakan banyaknya kue mini
 2
 5 1 2 3 4 5
 3 7 2 5
+10 7 7 7 7 7 7 7 7 7 7
 
 [Contoh Keluaran 1]
 
 10
 8
-
-[Contoh Masukan 2]
-
-1
-10 7 7 7 7 7 7 7 7 7 7
-
-[Contoh Keluaran 2]
-
 0
 
 [Penjelasan]
