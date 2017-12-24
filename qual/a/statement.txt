@@ -8,7 +8,7 @@ Karena Turfa sangat suka berbagi. Ia membagikan seluruh kue ulang tahunnya ke-N 
 
 [Format Masukan]
 
-Baris pertama berisi sebuah bilangan yang menyatakan banyaknya kasus
+Baris pertama berisi sebuah bilangan T yang menyatakan banyaknya kasus
 T baris berikutnya berisi sebuah bilangan N yang menyatakan banyaknya robot dan teman yang Turfa miliki diikuti dengan N buah bilangan yang menyatakan banyaknya kue yang dibuat oleh robot-robot turfa. Bilangan ke-i menyatakan nilai Ai.
 
 [Format Keluaran]
