@@ -2,7 +2,8 @@
 
 using namespace std;
 
-int t,n,q,x,a[100000],b[100000],p[200001];
+int t,n,q,x,a[100000],b[100000];
+long long p[200001];
 
 int main() {
 	scanf("%d", &t);
@@ -18,7 +19,7 @@ int main() {
 		while (q--) {
 			scanf("%d", &x);
 			if (x < 0 || x > 200000) printf("0\n");
-			else printf("%d\n", p[x]);
+			else printf("%lld\n", p[x]);
 		}
 	}
 	return 0;
