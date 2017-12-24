@@ -25,6 +25,7 @@ int main() {
   while (q--) {
     int l, r;
     scanf("%d %d", &l, &r);
+    l--; r--;
     printf("%d\n", solve(l, r));
   }
   return 0;
