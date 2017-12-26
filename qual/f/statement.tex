@@ -4,6 +4,7 @@
 \usepackage{listings}
 \usepackage[margin=1in]{geometry}
 \pagenumbering{gobble}
+\usepackage{indentfirst}
  
 \begin{document}
 
@@ -12,8 +13,8 @@
 \begin{center}
 \begin{tabular}{ |cc| } 
  \hline
- Time Limit & 10 detik \\ 
- Memory Limit & 32 MB \\
+ Time Limit & 3 detik \\ 
+ Memory Limit & 64 MB \\
  \hline
 \end{tabular}
 \end{center}
@@ -24,7 +25,7 @@
 
 \par Terdapat $N$ algoritma hash yang dapat dinomori dari $1$ hingga $N$. Algoritma hash ke-$i$ memiliki nilai kekuatan sebesar $A_i$ dan kompleksitas waktu sebesar $B_i$. Dengan kekuatan magic-nya, Turpa dapat menggabungkan algoritma $i$ dan $j$ menjadi algoritma baru bernama super-$i$-$j$ dengan kekuatan sebesar $A_i$ dan kompleksitas waktu sebesar $B_j$. Setiap algoritma baru yang dihasilkan oleh Turpa memiliki nilai keindahan. Nilai keindahan sebuah algoritma yang digabungkan dari algoritma $i$ dan $j$ adalah $A_i + B_j$. Perhatikan bahwa menggabungkan algoritma $i$ dengan $j$ berbeda dengan menggabungkan algoritma $j$ dengan $i$.
 
-\par Terdapat $Q$ query yang berisi sebuah bilangan bulat $x$. Untuk setiap query, tentukan banyaknya algoritma yang dapat dihasilkan dengan menggabungkan dua buah algoritma sehingga memiliki nilai keindahan sebesar $x$.
+\par Terdapat $Q$ query yang berisi sebuah bilangan bulat $x$. Untuk setiap query, tentukan banyaknya algoritma yang dapat dihasilkan dengan menggabungkan dua buah algoritma sehingga memiliki nilai keindahan sebesar $x$. Dua algoritma dikatakan berbeda jika memiliki nama yang berbeda.
 
 \subsection*{Format Masukan}
 \par Baris pertama berisi sebuah bilangan T yang menyatakan banyaknya kasus
@@ -69,12 +70,10 @@
 
 \par Terdapat paling banyak 20 kasus ($1 \leq T \leq 20$). Untuk setiap kasus, berlaku batasan sebagai berikut:
 \begin{itemize}
-	\item $0 \leq N \leq 5\times 10^4$
+	\item $1 \leq N \leq 5\times 10^4$
 	\item $1 \leq Q \leq 10^5$
 	\item $0 \leq A_i,B_i \leq 5\times 10^4$
 	\item $0 \leq x$
-	\item Nilai $A_i$ unik.
-	\item Nilai $B_i$ unik.
 \end{itemize}
 
 \end{document}

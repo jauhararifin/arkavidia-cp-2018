@@ -105,13 +105,13 @@ int main() {
 			int x; scanf("%d", &x);
 			while (a.size() <= x)
 				a.push_back(0);
-			a[x] = 1;
+			a[x]++;
 		}
 		for (int i = 0; i < n; i++) {
 			int x; scanf("%d", &x);
 			while (b.size() <= x)
 				b.push_back(0);
-			b[x] = 1;
+			b[x]++;
 		}
 		while (a.size() < b.size()) a.push_back(0);
 		while (b.size() < a.size()) b.push_back(0);

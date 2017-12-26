@@ -77,12 +77,12 @@ int main() {
 		memset(b, 0, sizeof b);
 		for (int i = 0; i < n; i++) {
 			scanf("%d", &x);
-			a[x] = 1;
+			a[x]++;
 			m = max(m, x);
 		}
 		for (int i = 0; i < n; i++) {
 			scanf("%d", &x);
-			b[x] = 1;
+			b[x]++;
 			m = max(m, x);
 		}
 		memset(p, 0, sizeof p);
