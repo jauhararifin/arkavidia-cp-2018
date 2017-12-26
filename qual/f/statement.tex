@@ -1,0 +1,80 @@
+
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage[margin=1in]{geometry}
+\pagenumbering{gobble}
+ 
+\begin{document}
+
+\section*{\hfil Hashing\hfil}
+
+\begin{center}
+\begin{tabular}{ |cc| } 
+ \hline
+ Time Limit & 10 detik \\ 
+ Memory Limit & 32 MB \\
+ \hline
+\end{tabular}
+\end{center}
+
+\subsection*{Deskripsi}
+
+\par Hashing adalah suatu teknik yang dapat digunakan untuk mengubah data yang memiliki ukuran berapapun menjadi data yang berukuran tetap. Fungsi hash akan memetakan data menjadi suatu data baru yang memiliki ukuran konstan. Untuk memudahkan persoalan, fungsi hash $f(x)$ adalah fungsi yang memetakan array of byte $(x)$ menjadi sebuah integer 32 bit. Nilai yang dihasilkan oleh fungsi hash ini disebut dengan \textit{hash value} atau \textit{digest}. Hashing digunakan pada banyak aplikasi seperti struktur data hash map, string matching, digital signature dan masih banyak lagi. Sekarang sudah banyak algoritma hash yang ditemukan, beberapa diantaranya adalah: MD5, SHA-1, CRC, dan lain sebagainya. Membuat fungsi hash adalah hal yang mudah, salah satu contoh fungsi hash yang valid adalah menjumlahkan seluruh byte pada $x$. Akan tetapi menjumlahkan seluruh byte pada $x$ tidak memberikan algoritma hash yang kuat. Dengan menggunakan algoritma tersebut array of byte $[1,2,3]$ dan $[1,5]$ akan memberikan hash value yang sama yaitu $6$, hal ini disebut dengan \textit{collision}. Nilai kekuatan algoritma hash didefinisikan dengan seberapa jarang collision terjadi. Selain itu, tentu saja algoritma hash juga memiliki kompleksitas waktu, algoritma hash yang kuat bisa saja membutuhkan waktu yang lama.
+
+\par Terdapat $N$ algoritma hash yang dapat dinomori dari $1$ hingga $N$. Algoritma hash ke-$i$ memiliki nilai kekuatan sebesar $A_i$ dan kompleksitas waktu sebesar $B_i$. Dengan kekuatan magic-nya, Turpa dapat menggabungkan algoritma $i$ dan $j$ menjadi algoritma baru bernama super-$i$-$j$ dengan kekuatan sebesar $A_i$ dan kompleksitas waktu sebesar $B_j$. Setiap algoritma baru yang dihasilkan oleh Turpa memiliki nilai keindahan. Nilai keindahan sebuah algoritma yang digabungkan dari algoritma $i$ dan $j$ adalah $A_i + B_j$. Perhatikan bahwa menggabungkan algoritma $i$ dengan $j$ berbeda dengan menggabungkan algoritma $j$ dengan $i$.
+
+\par Terdapat $Q$ query yang berisi sebuah bilangan bulat $x$. Untuk setiap query, tentukan banyaknya algoritma yang dapat dihasilkan dengan menggabungkan dua buah algoritma sehingga memiliki nilai keindahan sebesar $x$.
+
+\subsection*{Format Masukan}
+\par Baris pertama berisi sebuah bilangan T yang menyatakan banyaknya kasus
+\par Untuk setiap kasus, baris pertama berisi sebuah bilangan bulat $N$ yang menyatakan banyaknya algoritma hash yang ada.
+\par Baris kedua berisi $N$ buah bilangan bulat yang menyatakan nilai $A$.
+\par Baris ketiga berisi $N$ buah bilangan bulat yang menyatakan nilai $B$.
+\par Baris ke-empat berisi sebuah bilangan bulat $Q$ yang menytakan banyaknya query pada kasus yang bersangkutan.
+\par $Q$ baris berikutnya berisi sebuah bilangan bulat $x$ seperti yang dijelaskan pada deskripsi soal.
+
+\subsection*{Format Keluaran}
+
+\par Untuk setiap kasus, keluarkan $Q$ baris yang berisi sebuah bilangan bulat yang menyatakan jawaban tiap query.
+
+\subsection*{Contoh Masukan}
+
+\begin{lstlisting}
+1
+5
+1 6 2 3 4
+8 2 4 5 7
+3
+3
+6
+5
+\end{lstlisting}
+
+\subsection*{Contoh Keluaran}
+
+\begin{lstlisting}
+1
+3
+2
+\end{lstlisting}
+
+\subsection*{Penjelasan}
+
+\par Pada query pertama Turpa hanya dapat membuat algoritma dengan keindahan 3 dengan menggabungkan algoritma pertama dengan kedua.
+\par Pada query kedua Turpa dapat membuat algoritma dengan keindahan 6 dengan menggabungkan algoritma pertama dengan ke-empat, ke-tiga dengan ke-tiga, dan ke-lima dengan ke-dua.
+\par Pada query terakhir, Turpa dapat membuat algoritma dengan nilai keindahan 5 dengan menggabungkan algoritma pertama dan ketiga atau keempat dan kedua.
+
+\subsection*{Batasan}
+
+\par Terdapat paling banyak 20 kasus ($1 \leq T \leq 20$). Untuk setiap kasus, berlaku batasan sebagai berikut:
+\begin{itemize}
+	\item $0 \leq N \leq 5\times 10^4$
+	\item $1 \leq Q \leq 10^5$
+	\item $0 \leq A_i,B_i \leq 5\times 10^4$
+	\item $0 \leq x$
+	\item Nilai $A_i$ unik.
+	\item Nilai $B_i$ unik.
+\end{itemize}
+
+\end{document}
