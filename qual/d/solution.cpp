@@ -2,7 +2,7 @@
 
 using namespace std;
 
-const int N = 3e5 + 5;
+const int N = 1e5 + 5;
 const long long inf = 2e18;
 
 long long bit[N];
@@ -19,15 +19,21 @@ long long find(int i) {
 }
 
 int main() {
-  int n, k;
-  scanf("%d %d", &n, &k);
-  for (int i = 1; i <= n; i++) scanf("%d", a + i);
-  sort(a + 1, a + 1 + n);
-  update(k, -a[1]);
-  for (int i = 0; i + k <= n; i++) {
-    long long now = find(i) - a[i + 1];
-    update(i + k, now);
+  int t;
+  scanf("%d", &t);
+  while (t--) {
+    fill(bit, bit + N, inf);
+
+    int n, k;
+    scanf("%d %d", &n, &k);
+    for (int i = 1; i <= n; i++) scanf("%d", a + i);
+    sort(a + 1, a + 1 + n);
+    update(k, -a[1]);
+    for (int i = 0; i + k <= n; i++) {
+      long long now = find(i) - a[i + 1];
+      update(i + k, now);
+    }
+    printf("%lld\n", find(n) + a[n]);
   }
-  cout << find(n) + a[n] << endl;
   return 0;
 }

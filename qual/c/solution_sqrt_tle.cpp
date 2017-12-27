@@ -2,8 +2,8 @@
 
 using namespace std;
 
-const int N = 3e5 + 5;
-const int MAGIC = 550;
+const int N = 2e5 + 5;
+const int MAGIC = 450;
 
 int a[N], dp[MAGIC];
 
@@ -27,26 +27,29 @@ int solve(int l, int r) {
 }
 
 int main() {
-  int n, k;
-  scanf("%d %d", &n, &k);
-  for (int i = 0; i < n; i++) scanf("%d" a + i);
-  for (int i = 0; i < n; i += MAGIC) {
-    int b = i / MAGIC;
-    dp[b] = a[i];
-    for (int j = 0; j < MAGIC && i + j < n; j++) {
-      dp[b] = (dp[b] & a[i + j]);
+  int t;
+  scanf("%d", &t);
+  while (t--) {
+    int n;
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++) scanf("%d", a + i);
+    for (int i = 0; i < n; i += MAGIC) {
+      int b = i / MAGIC;
+      dp[b] = a[i];
+      for (int j = 0; j < MAGIC && i + j < n; j++) {
+        dp[b] = (dp[b] & a[i + j]);
+      }
+    }
+    
+    int q;
+    scanf("%d", &q);
+    while (q--) {
+      int l, r;
+      scanf("%d %d", &l, &r);
+      l--; r--;
+      printf("%d\n", solve(l, r));
     }
   }
-  
-  int q;
-  scanf("%d", &q);
-  while (q--) {
-    int l, r;
-    scanf("%d %d", &l, &r);
-    l--; r--;
-    printf("%d\n", solve(l, r));
-  }
-  
   return 0;
 }
 
