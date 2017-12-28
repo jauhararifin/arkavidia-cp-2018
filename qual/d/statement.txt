@@ -1,0 +1,63 @@
+Fahar, Jundi, dan Kotak
+
+[Deskripsi]
+
+Fahar dan Jundi adalah teman yang sangat akrab. Mereka juga suka bermain dengan angka. Mereka mempunyai teka-teki untuk anda. Beginilah teka-tekinya... 
+
+Fahar mempunyai N bilangan bulat. Bilangan ke-i bernilai A_i. Jundi mempunyai K kotak. Mereka ingin memasukkan bilangan-bilangan kedalam semua kotak dengan konfigurasi sebagai berikut:
+
+1. Setiap kotak berisi minimal 1 angka.
+2. Sebuah bilangan hanya dapat dimasukkan ke satu kotak saja.
+
+Terdapat fungsi f(X) yang menghitung selisih terbesar dari seluruh angka dalam kotak ke-X. Terdapat pula fungsi G yang menghitung total dari f(X) untuk 1 ≤ X ≤ K. Fahar dan Jundi penasaran, dari semua konfigurasi yang mungkin, berapakah nilai G minimum yang mungkin? Karena kemungkinannya sangat banyak, mereka kewalahan. Bantulah mereka mencari nilai G minimum yang mungkin!
+
+[Format Masukan]
+Baris pertama berisi sebuah bilangan bulat T, yaitu banyaknya kasus uji.
+Setiap kasus uji terdiri dari 2 baris.
+Baris pertama setiap kasus uji berisi 2 bilangan bulat N dan K.
+Baris kedua setiap kasus uji berisi N bilangan bulat A_i.
+
+[Format Keluaran]
+Untuk setiap kasus uji, keluarkan sebuah baris yang berisi nilai G minimum yang mungkin untuk kasus uji yang bersangkutan.
+
+[Contoh Masukan]
+
+2
+5 3
+1 1 1 2 2
+5 3
+1 2 3 3 5
+
+[Contoh Keluaran]
+
+0
+1
+
+[Penjelasan]
+
+Pada kasus uji pertama, salah satu solusi optimal yang mungkin adalah membagi bilangan seperti berikut:
+- Kotak 1 : [1, 1], f(1) = 1 - 1 = 0
+- Kotak 2 : [1], f(2) = 1 - 1 = 0
+- Kotak 3 : [2, 2], f(3) = 2 - 2 = 0
+
+Maka nilai G untuk konfigurasi di atas adalah 0 + 0 + 0 = 0.
+
+Pada kasus uji kedua, salah satu solusi optimal yang mungkin adalah:
+- Kotak 1 : [1], f(1) = 1 - 1 = 0
+- Kotak 2 : [5], f(2) = 5 - 5 = 0
+- Kotak 3 : [2, 3, 3], f(3) = 3 - 2 = 1
+
+Maka nilai G untuk konfigurasi di atas adalah 0 + 0 + 1 = 1. Tidak ada konfigurasi yang menghasilkan G lebih kecil dari 1.
+
+Berikut adalah konfigurasi yang kurang optimal untuk kasus uji kedua:
+- Kotak 1 : [1], f(1) = 1 - 1 = 0
+- Kotak 2 : [2], f(2) = 2 - 2 = 0
+- Kotak 3 : [3, 3, 5], f(3) = 5 - 3 = 2
+
+Nilai G untuk konfigurasi diatas adalah 0 + 0 + 2 = 2, sehingga bukan merupakan solusi optimal.
+
+[Batasan]
+
+- 1 ≤ T ≤ 20
+- 1 ≤ K ≤ N ≤ 100.000
+- 1 ≤ A_i ≤ 10^9
