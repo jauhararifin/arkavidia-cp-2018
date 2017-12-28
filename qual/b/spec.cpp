@@ -19,8 +19,8 @@ protected:
     }
 
     void GradingConfig() {
-        TimeLimit(0.5);
-        MemoryLimit(16);
+        TimeLimit(2);
+        MemoryLimit(256);
     }
 
     void MultipleTestCasesConfig() {
@@ -33,7 +33,7 @@ protected:
     }
 
     void Constraints() {
-        CONS(1 <= L < R <= 1000000000000000000LL);
+        CONS(1 <= L <= R <= 1000000000000000000LL);
     }
 };
 
@@ -80,6 +80,25 @@ protected:
         CASE(L = 288230376151711741, R = 288230376151711743);
         CASE(L = 288230376151711740, R = 288230376151711743);
         CASE(L = 288230376151711739, R = 288230376151711743);
+
+        CASE(L = 1, R = 1);
+        CASE(L = 2, R = 2);
+        CASE(L = 3, R = 3);
+        CASE(L = 4, R = 4);
+        CASE(L = 5, R = 5);
+        CASE(L = 9, R = 9);
+        CASE(L = 25, R = 25);
+        CASE(L = 100, R = 100);
+        CASE(L = 826, R = 826);
+        CASE(L = 827, R = 827);
+        CASE(L = 828, R = 828);
+        CASE(L = 829, R = 829);
+        CASE(L = 230376151, R = 230376151);
+        CASE(L = 230376152, R = 230376152);
+        CASE(L = 230376153, R = 230376153);
+        CASE(L = 230376154, R = 230376154);
+        CASE(L = 38217192873472, R = 38217192873472);
+        CASE(L = 38217192873472, R = 38217192873472);
 
         for (long long i = 0; i <= 100; i++)
             for (long long j = 0; j <= 100; j++)
