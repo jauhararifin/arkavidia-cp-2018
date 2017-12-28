@@ -2,23 +2,22 @@ Potongan Kue
 
 [Deskripsi]
 
-Pak Ansah memiliki kue yang akan dibagikan menjadi N potong. Setiap potongan dapat memiliki besaran yang berbeda-beda. Potongan ke-i memiliki besaran A_i unit. 
-
-Pak Ansah juga mempunyai N anak (kebetulan sekali!) sehingga ia ingin membagikan kue ke anak-anaknya dengan aturan sebagai berikut:
+Pak Ansah memiliki kue yang akan dibagikan menjadi N potong. Setiap potongan dapat memiliki besaran yang berbeda-beda. Potongan ke-i memiliki besaran A_i unit. Pak Ansah juga mempunyai N anak (kebetulan sekali!) sehingga ia ingin membagikan kue ke anak-anaknya dengan aturan sebagai berikut:
 
 1. Anak ke-i mendapatkan potongan kue ke-i.
-2. Setiap anak tidak boleh makan kue dengan besaran lebih banyak dari yang saudara-saudaranya. 
-3. Setiap anak juga tidak boleh membagikan kue ke saudaranya. 
+2. Setiap anak tidak boleh makan kue dengan besaran lebih banyak dari yang saudara-saudaranya.
+3. Setiap anak boleh makan sebagian dari potongan kue yang dimiliki. Dengan kata lain, boleh saja tidak memakan potongan kue secara utuh. 
+4. Setiap anak tidak boleh membagikan kue ke saudaranya. 
 
 Tentukan banyaknya total besaran minimum yang tersisa setelah anak-anaknya memakan kue sesuai dengan aturan diatas.
 
 [Format Masukan]
 
 Baris pertama berisi sebuah bilangan bulat T, yaitu banyaknya kasus uji.
-Untuk setiap kasus uji, berisi sebuah bilangan bulat N, diikuti dengan N bilangan bulat yang menyatakan A_i, yaitu besarnya kue per potong. 
+Untuk setiap kasus uji, berisi sebuah bilangan bulat N, diikuti dengan N bilangan bulat. Bilangan ke-i menyatakan A_i, yaitu besarnya potongan kue ke-i.  
 
 [Format Keluaran]
-Untuk setiap kasus uji, keluarkan satu baris yang berisi jawaban untuk kasus yang bersangkutan.
+Untuk setiap kasus uji, keluarkan satu baris yang berisi jawaban untuk kasus uji yang bersangkutan.
 
 [Contoh Masukan]
 
