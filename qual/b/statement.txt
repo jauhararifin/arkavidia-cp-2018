@@ -2,7 +2,7 @@ XOR
 
 [Deskripsi]
 
-Turfa baru belajar tentang operasi XOR (Exclusive-OR). Turfa mempunyai 2 buah bilangan l dan r. Turfa ingin mengetahui nilai dari l xor (l + 1) xor (l + 2) .. xor (r - 1) xor r. Bantulah Turfa!
+Turfa baru belajar tentang operasi bitwise XOR (Exclusive-OR). Operasi bitwise XOR ditandai dengan simbol ⊕. Turfa juga mempunyai 2 buah bilangan l dan r. Turfa ingin mengetahui nilai dari l ⊕ (l + 1) ⊕ (l + 2) .. ⊕ (r - 1) ⊕ r. Bantulah Turfa!
 
 [Format Masukan]
 Baris pertama berisi sebuah bilangan bulat T, yaitu banyaknya kasus uji.
