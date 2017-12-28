@@ -109,6 +109,8 @@ protected:
     }
 
 private:
+    mt19937 mersenne = mt19937(0xdead);
+
     void sameNumber(int x) {
         for (int i = 0; i < N; i++)
             A.push_back(x);
@@ -116,12 +118,12 @@ private:
     }
     void numberAbove(int x) {
         for (int i = 0; i < N; i++)
-            A.push_back(x + rand() % (1000000-x));
+            A.push_back(x + mersenne() % (1000000-x));
         random_shuffle(A.begin(), A.end());
     }
     void randomElement() {
         for (int i = 0; i < N; i++)
-            A.push_back(rand()%1000000+1);
+            A.push_back(mersenne()%1000000+1);
         random_shuffle(A.begin(), A.end());
     }
 };
