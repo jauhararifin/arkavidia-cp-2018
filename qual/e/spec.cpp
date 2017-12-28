@@ -152,6 +152,22 @@ protected:
     CASE(N = 1000, Q = 1000, A = random_array(N, 1, 200000), X = random_array(Q, 1, 1000000000));
   }
 
+  // no memo killer
+  void TestGroup4() {
+    CASE(N = 200000, Q = 200000, A = complete_array(N), X = random_array(Q, 1, 10));
+  }
+
+  // sqrt * N killer
+  void TestGroup5() {
+    CASE(N = 200000, Q = 400, A = random_array(N, 1, 999), X = complete_array(Q));
+    CASE(N = 200000, Q = 400, A = random_array(N, 1, 999), X = complete_array(Q));
+    CASE(N = 200000, Q = 400, A = random_array(N, 1, 999), X = complete_array(Q));
+    CASE(N = 200000, Q = 400, A = random_array(N, 1, 999), X = complete_array(Q));
+    CASE(N = 200000, Q = 400, A = random_array(N, 1, 999), X = complete_array(Q));
+    CASE(N = 200000, Q = 400, A = random_array(N, 1, 999), X = complete_array(Q));
+    CASE(N = 50000, Q = 400, A = random_array(N, 1, 999), X = complete_array(Q));
+  }
+
 private:
   mt19937 mersenne = mt19937(0xfafa);
 
