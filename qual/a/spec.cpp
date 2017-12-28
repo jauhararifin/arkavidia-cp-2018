@@ -19,8 +19,8 @@ protected:
     }
 
     void GradingConfig() {
-        TimeLimit(1);
-        MemoryLimit(32);
+        TimeLimit(2);
+        MemoryLimit(256);
     }
 
     void MultipleTestCasesConfig() {
