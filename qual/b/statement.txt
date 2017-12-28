@@ -1,0 +1,29 @@
+XOR
+
+[Deskripsi]
+
+Turfa baru belajar tentang operasi XOR (Exclusive-OR). Turfa mempunyai 2 buah bilangan l dan r. Turfa ingin mengetahui nilai dari l xor (l + 1) xor (l + 2) .. xor (r - 1) xor r. Bantulah Turfa!
+
+[Format Masukan]
+Baris pertama berisi sebuah bilangan bulat T, yaitu banyaknya kasus uji.
+Setiap kasus uji terdiri atas sebuah baris yang berisi 2 bilangan bulat l dan r yang dipisahkan oleh spasi.
+
+[Format Keluaran]
+Untuk setiap kasus uji, keluarkan sebuah baris yang berisi jawaban sesuai deskripsi diatas. 
+
+[Contoh Masukan]
+
+3
+1 2
+7 10
+100 101
+
+[Contoh Keluaran]
+
+3
+12
+1
+
+[Batasan]
+- 1 ≤ T ≤ 200.000
+- 1 ≤ l ≤ r ≤ 10^18

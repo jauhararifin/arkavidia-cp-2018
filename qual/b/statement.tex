@@ -3,11 +3,12 @@
 \usepackage{amsmath}
 \usepackage{listings}
 \usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
 \pagenumbering{gobble}
  
 \begin{document}
 
-\section*{\hfil Prefix XOR\hfil}
+\section*{\hfil XOR\hfil}
 
 \begin{center}
 \begin{tabular}{ |cc| } 
@@ -19,17 +20,15 @@
 \end{center}
 
 \subsection*{Deskripsi}
-\par Setelah memelajari prefix sum, Turfa ingin mencoba untuk melakukan prefix xor. Ia kemudian membuah sebuah array $A$ berisi $N$ buah bilangan bulat. Setelah melakukan precomputing nilai xor, akhirnya Turfa merasa senang karena dapat menjawab query yang berisi dua buah bilangan bulat yaitu $l$ dan $r$ dan menghasilkan nilai xor dari seluruh elemen $A$ dari $l$ hingga $r$, atau dengan kata lain Turfa dapat menghitung nilai $A_l \oplus A_{l+1} \dots A_r$. Dimana $a \oplus b$ berarti $a$ xor $b$.
-
-\par Kesenangan Turfa tidak berlangsung lama setelah Agung memberinya query yang lebih sulit. Diberikan dua buah bilangan yaitu $l$ dan $r$, tentukan nilai dari $l \oplus (l+1) \oplus (l+2) \oplus \dots \oplus r$.
+\par Turfa baru belajar tentang operasi \href{https://en.wikipedia.org/wiki/Exclusive_or}{XOR} (Exclusive-OR). Turfa mempunyai 2 buah bilangan $l$ dan $r$. Turfa ingin mengetahui nilai dari $l \oplus (l + 1) \oplus (l + 2) \dots \oplus (r - 1) \oplus r$. Bantulah Turfa!
 
 \subsection*{Format Masukan}
-\par Baris pertama berisi sebuah bilangan $T$ yang menyatakan banyaknya kasus
-\par Setiap kasus terdiri dari sebuah baris berisi dua buah bilangan bulat $l$ dan $r$.
+\par Baris pertama berisi sebuah bilangan bulat $T$, yaitu banyaknya kasus uji.
+\newline Setiap kasus terdiri dari sebuah baris berisi dua buah bilangan bulat $l$ dan $r$.
 
 \subsection*{Format Keluaran}
 
-\par Untuk setiap kasus, keluarkan sebuah bilangan bulat yang menyatakan nilai dari $l \oplus (l+1) \oplus (l+2) \oplus \dots \oplus r$.
+\par Untuk setiap kasus uji, keluarkan sebuah baris yang berisi jawaban sesuai deskripsi diatas. 
 
 \subsection*{Contoh Masukan}
 
@@ -44,7 +43,6 @@
 \subsection*{Contoh Keluaran}
 
 \begin{lstlisting}
-
 3
 12
 1
@@ -54,8 +52,8 @@
 \subsection*{Batasan}
 
 \begin{itemize}
-	\item $1 \leq T \leq 200000$
-	\item $1 \leq l < r \leq 10^{18}$
+	\item $1 \leq T\leq 200.000$
+	\item $1 \leq l \leq r \leq 10^{18}$
 \end{itemize}
 
 \end{document}
