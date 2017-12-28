@@ -12,7 +12,7 @@ int main() {
   scanf("%d", &t);
   while (t--) {
     int n, q;
-    scanf("%d", &n);
+    scanf("%d %d", &n, &q);
     for (int i = 0; i < n; i++) scanf("%d", a + i);
     sort(a, a + n);
     vector<pair<int, int>> p;

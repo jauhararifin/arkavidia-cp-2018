@@ -24,7 +24,7 @@ long long solve(int x) {
     }
   } else {
     for (int i = 0; i <= MAX; i += x) {
-      ans[x] += find(sum2, i, i + x - 1) - 2 * find(sum, i, i + x - 1) * x + find(cnt, i, i + x - 1) * x * x;
+      ans[x] += find(sum2, i, i + x - 1) - 2 * find(sum, i, i + x - 1) * i + find(cnt, i, i + x - 1) * i * i;
     }
   }
   return ans[x];
