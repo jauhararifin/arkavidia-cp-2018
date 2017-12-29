@@ -9,7 +9,7 @@ Fahar mempunyai N bilangan bulat. Bilangan ke-i bernilai A_i. Jundi mempunyai ko
 1. Setiap kotak terdiri atas minimal K angka.
 2. Sebuah bilangan hanya dapat dimasukkan ke satu kotak saja.
 
-Terdapat fungsi F yang menghitung selisih terbesar dari seluruh angka dalam suatu kotak. Terdapat pula fungsi G yang menghitung total dari f untuk semua kotak yang terisi oleh bilangan. Fahar dan Jundi penasaran, dari semua konfigurasi yang mungkin, berapakah nilai G minimum yang mungkin? Karena kemungkinannya sangat banyak, mereka kewalahan. Bantulah mereka mencari nilai G minimum yang mungkin!
+Terdapat fungsi F yang menghitung selisih terbesar dari seluruh angka dalam suatu kotak. Terdapat pula fungsi G yang menghitung total dari F untuk semua kotak yang terisi oleh bilangan. Fahar dan Jundi penasaran, dari semua konfigurasi yang mungkin, berapakah nilai G minimum yang mungkin? Karena kemungkinannya sangat banyak, mereka kewalahan. Bantulah mereka mencari nilai G minimum yang mungkin!
 
 [Format Masukan]
 Baris pertama berisi sebuah bilangan bulat T, yaitu banyaknya kasus uji.
@@ -38,14 +38,14 @@ Untuk setiap kasus uji, keluarkan sebuah baris yang berisi nilai G minimum yang 
 Pada kasus uji pertama, jumlah tidak mungkin untuk membagi bilangan ke lebih dari 1 kotak, sehingga nilai G = 2 - 1 = 1.
 
 Pada kasus uji kedua, salah satu solusi optimal yang mungkin adalah:
-- Kotak 1 : [1, 1, 1], f = 1 - 1 = 0
-- Kotak 2 : [2, 2], f = 2 - 2 = 0
+- Kotak 1 : [1, 1, 1], F = 1 - 1 = 0
+- Kotak 2 : [2, 2], F = 2 - 2 = 0
 
 Maka nilai G untuk konfigurasi di atas adalah 0 + 0 = 0.
 
 Berikut adalah konfigurasi yang kurang optimal untuk kasus uji kedua:
-- Kotak 1 : [1, 1], f = 1 - 1 = 0
-- Kotak 2 : [1, 2, 2], f = 2 - 1 = 0
+- Kotak 1 : [1, 1], F = 1 - 1 = 0
+- Kotak 2 : [1, 2, 2], F = 2 - 1 = 0
 
 Nilai G untuk konfigurasi diatas adalah 0 + 1 = 1, sehingga bukan merupakan solusi optimal.
 
