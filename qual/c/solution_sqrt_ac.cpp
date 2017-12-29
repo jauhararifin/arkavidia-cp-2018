@@ -3,7 +3,7 @@
 using namespace std;
 
 const int N = 2e5 + 5;
-const int MAGIC = 450;
+const int MAGIC = 540;
 
 int a[N], dp[MAGIC];
 
