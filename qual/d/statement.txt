@@ -4,12 +4,12 @@ Fahar, Jundi, dan Kotak
 
 Fahar dan Jundi adalah teman yang sangat akrab. Mereka juga suka bermain dengan angka. Mereka mempunyai teka-teki untuk anda. Beginilah teka-tekinya... 
 
-Fahar mempunyai N bilangan bulat. Bilangan ke-i bernilai A_i. Jundi mempunyai K kotak. Mereka ingin memasukkan bilangan-bilangan kedalam semua kotak dengan konfigurasi sebagai berikut:
+Fahar mempunyai N bilangan bulat. Bilangan ke-i bernilai A_i. Jundi mempunyai kotak yang banyaknya tak berhingga. Mereka ingin memasukkan bilangan-bilangan kedalam kotak-kotak tersebut dengan konfigurasi sebagai berikut:
 
-1. Setiap kotak berisi minimal 1 angka.
+1. Setiap kotak terdiri atas minimal K angka.
 2. Sebuah bilangan hanya dapat dimasukkan ke satu kotak saja.
 
-Terdapat fungsi f(X) yang menghitung selisih terbesar dari seluruh angka dalam kotak ke-X. Terdapat pula fungsi G yang menghitung total dari f(X) untuk 1 ≤ X ≤ K. Fahar dan Jundi penasaran, dari semua konfigurasi yang mungkin, berapakah nilai G minimum yang mungkin? Karena kemungkinannya sangat banyak, mereka kewalahan. Bantulah mereka mencari nilai G minimum yang mungkin!
+Terdapat fungsi F yang menghitung selisih terbesar dari seluruh angka dalam suatu kotak. Terdapat pula fungsi G yang menghitung total dari f untuk semua kotak yang terisi oleh bilangan. Fahar dan Jundi penasaran, dari semua konfigurasi yang mungkin, berapakah nilai G minimum yang mungkin? Karena kemungkinannya sangat banyak, mereka kewalahan. Bantulah mereka mencari nilai G minimum yang mungkin!
 
 [Format Masukan]
 Baris pertama berisi sebuah bilangan bulat T, yaitu banyaknya kasus uji.
@@ -25,36 +25,29 @@ Untuk setiap kasus uji, keluarkan sebuah baris yang berisi nilai G minimum yang 
 2
 5 3
 1 1 1 2 2
-5 3
-1 2 3 3 5
+5 2
+1 1 1 2 2
 
 [Contoh Keluaran]
 
-0
 1
+0
 
 [Penjelasan]
 
-Pada kasus uji pertama, salah satu solusi optimal yang mungkin adalah membagi bilangan seperti berikut:
-- Kotak 1 : [1, 1], f(1) = 1 - 1 = 0
-- Kotak 2 : [1], f(2) = 1 - 1 = 0
-- Kotak 3 : [2, 2], f(3) = 2 - 2 = 0
-
-Maka nilai G untuk konfigurasi di atas adalah 0 + 0 + 0 = 0.
+Pada kasus uji pertama, jumlah tidak mungkin untuk membagi bilangan ke lebih dari 1 kotak, sehingga nilai G = 2 - 1 = 1.
 
 Pada kasus uji kedua, salah satu solusi optimal yang mungkin adalah:
-- Kotak 1 : [1], f(1) = 1 - 1 = 0
-- Kotak 2 : [5], f(2) = 5 - 5 = 0
-- Kotak 3 : [2, 3, 3], f(3) = 3 - 2 = 1
+- Kotak 1 : [1, 1, 1], f = 1 - 1 = 0
+- Kotak 2 : [2, 2], f = 2 - 2 = 0
 
-Maka nilai G untuk konfigurasi di atas adalah 0 + 0 + 1 = 1. Tidak ada konfigurasi yang menghasilkan G lebih kecil dari 1.
+Maka nilai G untuk konfigurasi di atas adalah 0 + 0 = 0.
 
 Berikut adalah konfigurasi yang kurang optimal untuk kasus uji kedua:
-- Kotak 1 : [1], f(1) = 1 - 1 = 0
-- Kotak 2 : [2], f(2) = 2 - 2 = 0
-- Kotak 3 : [3, 3, 5], f(3) = 5 - 3 = 2
+- Kotak 1 : [1, 1], f = 1 - 1 = 0
+- Kotak 2 : [1, 2, 2], f = 2 - 1 = 0
 
-Nilai G untuk konfigurasi diatas adalah 0 + 0 + 2 = 2, sehingga bukan merupakan solusi optimal.
+Nilai G untuk konfigurasi diatas adalah 0 + 1 = 1, sehingga bukan merupakan solusi optimal.
 
 [Batasan]
 
