@@ -4,7 +4,6 @@
 \usepackage{listings}
 \usepackage[margin=1in]{geometry}
 \pagenumbering{gobble}
-\usepackage{indentfirst}
  
 \begin{document}
 
@@ -20,26 +19,23 @@
 \end{center}
 
 \subsection*{Deskripsi}
+Diberikan sebuah array $A$ berisi $N$ bilangan bulat. $A_{i}$ menandakan elemen $A$ ke-$i$ untuk $1 \leq i \leq N$. Terdapat $Q$ buah \textit{query}. Setiap query diberikan sebuah bilangan bulat $X$. Hitunglah nilai dari:
 
-\par Diberikan sebuah array $A$ berisi $N$ bilangan bulat. $A_{i}$ adalah elemen $A$ ke-$i$ dengan $1 \leq i \leq N$.
-
-\par Terdapat $Q$ buah \textit{query}. Setiap query diberikan sebuah bilangan bulat $X$. Hitunglah nilai dari:
 \begin{gather*} 
 (A_{1} \bmod X)^2 + (A_{2} \bmod X)^2 + ... + (A_{n} \bmod X)^2
 \end{gather*} 
 
 \subsection*{Format Masukan}
 \par Baris pertama berisi sebuah bilangan T yang menyatakan banyaknya kasus.
-\par Baris pertama setiap kasus berisi dua bilangan bulat: $N$ sebagai panjang array $A$, dan $Q$ banyak \textit{query}.
-\par Baris kedua berisi $N$ buah bilangan bulat yang menyatakan nilai $A$.
-\par $Q$ baris berikutnya berisi sebuah bilangan bulat $X$ seperti yang dijelaskan pada deskripsi soal.
+\newline Baris pertama setiap kasus berisi dua bilangan bulat: $N$ sebagai panjang array $A$, dan $Q$ banyak \textit{query}.
+\newline Baris kedua berisi $N$ buah bilangan bulat yang menyatakan nilai $A$.
+\newline $Q$ baris berikutnya berisi sebuah bilangan bulat $X$ seperti yang dijelaskan pada deskripsi soal.
 
 \subsection*{Format Keluaran}
 
 \par Untuk setiap kasus, keluarkan $Q$ baris bilangan bulat yang menyatakan jawaban tiap \textit{query}.
 
 \subsection*{Contoh Masukan}
-
 \begin{lstlisting}
 1
 5 3
@@ -50,7 +46,6 @@
 \end{lstlisting}
 
 \subsection*{Contoh Keluaran}
-
 \begin{lstlisting}
 0
 14
