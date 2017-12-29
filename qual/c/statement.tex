@@ -20,15 +20,17 @@
 \end{center}
 
 \subsection*{Deskripsi}
-\par Setelah belajar XOR, Turfa kemudian belajar tentang operasi \textit{bitwise} \href{https://en.wikipedia.org/wiki/Bitwise_operation#AND}{AND}. Operasi \textit{bitwise} AND ditandai dengan simbol $\land$. Turfa mempunyai sebuah array $A$ berisi $N$ buah bilangan bulat. $A_{i}$ adalah elemen $A$ ke-$i$ dengan $1 \leq i \leq N$.
+\par Setelah belajar XOR, Turfa kemudian belajar tentang operasi \textit{bitwise} \href{https://en.wikipedia.org/wiki/Bitwise_operation#AND}{AND}. Operasi \textit{bitwise} AND ditandai dengan simbol $\land$. Turfa mempunyai sebuah array $A$ berisi $N$ buah bilangan bulat. $A_{i}$ menyatakan elemen $A$ ke-$i$ dengan $1 \leq i \leq N$.
 \par Selain itu, Turfa mempunyai $Q$ \textit{query}. Setiap \textit{query} diberikan dua buah bilangan bulat $L$ dan $R$. Turfa ingin mengetahui nilai dari $A_{L} \land A_{L+1} \land \dots \land A_{R-1} \land A_{R}$. Bantulah Turfa!
 
 \subsection*{Format Masukan}
-\par Baris pertama berisi sebuah bilangan T yang menyatakan banyaknya kasus.
-\newline Baris pertama setiap kasus berisi sebuah bilangan bulat: $N$ sebagai panjang array $A$.
-\newline Baris kedua berisi $N$ buah bilangan bulat yang menyatakan nilai $A$.
-\newline Baris ketiga berisi sebuah bilangan bulat $Q$ yang menyatakan banyak \textit{query}
-\newline $Q$ baris berikutnya berisi dua buah bilangan bulat $L$ dan $R$ seperti yang dijelaskan pada deskripsi soal.
+\par Baris pertama berisi sebuah bilangan $T$ yang menyatakan banyaknya kasus. Setiap kasus uji memiliki format sebagai berikut:
+\begin{itemize}
+\item Baris pertama berisi sebuah bilangan bulat: $N$ sebagai panjang array $A$.
+\item Baris kedua berisi $N$ buah bilangan bulat. Bilangan ke-$i$ menyatakan nilai $A_{i}$.
+\item Baris ketiga berisi sebuah bilangan bulat $Q$ yang menyatakan banyak \textit{query}.
+\item $Q$ baris berikutnya berisi dua buah bilangan bulat $L$ dan $R$ seperti yang dijelaskan pada deskripsi soal.
+\end{itemize}
 
 \subsection*{Format Keluaran}
 
@@ -62,10 +64,9 @@
 \begin{itemize}
   \item $1 \leq T\leq 10$
   \item $1 \leq N,\space Q\leq 200.000$
-    \item $0 \leq A_{i} \leq 10^9$
-    \item $1 \leq L \leq R \leq N$
-    \item Jumlah $N$ dalam satu file tidak lebih dari $200.000$.
-    \item Jumlah $Q$ dalam satu file tidak lebih dari $200.000$.
+  \item $0 \leq A_{i} \leq 10^9$
+  \item $1 \leq L \leq R \leq N$
+  \item Jumlah $N$ dalam satu file tidak lebih dari $200.000$. Jumlah $Q$ dalam satu file tidak lebih dari $200.000$.
 \end{itemize}
 
 \end{document}
