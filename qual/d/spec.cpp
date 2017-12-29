@@ -151,7 +151,6 @@ private:
     int diff = maxdiff/n - 1 - err;
     for (int i = 0, now = lo; i < n; ++i, now += rnd.nextInt(diff, diff+err))
       ret[i] = now;
-    cerr << ret.back() << endl;
     return ret;
   }
 
