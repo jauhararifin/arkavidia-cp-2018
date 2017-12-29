@@ -13,22 +13,29 @@
 \begin{tabular}{ |cc| } 
  \hline
  Time Limit & 1 detik \\ 
- Memory Limit & 32 MB \\
+ Memory Limit & 256 MB \\
  \hline
 \end{tabular}
 \end{center}
 
 \subsection*{Deskripsi}
-\par Beberapa hari lagi Turfa akan ulang tahun. Oleh karena itu, teman-teman turfa sibuk menyiapkan kue ulang tahun untuknya. Untuk memudahkan pembuatan kue ulang tahun, Turfa mengerahkan N buah robot buatannya untuk membuat kue ulang tahun. Robot ini dinomori dari 1 hingga N. Meskipun kue ulang tahun tersebut dibuat oleh robot, rasa kue ulang tahun tersebut bisa berbeda-beda karena robot Turfa memiliki kepribadian masing-masing. Meskipun begitu, karena adanya perbedaan kemampuan dan sisa baterai, banyaknya kue ulang tahun yang dibuat oleh setiap robot berbeda-beda. Robot ke-i membuat kue sebanyak $A_i$.
-\par Karena Turfa sangat suka berbagi. Ia membagikan seluruh kue ulang tahunnya ke-N orang temannya. Sayangnya teman turfa hanya menyukai kue ulang tahun yang dibuat oleh robot tertentu. Teman Turfa yang ke-i menyukai kue ulang tahun yang dibuat oleh robot i. Untuk menjaga keharmonisan antara teman-teman Turfa, Turfa akan bersikap adil dengan memberikan kue ke semua temannya dengan sama banyak. Untuk menyamakan jumlah kue yang didapat oleh teman Turfa, Turfa memakan kue yang berlebih sendirian. Karena Turfa tidak ingin obesitas, ia ingin agar banyaknya kue yang ia makan seminimum mungkin. Bantulah Turfa untuk menentukan jumlah kue minimum yang harus ia makan agar tiap temannya mendapatkan kue sama banyak!
+\par Pak Ansah memiliki kue yang akan dibagikan menjadi $N$ potong. Setiap potongan dapat memiliki besaran yang berbeda-beda. Potongan ke-$i$ memiliki besaran $A_i$ unit. Pak Ansah juga mempunyai N anak (kebetulan sekali!) sehingga ia ingin membagikan kue ke anak-anaknya dengan aturan sebagai berikut:
+
+\begin{enumerate}
+\item Anak ke-$i$ mendapatkan potongan kue ke-$i$.
+\item Setiap anak tidak boleh makan kue dengan besaran lebih banyak dari yang saudara-saudaranya.
+\item Setiap anak boleh makan sebagian dari potongan kue yang dimiliki. Dengan kata lain, boleh saja tidak memakan potongan kue secara utuh. 
+\item Setiap anak tidak boleh membagikan kue ke saudaranya. 
+\end{enumerate}
+Tentukan banyaknya total besaran minimum yang tersisa setelah anak-anaknya memakan kue sesuai dengan aturan diatas.
 
 \subsection*{Format Masukan}
-\par Baris pertama berisi sebuah bilangan T yang menyatakan banyaknya kasus
-\par $T$ baris berikutnya berisi sebuah bilangan $N$ yang menyatakan banyaknya robot dan teman yang Turfa miliki diikuti dengan $N$ buah bilangan yang menyatakan banyaknya kue yang dibuat oleh robot-robot turfa. Bilangan ke-i menyatakan nilai $A_i$.
+Baris pertama berisi sebuah bilangan bulat T, yaitu banyaknya kasus uji. \newline
+Untuk setiap kasus uji, berisi sebuah bilangan bulat N, diikuti dengan N bilangan bulat. Bilangan ke-$i$ menyatakan $A_i$, yaitu besarnya potongan kue ke-$i$. 
 
 \subsection*{Format Keluaran}
 
-\par Untuk setiap kasus, keluarkan sebuah bilangan yang menyatakan banyaknya kue minimum yang harus Turfa makan agar semua temannya mendapatkan kue sama banyak.
+\par Untuk setiap kasus uji, keluarkan satu baris yang berisi jawaban untuk kasus uji yang bersangkutan.
 
 \subsection*{Contoh Masukan}
 
@@ -49,15 +56,14 @@
 
 \subsection*{Penjelasan}
 
-Pada contoh pertama, Turfa perlu memakan satu buah kue yang dibuat robot kedua, dua buah kue yang dibuat robot ketiga, tiga buah kue yang dibuat robot ke-empat dan empat buah kue yang dibuat robot kelima sehingga semua temannya mendapat satu buah kue.
-Pada contoh kedua, Turfa tidak perlu memakan kue karena semuanya telah mendapatkan tujuh buah kue.
+Untuk kasus ketiga, total besaran kue = $70$ unit. Seluruh anak mendapatkan potongan dengan besaran yang sama, sehingga setiap anak mendapatkan $7$ unit, dan total kue yang tersisa = $70 - 7 * 10 = 0$ unit tersisa.
 
 \subsection*{Batasan}
 
 \begin{itemize}
-	\item $1 \leq T \leq 100$
-	\item $1 \leq N \leq 10^5$
-	\item $1 \leq A_i \leq 10^6$
+	\item $1 \leq T\leq 100$
+	\item $1 \leq N\leq 10^5$
+	\item $1 \leq A_i\leq 10^6$
 \end{itemize}
 
 \end{document}
