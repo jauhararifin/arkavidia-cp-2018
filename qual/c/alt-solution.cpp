@@ -7,8 +7,8 @@ int main(){
   int t;
   scanf("%d", &t);
   while(t--){
-    int n, q;
-    scanf("%d%d", &n, &q);
+    int n;
+    scanf("%d", &n);
     memset(pref, 0, sizeof pref);
     for(int i = 1; i <= n; ++i){
       int x;
@@ -20,6 +20,8 @@ int main(){
         }
       }
     }
+    int q;
+    scanf("%d", &q);
 
     while(q--){
       int l, r;
