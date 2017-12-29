@@ -70,6 +70,16 @@ protected:
     });
   }
 
+  void SampleTestCase3() {
+    Input({
+      "10 3",
+      "1 2098 2145 35 25 23 2112 23 2123 13"
+    });
+    Output({
+      "81"
+    });
+  }
+
   void BeforeTestCase() {
     A.clear();
   }
