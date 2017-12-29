@@ -4,10 +4,10 @@ Fahar, Jundi, dan Kotak
 
 Fahar dan Jundi adalah teman yang sangat akrab. Mereka juga suka bermain dengan angka. Mereka mempunyai teka-teki untuk anda. Beginilah teka-tekinya... 
 
-Fahar mempunyai N bilangan bulat. Bilangan ke-i bernilai A_i. Jundi mempunyai kotak yang banyaknya tak berhingga. Mereka ingin memasukkan bilangan-bilangan kedalam kotak-kotak tersebut dengan konfigurasi sebagai berikut:
+Fahar mempunyai N bilangan bulat. Bilangan ke-i bernilai A_i. Jundi mempunyai kotak yang banyaknya tak berhingga. Mereka ingin memasukkan bilangan-bilangan ke dalam kotak-kotak tersebut dengan konfigurasi sebagai berikut:
 
-1. Setiap kotak terdiri atas minimal K angka.
-2. Sebuah bilangan hanya dapat dimasukkan ke satu kotak saja.
+1. Sebuah bilangan hanya dapat dimasukkan tepat ke satu kotak.
+2. Setiap kotak terdiri atas minimal K angka.
 
 Terdapat fungsi F yang menghitung selisih terbesar dari seluruh angka dalam suatu kotak. Terdapat pula fungsi G yang menghitung total dari F untuk semua kotak yang terisi oleh bilangan. Fahar dan Jundi penasaran, dari semua konfigurasi yang mungkin, berapakah nilai G minimum yang mungkin? Karena kemungkinannya sangat banyak, mereka kewalahan. Bantulah mereka mencari nilai G minimum yang mungkin!
 
@@ -22,16 +22,19 @@ Untuk setiap kasus uji, keluarkan sebuah baris yang berisi nilai G minimum yang 
 
 [Contoh Masukan]
 
-2
+3
 5 3
-1 1 1 2 2
+1 1 2 1 2
 5 2
-1 1 1 2 2
+1 1 2 1 2
+10 3
+1 2098 2145 35 25 23 2112 23 2123 13
 
 [Contoh Keluaran]
 
 1
 0
+81
 
 [Penjelasan]
 
@@ -45,7 +48,7 @@ Maka nilai G untuk konfigurasi di atas adalah 0 + 0 = 0.
 
 Berikut adalah konfigurasi yang kurang optimal untuk kasus uji kedua:
 - Kotak 1 : [1, 1], F = 1 - 1 = 0
-- Kotak 2 : [1, 2, 2], F = 2 - 1 = 0
+- Kotak 2 : [2, 1, 2], F = 2 - 1 = 1
 
 Nilai G untuk konfigurasi diatas adalah 0 + 1 = 1, sehingga bukan merupakan solusi optimal.
 
