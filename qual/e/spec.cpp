@@ -36,8 +36,8 @@ protected:
   }
 
   void Constraints() {
-    CONS(1 <= N <= 200000);
-    CONS(1 <= Q <= 200000);
+    CONS(1 <= N && N <= 200000);
+    CONS(1 <= Q && Q <= 200000);
     CONS(eachElementBetween(A, 1, 200000));
     CONS(eachElementBetween(X, 1, 1000000000));
     CONS(N == A.size());
