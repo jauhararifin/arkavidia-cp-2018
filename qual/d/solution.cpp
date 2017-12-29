@@ -30,7 +30,7 @@ int main() {
     sort(a + 1, a + 1 + n);
     update(k, -a[1]);
     for (int i = 0; i + k <= n; i++) {
-      long long now = find(i) + a[i + 1];
+      long long now = find(i) + a[i] - a[i + 1];
       update(i + k, now);
     }
     printf("%lld\n", find(n) + a[n]);
