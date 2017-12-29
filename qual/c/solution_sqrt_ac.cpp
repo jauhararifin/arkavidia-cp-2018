@@ -3,7 +3,7 @@
 using namespace std;
 
 const int N = 2e5 + 5;
-const int MAGIC = 450;
+const int MAGIC = 540;
 
 int a[N], dp[MAGIC];
 
@@ -21,7 +21,7 @@ int solve(int l, int r) {
   } else {
     int ret = a[l];
     for (int i = bl + 1; i < br; i++) ret &= dp[i];
-    return ret & solve(l, (l + 1) * MAGIC - 1) & solve(br * MAGIC, r);
+    return ret & solve(l, (bl + 1) * MAGIC - 1) & solve(br * MAGIC, r);
     
   }
 }
