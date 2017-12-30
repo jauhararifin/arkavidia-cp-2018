@@ -9,7 +9,7 @@ Fahar mempunyai N bilangan bulat. Bilangan ke-i bernilai A_i. Jundi mempunyai ko
 1. Sebuah bilangan hanya dapat dimasukkan tepat ke satu kotak.
 2. Setiap kotak terdiri atas minimal K angka.
 
-Terdapat fungsi F yang menghitung selisih terbesar dari seluruh angka dalam suatu kotak. Terdapat pula fungsi G yang menghitung total dari F untuk semua kotak yang terisi oleh bilangan. Fahar dan Jundi penasaran, dari semua konfigurasi yang mungkin, berapakah nilai G minimum yang mungkin? Karena kemungkinannya sangat banyak, mereka kewalahan. Bantulah mereka mencari nilai G minimum yang mungkin!
+Terdapat fungsi F yang menghitung selisih bilangan terbesar dan terkecil dalam suatu kotak. Terdapat pula fungsi G yang menghitung total dari F untuk semua kotak yang terisi oleh bilangan. Fahar dan Jundi penasaran, dari semua konfigurasi yang mungkin, berapakah nilai G minimum yang mungkin? Karena kemungkinannya sangat banyak, mereka kewalahan. Bantulah mereka mencari nilai G minimum yang mungkin!
 
 [Format Masukan]
 Baris pertama berisi sebuah bilangan bulat T, yaitu banyaknya kasus uji.
