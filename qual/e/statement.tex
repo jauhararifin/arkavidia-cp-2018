@@ -4,7 +4,6 @@
 \usepackage{listings}
 \usepackage[margin=1in]{geometry}
 \pagenumbering{gobble}
-\usepackage{indentfirst}
  
 \begin{document}
 
@@ -20,26 +19,23 @@
 \end{center}
 
 \subsection*{Deskripsi}
+Diberikan sebuah array $A$ berisi $N$ bilangan bulat. $A_{i}$ menandakan elemen $A$ ke-$i$ untuk $1 \leq i \leq N$. Terdapat $Q$ buah \textit{query}. Setiap query diberikan sebuah bilangan bulat $X$. Hitunglah nilai dari:
 
-\par Diberikan sebuah array $A$ berisi $N$ bilangan bulat. $A_{i}$ adalah elemen $A$ ke-$i$ dengan $1 \leq i \leq N$.
-
-\par Terdapat $Q$ buah \textit{query}. Setiap query diberikan sebuah bilangan bulat $X$. Hitunglah nilai dari:
 \begin{gather*} 
-(A_{1} \bmod X)^2 + (A_{2} \bmod X)^2 + ... + (A_{n} \bmod X)^2
+(A_{1} \bmod X)^2 + (A_{2} \bmod X)^2 + \dots + (A_{N} \bmod X)^2
 \end{gather*} 
 
 \subsection*{Format Masukan}
-\par Baris pertama berisi sebuah bilangan T yang menyatakan banyaknya kasus.
-\par Baris pertama setiap kasus berisi dua bilangan bulat: $N$ sebagai panjang array $A$, dan $Q$ banyak \textit{query}.
-\par Baris kedua berisi $N$ buah bilangan bulat yang menyatakan nilai $A$.
-\par $Q$ baris berikutnya berisi sebuah bilangan bulat $X$ seperti yang dijelaskan pada deskripsi soal.
+\par Baris pertama berisi sebuah bilangan $T$ yang menyatakan banyaknya kasus.
+\newline Baris pertama setiap kasus berisi 2 bilangan bulat: $N$ dan $Q$.
+\newline Baris kedua setiap kasus berisi $N$ bilangan bulat. Bilangan ke-$i$ menyatakan nilai $A_{i}$.
+\newline $Q$ baris berikutnya dari setiap kasus berisi sebuah bilangan bulat $X$ seperti yang dijelaskan pada deskripsi soal.
 
 \subsection*{Format Keluaran}
 
 \par Untuk setiap kasus, keluarkan $Q$ baris bilangan bulat yang menyatakan jawaban tiap \textit{query}.
 
 \subsection*{Contoh Masukan}
-
 \begin{lstlisting}
 1
 5 3
@@ -50,7 +46,6 @@
 \end{lstlisting}
 
 \subsection*{Contoh Keluaran}
-
 \begin{lstlisting}
 0
 14
@@ -59,18 +54,18 @@
 
 \subsection*{Penjelasan}
 
-\par Pada \textit{query} kedua:
+\par Terdapat satu kasus uji. Dalam kasus uji tersebut, N = 5 dan Q = 3. Pada query kedua dari kasus uji tersebut, hasilnya adalah:
 \begin{gather*} 
 (1 \bmod 5)^2 + (100 \bmod 5)^2 + (7 \bmod 5)^2 + (33 \bmod 5)^2 + (20 \bmod 5)^2 = 1^2 + 0^2 + 2^2 + 3^2 + 0^2 = 14
 \end{gather*} 
 
 \subsection*{Batasan}
 
-\par Terdapat paling banyak 10 kasus ($1 \leq T\leq 10$). Untuk setiap kasus, berlaku batasan berikut:
 \begin{itemize}
-	\item $1 \leq N\leq 2\times 10^5$
-	\item $1 \leq Q\leq 2\times 10^5$
-	\item $1 \leq A_i\leq 2\times 10^5$
+	\item $1 \leq T \leq 10$
+	\item $1 \leq N \leq 2 \times 10^5$
+	\item $1 \leq Q \leq 2 \times 10^5$
+	\item $1 \leq A_i \leq 2 \times 10^5$
 	\item $1 \leq X \leq 10^9$
 \end{itemize}
 

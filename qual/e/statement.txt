@@ -1,0 +1,42 @@
+Sisa yang Dikuadratkan
+
+[Deskripsi]
+Diberikan sebuah array A berisi N bilangan bulat. A_i menandakan elemen A ke-i untuk 1 ≤ i ≤ N. Terdapat Q buah query. Setiap query diberikan sebuah bilangan bulat X. Hitunglah nilai dari:
+
+(A_1 mod X)^2 + (A_2 mod X)^2 + ... + (A_N mod X)^2
+
+[Format Masukan]
+
+Baris pertama berisi sebuah bilangan T yang menyatakan banyaknya kasus.
+Baris pertama setiap kasus berisi dua bilangan bulat: N dan Q.
+Baris kedua setiap kasus berisi N bilangan bulat. Bilangan ke-i menyatakan nilai A_i.
+Q baris berikutnya dari setiap kasus berisi sebuah bilangan bulat X seperti yang dijelaskan pada deskripsi soal.
+
+[Format Keluaran]
+
+[Contoh Masukan]
+
+1
+5 3
+1 100 7 33 20
+1
+5
+123456789
+
+[Contoh Keluaran]
+
+0
+14
+11539
+
+[Penjelasan]
+
+Terdapat satu kasus uji. Dalam kasus uji tersebut, N = 5 dan Q = 3. Pada query kedua dari kasus uji tersebut, hasilnya adalah:
+(1 mod 5)^2 + (100 mod 5)^2 + (7 mod 5)^2 + (33 mod 5)^2 + (20 mod 5)^2 = 1^2 + 0^2 + 2^2 + 3^2 + 0^2 = 14
+
+[Batasan]
+- 1 ≤ T ≤ 10
+- 1 ≤ N ≤ 2 * 10^5
+- 1 ≤ Q ≤ 2 * 10^5
+- 1 ≤ A_i ≤ 2 * 10^5
+- 1 ≤ X ≤ 10^9
