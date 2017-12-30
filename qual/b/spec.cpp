@@ -66,6 +66,15 @@ protected:
         });
     }
 
+    void SampleTestCase4() {
+        Input({
+            "1 1"
+        });
+        Output({
+            "1"
+        });
+    }
+
     void TestCases() {
         CASE(L = 1, R = 2);
         CASE(L = 999999999999999999, R = 1000000000000000000);
