@@ -1,0 +1,106 @@
+
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage[margin=1in]{geometry}
+\pagenumbering{gobble}
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.7}
+\usepackage{indentfirst}
+\usepackage{commath}
+ 
+\begin{document}
+
+\section*{\hfil D. Minesweeper\hfil}
+
+\begin{center}
+\begin{tabular}{ |cc| } 
+ \hline
+ Time Limit & 1 detik \\ 
+ \hline
+ Memory Limit & 64 MB \\
+ \hline
+\end{tabular}
+\end{center}
+
+\subsection*{Deskripsi}
+
+\par\noindent
+Suatu hari Pak Ganesh sedang bosan. Kemudian Pak Ganesh memutuskan untuk bermain satu-satunya game yang ada di komputernya yaitu Minesweeper. Minesweeper adalah sebuah game pada sebuah grid berukuran $N$ baris dan $M$ kolom. Pada grid tersebut terdapat beberapa petak yang berisi bom. Pada awalnya semua petak pada grid tertutup dan tujuan dari game ini adalah untuk membuka semua petak yang tidak berisi bom.
+\newline
+\par\noindent
+Jika pemain membuka petak yang berisi bom maka permainan berakhir dan pemain dinyatakan kalah. Namun jika petak yang dibuka tidak berisi bom maka pada petak tersebut akan tertulis angka yang menyatakan petunjuk jumlah bom yang terdapat pada petak-petak tetangganya. Petak pada kolom $A$ dan baris $B$ dinyatakan bertetangga dengan petak pada kolom $P$ dan baris $Q$ jika memenuhi $\abs{A-P}\leq 1$ dan $\abs{B-Q} \leq 1$. Untuk mempermudah permainan, pemain bisa memberikan tanda pada petak yang diyakini berisi bom sehingga pemain tidak perlu menghafal semua petak yang sudah diyakini berisi bom. Jika semua petak yang tidak berisi bom sudah terbuka maka permainan akan berakhir dan pemain dinyatakan menang.
+\newline
+\par\noindent
+Pak Ganesh sangat hebat dalam game Minesweeper dan belum pernah terkalahkan kecuali jika hanya ada error pada game tersebut. Namun ternyata game Minesweeper yang ada di komputer Pak Ganesh terdapat bug sehingga terkadang angka petunjuk pada petak yang sudah terbuka tidak sesuai dengan yang seharusnya. Pak Ganesh sangat tidak suka jika hal tersebut terjadi. Sehingga Pak Ganesh meminta bantuan Anda sebagai orang yang lebih mengerti pemrograman komputer untuk membuatkannya sebuah program untuk mengecek apakah game Minesweeper yang sedang dimainkannya memberikan petunjuk yang valid atau tidak.
+
+\subsection*{Format Masukan}
+\par\noindent
+Baris pertama berisi 2 buah bilangan bulat $N$ dan $M$. $N$ dan $M$ secara berturut-turut menyatakan jumlah baris dan jumlah kolom grid pada game Minesweeper.
+\newline
+\par\noindent
+Kemudian $N$ baris berikutnya masing-masing berisi $M$ karakter. Karakter-karater tersebut menyatakan keadaan game Minesweeper yang sedang dimainkan Pak Ganesh. Karakter yang muncul hanya berupa karakter '*', karakter '?' atau sebuah digit dari '0' hingga '9'. Karakter '*' menyatakan petak yang sudah ditandai oleh Pak Ganesh sebagai petak yang berisi bom. Karena kehebatannya dalam bermain game Minesweeper, Pak Ganesh tidak pernah salah dalam meletakkan tanda bom ini. Kemudian karakter '?' menyatakan petak yang masih belum terbuka, dan digit '0' hingga '9' menyatakan petunjuk yang diberikan game karena sudah membuka petak tersebut.
+
+\subsection*{Format Keluaran}
+
+\par\noindent Sebuah baris berisi "VALID" jika petunjuk yang diberikan benar atau "INVALID" jika tidak.
+
+\subsection*{Contoh Masukan 1}
+\begin{lstlisting}
+3 3
+2**
+*4?
+12*
+\end{lstlisting}
+\subsection*{Contoh Keluaran 1}
+\begin{lstlisting}
+VALID
+\end{lstlisting}
+
+
+\subsection*{Contoh Masukan 2}
+\begin{lstlisting}
+3 3
+2**
+*5?
+12*
+\end{lstlisting}
+\subsection*{Contoh Keluaran 2}
+\begin{lstlisting}
+INVALID
+\end{lstlisting}
+
+
+\subsection*{Contoh Masukan 3}
+\begin{lstlisting}
+4 5
+01121
+01*2*
+12232
+1*11*
+\end{lstlisting}
+\subsection*{Contoh Keluaran 3}
+\begin{lstlisting}
+VALID
+\end{lstlisting}
+
+\subsection*{Penjelasan}
+\par\noindent
+Pada contoh pertama jika petak yang masih tertutup tidak berisi bom maka semua petunjuk yang dimasukan sudah benar, sehingga jawabannya VALID.
+\newline
+\par\noindent
+Pada contoh kedua jika petak yang tertutup berisi bom maka angka pada petak baris ke-$3$ kolom ke-$2$ tidak sesuai. Sedangkan jika petak yang tertutup tidak berisi bom maka angka pada petak baris ke-$2$ kolom ke-$2$ tidak sesuai. Sehingga jawabannya INVALID.
+\newline
+\par\noindent
+Pada contoh ketiga, semua petak yang tidak berisi bom menunjukan petunjuk yang benar.
+
+
+\subsection*{Batasan}
+
+\begin{itemize}
+	\item $1 \leq N, M \leq 1.000$
+    \item Karakter yang muncul pada grid hanyalah '*', '?', atau sebuah digit dari '0' hingga '9'.
+    \item Karakter '?' hanya muncul paling banyak 16 kali.
+\end{itemize}
+
+\end{document}
