@@ -1,0 +1,196 @@
+
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage[margin=1in]{geometry}
+\pagenumbering{gobble}
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.7}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+ 
+\begin{document}
+
+\section*{\hfil B. Tantangan Gebetan Radit\hfil}
+
+\begin{center}
+\begin{tabular}{ |cc| } 
+ \hline
+ Time Limit & 1 detik \\ 
+ \hline
+ Memory Limit & 64 MB \\
+ \hline
+\end{tabular}
+\end{center}
+
+\subsection*{Deskripsi}
+
+\par\noindent Radit dan gebetannya sudah saling mengenal begitu lama! Mereka sudah sering bersama: nugas bersama, makan bersama, satu divisi di kepanitiaan yang sama, tempat tinggal mereka pun berdekatan sehingga sering pulang bersama. Tak jarang mereka berbagi pikiran, saling menyemangati ketika salah satu down, berbagi emosi, saling jujur satu sama lain.
+\newline
+\par\noindent Radit berencana menyatakan perasaan (\textit{confess}) kepada gebetannya. Tetapi, si gebetan yang ternyata gila \textit{Competitive Programming} (CP) tidak langsung berkata '\textit{yes}' atau '\textit{no}', tetapi malah memberikan sebuah tantangan yang harus diselesaikan untuk membuktikan bahwa Radit memang '\textit{\textbf{computationally handsome}}'. Jawaban si gebetan akan bergantung pada jawaban Radit.
+\newline
+\par\noindent Ketika memberi tantangan, gebetan Radit menoleh ke \textit{seven segment} dekat \textit{traffic light}.
+\newline
+\par\noindent Diberikan sebuah konfigurasi \textit{seven-segment} yang terdiri dari beberapa digit. Untuk setiap digit, bisa saja \textit{seven-segment} pada digit tersebut rusak atau berfungsi normal.
+\newline
+\par\noindent Apabila seven-segment pada digit berfungsi normal, maka segment yang hidup akan menunjukkan konfigurasi \textit{seven-segment} yang sebenarnya. \textit{Segment} pada digit yang berfungsi normal belum tentu merepresentasikan angka yang benar.
+\newline
+\par\noindent Apabila \textit{seven-segment} pada digit tersebut rusak, maka segment yang padam bisa jadi sebenarnya hidup (tetapi rusak sehingga padam). \textit{Segment} yang hidup akan tetap hidup selamanya.
+\newline
+\par\noindent Aturan penulisan bilangan mengikuti kaidah biasanya. Seperti: tidak boleh ada \textit{leading-zero} kecuali angka nol, penulisan digit rata kanan, seluruh digit pada seven-segment harus padam sebelum digit pertama. 
+\newline
+\par\noindent Radit diminta menentukan ada berapa banyak angka berbeda yang mungkin dipresentasikan \textit{seven-segment} tersebut.
+\newline
+\par\noindent Radit grogi. Tangannya bergetar. Suaranya gamang. Dia tidak bisa berpikir jernih. Kalian adalah programmer handal, bantu Radit menyelesaikan tantangan gebetannya!
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.2\textwidth]{seven.png}
+    \caption{Aturan posisi segment}
+    \label{fig:mesh1}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{segment3.png}
+    \caption{Konvensi digit seven-segment. Angka pada segment mengikuti konvensi di atas.}
+    \label{fig:mesh1}
+\end{figure}
+
+\subsection*{Format Masukan}
+\par\noindent Baris pertama berisi sebuah bilangan bulat $N$. Banyak digit pada konfigurasi \textit{seven-segment}.
+\newline
+\par\noindent 
+Baris kedua berisi sebuah string dengan panjang $N$ karakter yang hanya berisi '$0$' atau '$1$'. Apabila karakter ke-$i$ berisi '$1$', maka seven-segment pada digit ke-$i$ berfungsi normal. Apabila '$0$', maka seven-segment pada digit tersebut rusak.  
+\newline
+\par\noindent 
+Baris ketiga hingga baris $N+2$ berisi $7$ buah karakter antara '$0$' atau '$1$'.
+\par\noindent
+Karakter-karakter pada baris ke-($i+2$) mewakili digit ke-$i$ (\textit{one-based}).
+\par\noindent
+Masing-masing baris terdiri dari tujuh karakter, mewakili seven-segment pada digit yang bersangkutan.
+\newline
+\par\noindent 
+Dalam satu baris:
+\par\noindent
+karakter pertama mewakili segment pada posisi A.
+\par\noindent
+karakter kedua mewakili segment pada posisi B.
+\par\noindent
+karakter ketiga mewakili segment pada posisi C.
+\par\noindent
+dst.
+\newline
+\par\noindent
+Apabila karakter berisi '0', artinya segment tersebut padam.
+\par\noindent
+Apabila karakter berisi '1', artinya segment tersebut nyala.  
+\newline
+\par\noindent 
+Ingat, bahwa angka yang mungkin dipresentasikan juga bergantung pada apakah digit tersebut berfungsi normal atau rusak.
+
+\subsection*{Format Keluaran}
+
+\par\noindent Sebuah bilangan bulat yang menyatakan banyaknya angka berbeda yang mungkin direpresentasikan, dimodulo dengan $10^9 + 8$.
+
+\subsection*{Contoh Masukan 1}
+\begin{lstlisting}
+2
+01
+0 0 0 0 0 0 0
+1 1 1 1 1 1 0
+\end{lstlisting}
+\subsection*{Contoh Keluaran 1}
+\begin{lstlisting}
+10
+\end{lstlisting}
+
+
+\subsection*{Contoh Masukan 2}
+\begin{lstlisting}
+3
+110
+1 1 1 1 1 1 0
+1 1 1 1 1 1 0
+0 1 1 0 0 0 0
+\end{lstlisting}
+\subsection*{Contoh Keluaran 2}
+\begin{lstlisting}
+0
+\end{lstlisting}
+
+\subsection*{Contoh Masukan 3}
+\begin{lstlisting}
+2
+01
+1 1 1 1 1 1 1
+0 0 0 0 0 0 0
+\end{lstlisting}
+\subsection*{Contoh Keluaran 3}
+\begin{lstlisting}
+0
+\end{lstlisting}
+
+\subsection*{Contoh Masukan 4}
+\begin{lstlisting}
+2
+00
+1 1 1 1 1 1 0
+1 1 1 1 1 1 0
+\end{lstlisting}
+\subsection*{Contoh Keluaran 4}
+\begin{lstlisting}
+2
+\end{lstlisting}
+
+\subsection*{Contoh Masukan 5}
+\begin{lstlisting}
+1
+1
+1 0 0 0 0 0 0
+\end{lstlisting}
+\subsection*{Contoh Keluaran 5}
+\begin{lstlisting}
+0
+\end{lstlisting}
+
+\subsection*{Contoh Masukan 6}
+\begin{lstlisting}
+7
+1001010
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0 1 1 0 0 0 0
+1 1 1 1 1 1 0
+1 1 1 1 1 1 1
+0 0 0 0 0 0 0
+\end{lstlisting}
+\subsection*{Contoh Keluaran 6}
+\begin{lstlisting}
+2000
+\end{lstlisting}
+
+\subsection*{Penjelasan}
+\par\noindent 
+Pada contoh pertama, digit pertama rusak dan digit kedua berfungsi normal. Digit pertama rusak dan semua segment padam. Digit pertama bisa saja merepresentasikan seluruh angka 0-9, juga angka 'kosong'. Karena digit kedua berfungsi normal, pasti digit kedua merepresentasikan angka 0. Angka yang mungkin direpresentasikan adalah 0, 10, 20, 30, 40, 50, 60, 70, 80, 90. Perhatikan bahwa '00' bukan angka yang valid. Serta representasi digit pertama pada angka '0' adalah seven-segment 'kosong'. 
+\newline
+\par\noindent 
+Pada contoh kedua, digit pertama berfungsi normal dan hanya bisa merepresentasikan angka nol. Perhatikan bahwa leading zero tidak valid. Tidak ada angka yang bisa direpresentasikan.
+\newline
+\par\noindent 
+Pada contoh ketiga, digit terakhir berfungsi normal dan hanya bisa merepresentasikan angka 'kosong'. Tidak ada angka yang mempunyai 'angka kosong' di digit terakhir, sehingga tidak ada angka yang dapat direpresentasikan.
+\newline
+\par\noindent 
+Pada contoh keempat, kedua digit rusak. Segment yang padam bisa saja sebenarnya nyala. Angka yang dapat direpresentasikan adalah 80 dan 88.
+\newline
+\par\noindent 
+Pada contoh kelima, digit berfungsi normal tapi tidak merepresentasikan angka apapun. 
+
+\subsection*{Batasan}
+
+\begin{itemize}
+	\item $1 \leq N \leq 100.000$
+\end{itemize}
+
+\end{document}
