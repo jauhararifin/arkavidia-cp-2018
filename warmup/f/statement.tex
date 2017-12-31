@@ -1,0 +1,74 @@
+
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage[margin=1in]{geometry}
+\pagenumbering{gobble}
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.7}
+\usepackage{indentfirst}
+ 
+\begin{document}
+
+\section*{\hfil F. Terdekat di Antara yang Terjauh\hfil}
+
+\begin{center}
+\begin{tabular}{ |cc| } 
+ \hline
+ Time Limit & 2 detik \\ 
+ \hline
+ Memory Limit & 64 MB \\
+ \hline
+\end{tabular}
+\end{center}
+
+\subsection*{Deskripsi}
+\par\noindent
+Diberikan sebuah tree dengan $N$ node. Setiap node dinamai dari $1$ hingga $N$. Setiap node pada tree memiliki salah satu warna dari $1$ hingga $K$ (inklusif). Mungkin saja ada lebih dari $1$ node yang memiliki warna yang sama, atau bisa saja ada warna yang tidak terdapat pada tree tersebut. 
+\newline\par\noindent
+Terdapat dua fungsi $F$ dan $G$. Kedua fungsi tersebut didefinisikan sebagai berikut:
+\begin{enumerate}
+\item $F(C, X)$ menyatakan jarak terjauh dari sebuah node $X$ ke node yang memiliki warna $C$. Apabila tidak ada node yang memiliki warna $C$, $F(C, X)$ bernilai $0$.
+\item $G(C)$ menyatakan minimum dari $F(C, X)$ untuk setiap node $1 \leq X \leq N$. Tentukan $G(C)$ untuk setiap $1 \leq C \leq K$!
+\end{enumerate}
+
+\subsection*{Format Masukan}
+\par\noindent
+Baris pertama berisi dua buah bilangan bulat $N$ dan $K$.
+\newline\par\noindent
+Baris kedua berisi $N$ buah bilangan bulat $C_i$ ($1 \leq i \leq N$).
+\newline\par\noindent
+$N - 1$ baris berikutnya masing-masing berisi 2 buah bilangan bulat $x_i$ dan $y_i$ yang menandakan bahwa terdapat jalan dua arah yang menghubungkan node $x_i$ dan $y_i$.
+
+\subsection*{Format Keluaran}
+\par\noindent Sebuah baris berisi $K$ buah bilangan bulat $G(1)$, $G(2)$, ..., $G(K)$.
+
+\subsection*{Contoh Masukan}
+
+\begin{lstlisting}
+3 2
+1 2 1
+1 2
+1 3
+\end{lstlisting}
+
+\subsection*{Contoh Keluaran}
+
+\begin{lstlisting}
+1 0
+\end{lstlisting}
+
+
+\subsection*{Batasan}
+
+\begin{itemize}
+	\item $1 \leq N \leq 100.000$
+    \item $1 \leq K \leq N$
+    \item $1 \leq C_i \leq K$
+    \item $1 \leq x_i, y_i \leq N$
+    \item $x_i \neq y_i$
+    \item Dijamin graf yang diberikan merupakan sebuah pohon
+    
+\end{itemize}
+
+\end{document}
