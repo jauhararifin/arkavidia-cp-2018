@@ -1,0 +1,95 @@
+
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage[margin=1in]{geometry}
+\pagenumbering{gobble}
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.7}
+ 
+\begin{document}
+
+\section*{\hfil D. Fahar, Jundi, dan Kotak\hfil}
+
+\begin{center}
+\begin{tabular}{ |cc| } 
+ \hline
+ Time Limit & 2 detik \\ 
+ \hline
+ Memory Limit & 256 MB \\
+ \hline
+\end{tabular}
+\end{center}
+
+\subsection*{Deskripsi}
+
+\par Fahar dan Jundi adalah teman yang sangat akrab. Mereka juga suka bermain dengan angka. Mereka mempunyai teka-teki untuk Anda. Beginilah teka-tekinya... 
+\newline
+\newline Fahar mempunyai $N$ bilangan bulat. Bilangan ke-$i$ bernilai $A_{i}$. Jundi mempunyai kotak yang banyaknya tak berhingga. Mereka ingin memasukkan bilangan-bilangan ke dalam kotak-kotak tersebut dengan konfigurasi sebagai berikut:
+
+\begin{enumerate}
+  \item Sebuah bilangan hanya dapat dimasukkan tepat ke satu kotak.
+  \item Setiap kotak terdiri atas minimal $K$ angka.
+\end{enumerate}
+
+\par\noindent Terdapat fungsi $F$ yang menghitung selisih bilangan terbesar dan terkecil dalam suatu kotak. Terdapat pula fungsi $G$ yang menghitung total dari $F$ untuk semua kotak yang terisi oleh bilangan. Fahar dan Jundi penasaran, dari semua konfigurasi yang mungkin, berapakah nilai $G$ minimum yang mungkin? Karena kemungkinannya sangat banyak, mereka kewalahan. Bantulah mereka mencari nilai $G$ minimum yang mungkin!
+
+\subsection*{Format Masukan}
+\par Baris pertama berisi sebuah bilangan bulat $T$, yaitu banyaknya kasus uji.
+\newline Setiap kasus uji terdiri dari 2 baris.
+\newline Baris pertama setiap kasus uji berisi 2 bilangan bulat $N$ dan $K$.
+\newline Baris kedua setiap kasus uji berisi $N$ bilangan bulat $A_{i}$.
+
+\subsection*{Format Keluaran}
+
+\par Untuk setiap kasus uji, keluarkan sebuah baris yang berisi nilai $G$ minimum yang mungkin untuk kasus uji yang bersangkutan.
+
+\subsection*{Contoh Masukan}
+
+\begin{lstlisting}
+3
+5 3
+1 1 2 1 2
+5 2
+1 1 2 1 2
+10 3
+1 2098 2145 35 25 23 2112 23 2123 13
+\end{lstlisting}
+
+\subsection*{Contoh Keluaran}
+
+\begin{lstlisting}
+1
+0
+81
+\end{lstlisting}
+
+\subsection*{Penjelasan}
+
+Pada kasus uji pertama, tidak mungkin untuk membagi bilangan ke lebih dari 1 kotak, sehingga nilai $G = 2 - 1 = 1$.
+\newline 
+\newline Pada kasus uji kedua, salah satu solusi optimal yang mungkin adalah:
+\begin{itemize}
+\item Kotak 1 : $[1, 1, 1]$, $F = 1 - 1 = 0$
+\item Kotak 2 : $[2, 2]$, $F = 2 - 2 = 0$
+\end{itemize}
+
+\par\noindent Maka nilai $G$ untuk konfigurasi di atas adalah $0 + 0 = 0$.
+\newline
+\newline Berikut adalah konfigurasi yang kurang optimal untuk kasus uji kedua:
+\begin{itemize}
+\item Kotak 1 : $[1, 1]$, $F = 1 - 1 = 0$
+\item Kotak 2 : $[2, 1, 2]$, $F = 2 - 1 = 1$
+\end{itemize}
+
+\par\noindent Nilai $G$ untuk konfigurasi diatas adalah $0 + 1 = 1$, sehingga bukan merupakan solusi optimal.
+
+\subsection*{Batasan}
+
+\begin{itemize}
+	\item $1 \leq T \leq 20$
+	\item $1 \leq K \leq N\leq 100.000$
+	\item $1 \leq A_i\leq10^9$
+\end{itemize}
+
+\end{document}
