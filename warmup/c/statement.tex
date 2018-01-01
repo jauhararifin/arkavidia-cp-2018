@@ -1,0 +1,107 @@
+
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage[margin=1in]{geometry}
+\pagenumbering{gobble}
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.7}
+\usepackage{indentfirst}
+ 
+\begin{document}
+
+\section*{\hfil C. FPB KPK\hfil}
+
+\begin{center}
+\begin{tabular}{ |cc| } 
+ \hline
+ Time Limit & 2 detik \\ 
+ \hline
+ Memory Limit & 256 MB \\
+ \hline
+\end{tabular}
+\end{center}
+
+\subsection*{Deskripsi}
+
+\par\noindent 
+\textit{Libur t'lah tiba! Libur t'lah tiba! Hore! Hore! Hore!}
+\newline
+\par\noindent Sudah tiga bulan para siswa SDN Amhar Sani diliburkan. Karena merasa bosan dan takut melupakan materi, $N$ siswa berkumpul dan bermain sebuah permainan yang cukup menguras otak.
+\newline
+\par\noindent 
+Pada mulanya, masing-masing dari mereka memilih $K$ buah bilangan favorit ($K$ setiap anak bisa saja berbeda). Dalam setiap sesi, setiap siswa harus menyebutkan sebuah bilangan dari daftar bilangan favoritnya. Setelah semua siswa menyebutkan sebuah bilangan, mereka akan menghitung nilai Faktor Persekutuan Terbesar (FPB) dari semua bilangan yang telah disebutkan pada sesi tersebut.
+\newline
+\par\noindent 
+Karena permainan ini terlalu mudah, Awkar (salah satu dari $N$ siswa tersebut) menjadi penasaran. Berapa Kelipatan Persekutuan Terkecil (KPK) dari setiap FPB yang dihasilkan dari setiap sesi yang mungkin terjadi? Karena jawabannya bisa sangat besar, keluarkanlah dalam bentuk faktorisasi prima.
+\newline
+\par\noindent 
+Setiap bilangan bulat $A$ bisa disusun menjadi $A = P_{1}^{Q_{1}} \cdot P_{2}^{Q_{2}} \cdot P_{3}^{Q_{3}} \cdot ... \cdot P_{M}^{Q_{M}}$ dengan $P_{i}$ merupakan sebuah bilangan prima.
+
+\subsection*{Format Masukan}
+\par\noindent 
+Baris pertama berisi sebuah bilangan bulat $N$ yang menyatakan banyaknya siswa yang sedang berkumpul.
+\newline
+\par\noindent 
+Untuk $N$ baris berikutnya, pertama-tama akan diberikan sebuah bilangan bulat $K_i$, diikuti $K_i$ buah bilangan bulat $X_{ij}$ yang merupakan bilangan favorit ke-$j$ dari siswa ke-$i$.
+
+\subsection*{Format Keluaran}
+\par\noindent 
+Baris pertama berisi sebuah bilangan bulat $M$, banyaknya bilangan prima dalam faktorisasi prima jawaban.
+\newline
+\par\noindent 
+$M$ baris berikutnya berisi dua buah bilangan bulat $P_i$ dan $Q_i$, menyatakan bilangan prima dan pangkatnya. Keluaran harus terurut secara menaik berdasarkan bilangan primanya dan nilai $Q_i$ harus lebih dari $0$.
+
+\subsection*{Contoh Masukan 1}
+\begin{lstlisting}
+2
+2 2 27
+2 4 9
+\end{lstlisting}
+\subsection*{Contoh Keluaran 1}
+\begin{lstlisting}
+2
+2 1
+3 2
+\end{lstlisting}
+
+\subsection*{Contoh Masukan 2}
+\begin{lstlisting}
+3
+1 4
+2 2 5
+3 1 3 6
+\end{lstlisting}
+\subsection*{Contoh Keluaran 2}
+\begin{lstlisting}
+1
+2 1
+\end{lstlisting}
+
+
+\subsection*{Penjelasan}
+\par\noindent 
+Berikut adalah penjelasan untuk masukan pertama.
+\newline
+\par\noindent 
+Sesi-sesi yang mungkin terjadi yaitu:
+\begin{itemize}
+\item Siswa pertama memilih bilangan 2, siswa kedua memilih bilangan 4, FPB yang dihasilkan 2.
+\item Siswa pertama memilih bilangan 2, siswa kedua memilih bilangan 9, FPB yang dihasilkan 1.
+\item Siswa pertama memilih bilangan 27, siswa kedua memilih bilangan 4, FPB yang dihasilkan 1.
+\item Siswa pertama memilih bilangan 27, siswa kedua memilih bilangan 9, FPB yang dihasilkan 9.
+\end{itemize}
+\par\noindent 
+KPK dari setiap FPB yang dihasilkan (2, 1, 1, dan 9) adalah $18$. Nilai tersebut dapat difaktorisasi menjadi $18 = 2^1 \cdot 3^2$.
+
+\subsection*{Batasan}
+
+\begin{itemize}
+	\item $1 \leq N \leq 10^5$
+    \item $1 \leq K_i \leq 10^5$
+    \item $1 \leq X_{ij} \leq 10^7$
+    \item $1 \leq sum(K_i) \leq 10^5$
+    \item Untuk setiap $i \leq N$, $a \leq K_i$, $b \leq K_i$, dan $a \neq b$, $X_{ia} \neq X_{ib}$
+\end{itemize}
+
+\end{document}
