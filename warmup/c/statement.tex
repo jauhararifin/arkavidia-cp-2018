@@ -10,12 +10,12 @@
  
 \begin{document}
 
-\section*{\hfil C. FPB KPK\hfil}
+\section*{\hfil C. Kakek Sugih\hfil}
 
 \begin{center}
 \begin{tabular}{ |cc| } 
  \hline
- Time Limit & 2 detik \\ 
+ Time Limit & 1 detik \\ 
  \hline
  Memory Limit & 256 MB \\
  \hline
@@ -24,84 +24,38 @@
 
 \subsection*{Deskripsi}
 
-\par\noindent 
-\textit{Libur t'lah tiba! Libur t'lah tiba! Hore! Hore! Hore!}
-\newline
-\par\noindent Sudah tiga bulan para siswa SDN Amhar Sani diliburkan. Karena merasa bosan dan takut melupakan materi, $N$ siswa berkumpul dan bermain sebuah permainan yang cukup menguras otak.
-\newline
-\par\noindent 
-Pada mulanya, masing-masing dari mereka memilih $K$ buah bilangan favorit ($K$ setiap anak bisa saja berbeda). Dalam setiap sesi, setiap siswa harus menyebutkan sebuah bilangan dari daftar bilangan favoritnya. Setelah semua siswa menyebutkan sebuah bilangan, mereka akan menghitung nilai Faktor Persekutuan Terbesar (FPB) dari semua bilangan yang telah disebutkan pada sesi tersebut.
-\newline
-\par\noindent 
-Karena permainan ini terlalu mudah, Awkar (salah satu dari $N$ siswa tersebut) menjadi penasaran. Berapa Kelipatan Persekutuan Terkecil (KPK) dari setiap FPB yang dihasilkan dari setiap sesi yang mungkin terjadi? Karena jawabannya bisa sangat besar, keluarkanlah dalam bentuk faktorisasi prima.
-\newline
-\par\noindent 
-Setiap bilangan bulat $A$ bisa disusun menjadi $A = P_{1}^{Q_{1}} \cdot P_{2}^{Q_{2}} \cdot P_{3}^{Q_{3}} \cdot ... \cdot P_{M}^{Q_{M}}$ dengan $P_{i}$ merupakan sebuah bilangan prima.
+\par\indent Kakek Sugih mempunyai $N$ permen yang berbeda. Ia mempunyai 2 cucu yang bernama Rutfa dan Harma. Kakek Sugih adalah orang yang sangat dermawan sehingga beliau sering menyisihkan sebagian permennya untuk diberikan ke panti asuhan. 
+
+\par Kakek Sugih akan menyisihkan $X$ permen untuk diberikan ke panti asuhan, $Y$ permen untuk Rutfa, dan $(N - X - Y)$ permen untuk Harma. Kakek Sugih tidak mungkin memberikan permen sejumlah bilangan negatif. Kakek Sugih tidak ingin kedua cucunya bertengkar, sehingga Kakek Sugih harus dapat membagikan permen berjumlah sama kepada masing-masing Rutfa dan Harma.
+
+\par Kakek Sugih penasaran, berapakah banyak cara pembagian permen yang mungkin? Pembagian permen dikatakan berbeda apabila ada setidaknya satu permen yang diberikan kepada subjek yang berbeda. 
+
+\par Karena banyaknya cara pembagian permen bisa sangat besar, ia meminta Anda untuk memberitahu hasilnya modulo $1.000.000.007$.
 
 \subsection*{Format Masukan}
-\par\noindent 
-Baris pertama berisi sebuah bilangan bulat $N$ yang menyatakan banyaknya siswa yang sedang berkumpul.
-\newline
-\par\noindent 
-Untuk $N$ baris berikutnya, pertama-tama akan diberikan sebuah bilangan bulat $K_i$, diikuti $K_i$ buah bilangan bulat $X_{ij}$ yang merupakan bilangan favorit ke-$j$ dari siswa ke-$i$.
+\par\noindent Baris pertama berisi sebuah bilangan bulat $N$.
 
 \subsection*{Format Keluaran}
-\par\noindent 
-Baris pertama berisi sebuah bilangan bulat $M$, banyaknya bilangan prima dalam faktorisasi prima jawaban.
-\newline
-\par\noindent 
-$M$ baris berikutnya berisi dua buah bilangan bulat $P_i$ dan $Q_i$, menyatakan bilangan prima dan pangkatnya. Keluaran harus terurut secara menaik berdasarkan bilangan primanya dan nilai $Q_i$ harus lebih dari $0$.
 
-\subsection*{Contoh Masukan 1}
+\par\noindent Sebuah baris berisi banyaknya cara pemilihan permen yang berbeda.
+
+\subsection*{Contoh Masukan}
+
 \begin{lstlisting}
-2
-2 2 27
-2 4 9
-\end{lstlisting}
-\subsection*{Contoh Keluaran 1}
-\begin{lstlisting}
-2
-2 1
-3 2
+4
 \end{lstlisting}
 
-\subsection*{Contoh Masukan 2}
+\subsection*{Contoh Keluaran}
+
 \begin{lstlisting}
-3
-1 4
-2 2 5
-3 1 3 6
-\end{lstlisting}
-\subsection*{Contoh Keluaran 2}
-\begin{lstlisting}
-1
-2 1
+19
 \end{lstlisting}
 
-
-\subsection*{Penjelasan}
-\par\noindent 
-Berikut adalah penjelasan untuk masukan pertama.
-\newline
-\par\noindent 
-Sesi-sesi yang mungkin terjadi yaitu:
-\begin{itemize}
-\item Siswa pertama memilih bilangan 2, siswa kedua memilih bilangan 4, FPB yang dihasilkan 2.
-\item Siswa pertama memilih bilangan 2, siswa kedua memilih bilangan 9, FPB yang dihasilkan 1.
-\item Siswa pertama memilih bilangan 27, siswa kedua memilih bilangan 4, FPB yang dihasilkan 1.
-\item Siswa pertama memilih bilangan 27, siswa kedua memilih bilangan 9, FPB yang dihasilkan 9.
-\end{itemize}
-\par\noindent 
-KPK dari setiap FPB yang dihasilkan (2, 1, 1, dan 9) adalah $18$. Nilai tersebut dapat difaktorisasi menjadi $18 = 2^1 \cdot 3^2$.
 
 \subsection*{Batasan}
 
 \begin{itemize}
-	\item $1 \leq N \leq 10^5$
-    \item $1 \leq K_i \leq 10^5$
-    \item $1 \leq X_{ij} \leq 10^7$
-    \item $1 \leq sum(K_i) \leq 10^5$
-    \item Untuk setiap $i \leq N$, $a \leq K_i$, $b \leq K_i$, dan $a \neq b$, $X_{ia} \neq X_{ib}$
+	\item $0 \leq N \leq 10$
 \end{itemize}
 
 \end{document}
