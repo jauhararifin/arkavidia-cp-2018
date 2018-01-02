@@ -31,16 +31,17 @@
 \par Terdapat $Q$ query yang berisi sebuah bilangan bulat $x$. Untuk setiap query, tentukan banyaknya algoritma berbeda yang dapat dihasilkan dengan menggabungkan dua buah algoritma sehingga memiliki nilai keindahan sebesar $x$. Dua algoritma dikatakan berbeda jika memiliki nama yang berbeda.
 
 \subsection*{Format Masukan}
-\par Baris pertama berisi sebuah bilangan T yang menyatakan banyaknya kasus
-\par Untuk setiap kasus, baris pertama berisi sebuah bilangan bulat $N$ yang menyatakan banyaknya algoritma hash yang ada.
-\par Baris kedua berisi $N$ buah bilangan bulat yang menyatakan nilai $A$.
-\par Baris ketiga berisi $N$ buah bilangan bulat yang menyatakan nilai $B$.
-\par Baris keempat berisi sebuah bilangan bulat $Q$ yang menyatakan banyaknya query pada kasus yang bersangkutan.
-\par $Q$ baris berikutnya berisi sebuah bilangan bulat $x$ seperti yang dijelaskan pada deskripsi soal.
-
+\begin{itemize}
+\item Baris pertama berisi sebuah bilangan T yang menyatakan banyaknya kasus
+\item Untuk setiap kasus, baris pertama berisi sebuah bilangan bulat $N$ yang menyatakan banyaknya algoritma hash yang ada.
+\item Baris kedua berisi $N$ buah bilangan bulat yang menyatakan nilai $A$.
+\item Baris ketiga berisi $N$ buah bilangan bulat yang menyatakan nilai $B$.
+\item Baris keempat berisi sebuah bilangan bulat $Q$ yang menyatakan banyaknya query pada kasus yang bersangkutan.
+\item $Q$ baris berikutnya berisi sebuah bilangan bulat $x$ seperti yang dijelaskan pada deskripsi soal.
+\end{itemize}
 \subsection*{Format Keluaran}
 
-\par Untuk setiap kasus, keluarkan $Q$ baris yang berisi sebuah bilangan bulat yang menyatakan jawaban tiap query.
+\par Untuk setiap kasus, keluarkan $Q$ baris yang berisi sebuah bilangan bulat yaitu jawaban tiap query.
 
 \subsection*{Contoh Masukan}
 
@@ -64,11 +65,11 @@
 \end{lstlisting}
 
 \subsection*{Penjelasan}
-
-\par Pada query pertama Turpa hanya dapat membuat algoritma dengan keindahan 3 dengan menggabungkan algoritma pertama dengan kedua.
-\par Pada query kedua Turpa dapat membuat algoritma dengan keindahan 6 dengan menggabungkan algoritma pertama dengan keempat, ketiga dengan ketiga, dan kelima dengan kedua.
-\par Pada query terakhir, Turpa dapat membuat algoritma dengan nilai keindahan 5 dengan menggabungkan algoritma pertama dan ketiga atau keempat dan kedua.
-
+\begin{itemize}
+\item Pada query pertama Turpa hanya dapat membuat algoritma dengan keindahan 3 dengan menggabungkan algoritma pertama dengan kedua.
+\item Pada query kedua Turpa dapat membuat algoritma dengan keindahan 6 dengan menggabungkan algoritma pertama dengan keempat, ketiga dengan ketiga, dan kelima dengan kedua.
+\item Pada query terakhir, Turpa dapat membuat algoritma dengan nilai keindahan 5 dengan menggabungkan algoritma pertama dan ketiga atau keempat dan kedua.
+\end{itemize}
 \subsection*{Batasan}
 
 \par Terdapat paling banyak 20 kasus ($1 \leq T \leq 20$). Untuk setiap kasus, berlaku batasan sebagai berikut:
