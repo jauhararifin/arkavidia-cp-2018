@@ -16,7 +16,7 @@ Pada baris berikutnya terdapat bilangan Q menyatakan jumlah pertanyaan.
 Q baris berikutnya berisi pertanyaan dengan baris ke-i mengandung l_i, r_i, dan t_i.
 
 [Format Output]
-Untuk setiap kasus, keluarkan Q baris dengan baris ke-i menyatakan nomor laptop yang mencoba password terbanyak pada detik yang ditanyakan.
+Keluarkan Q baris dengan baris ke-i menyatakan nomor laptop antar l_i sampai r_i yang mencoba password terbanyak pada detik ke-t_i.
 
 [Contoh Input]
 4
@@ -36,4 +36,5 @@ Untuk setiap kasus, keluarkan Q baris dengan baris ke-i menyatakan nomor laptop 
 
 [Batasan]
 - 1 <= N <= 10^5
+- 1 <= l_i, r_i <= N
 - 1 <= s_i, d_i, t_i <= 10^9
