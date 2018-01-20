@@ -26,8 +26,7 @@ def circumCenter(a, b, c):
     d = 2 * cross(bb, cc)
     return subtract(a, ((bb[1]*dc-cc[1]*db)/d, (cc[0]*db-bb[0]*dc)/d))
 
-t = int(input())
-for _ in range(t):
+if __name__ == "__main__":
     n, m = map(int, input().split())
     points = [(Fraction(0, 1), Fraction(0, 1)) for i in range(n+m)]
     for i in range(n):

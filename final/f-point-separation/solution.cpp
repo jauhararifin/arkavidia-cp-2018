@@ -51,78 +51,74 @@ bool cmpCenter(int il, int ir) {
 }
 
 int main() {
-  int t;
-  scanf("%d", &t);
-  while (t--) {
-    int n, m;
-    scanf("%d %d", &n, &m);
-    for (int i = 0; i < n; ++i) {
-      int x, y;
-      scanf("%d %d", &x, &y);
-      vp[i] = point(x, y);
-    }
-    for (int i = 0; i < m; ++i) {
-      int x, y;
-      scanf("%d %d", &x, &y);
-      vp[n+i] = point(x, y);
-    }
-    int ans = min(n, m);
-    int all = n + m;
-    for (int i = 0; i < all; ++i) {
-      for (int j = i+1; j < all; ++j) {
-        int sisa = 0, rmBlack = 0, rmWhite = 0;
-        for (int k = 0, p = 0; k < all; ++k) {
-          if (i == k || j == k) continue;
-          int dir = ccw(vp[i], vp[j], vp[k]);
-          if (dir == 0) {
-            point ki = vp[i]-vp[k], kj = vp[j]-vp[k];
-            if (ki * kj < 0) // check if vp[k] is between vp[i] and vp[j]
-              rmBlack += k >= n; // black should be removed
-            else
-              rmWhite += k < n; // white should be removed
-            continue;
-          }
-          else if (k < n) 
-            rmWhite += dir < 0; // white is removed if outside
-          else 
-            rmBlack += dir > 0; // black is removed if inside
-          centers[k] = circumCenter(vp[i], vp[j], vp[k]);
-          idx[sisa++] = k;
+  int n, m;
+  scanf("%d %d", &n, &m);
+  for (int i = 0; i < n; ++i) {
+    int x, y;
+    scanf("%d %d", &x, &y);
+    vp[i] = point(x, y);
+  }
+  for (int i = 0; i < m; ++i) {
+    int x, y;
+    scanf("%d %d", &x, &y);
+    vp[n+i] = point(x, y);
+  }
+  int ans = min(n, m);
+  int all = n + m;
+  for (int i = 0; i < all; ++i) {
+    for (int j = i+1; j < all; ++j) {
+      int sisa = 0, rmBlack = 0, rmWhite = 0;
+      for (int k = 0, p = 0; k < all; ++k) {
+        if (i == k || j == k) continue;
+        int dir = ccw(vp[i], vp[j], vp[k]);
+        if (dir == 0) {
+          point ki = vp[i]-vp[k], kj = vp[j]-vp[k];
+          if (ki * kj < 0) // check if vp[k] is between vp[i] and vp[j]
+            rmBlack += k >= n; // black should be removed
+          else
+            rmWhite += k < n; // white should be removed
+          continue;
         }
-        pivot = vp[i];
-        sort(idx, idx+sisa, cmpCenter);
-        for (int k = 0; k <= sisa; ++k) {
-          addBlack[k] = addWhite[k] = 0;
+        else if (k < n) 
+          rmWhite += dir < 0; // white is removed if outside
+        else 
+          rmBlack += dir > 0; // black is removed if inside
+        centers[k] = circumCenter(vp[i], vp[j], vp[k]);
+        idx[sisa++] = k;
+      }
+      pivot = vp[i];
+      sort(idx, idx+sisa, cmpCenter);
+      for (int k = 0; k <= sisa; ++k) {
+        addBlack[k] = addWhite[k] = 0;
+      }
+      point pnow;
+      int cntCenter = 0;
+      for (int k = 0; k < sisa; ++k) {
+        int id = idx[k];
+        if (cntCenter == 0 || !(pnow == centers[id]))
+          pnow = centers[id], ++cntCenter;
+        int dir = ccw(vp[i], vp[j], vp[id]);
+        if (id < n) {
+          if (dir > 0)
+            ++addWhite[cntCenter];
+          else
+            --addWhite[cntCenter-1];
         }
-        point pnow;
-        int cntCenter = 0;
-        for (int k = 0; k < sisa; ++k) {
-          int id = idx[k];
-          if (cntCenter == 0 || !(pnow == centers[id]))
-            pnow = centers[id], ++cntCenter;
-          int dir = ccw(vp[i], vp[j], vp[id]);
-          if (id < n) {
-            if (dir > 0)
-              ++addWhite[cntCenter];
-            else
-              --addWhite[cntCenter-1];
-          }
-          else {
-            if (dir > 0)
-              --addBlack[cntCenter-1];
-            else
-              ++addBlack[cntCenter];
-          }
-        }
-        ans = min(ans, rmBlack + rmWhite);
-        for (int k = 0; k <= cntCenter; ++k) {
-          rmBlack += addBlack[k];
-          rmWhite += addWhite[k];
-          ans = min(ans, rmBlack + rmWhite);
+        else {
+          if (dir > 0)
+            --addBlack[cntCenter-1];
+          else
+            ++addBlack[cntCenter];
         }
       }
+      ans = min(ans, rmBlack + rmWhite);
+      for (int k = 0; k <= cntCenter; ++k) {
+        rmBlack += addBlack[k];
+        rmWhite += addWhite[k];
+        ans = min(ans, rmBlack + rmWhite);
+      }
     }
-    printf("%d\n", ans);
   }
+  printf("%d\n", ans);
   return 0;
 }

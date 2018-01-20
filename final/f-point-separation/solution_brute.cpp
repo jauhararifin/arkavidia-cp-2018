@@ -30,61 +30,66 @@ point circumCenter(point &a, point &b, point &c) {
   return a - point(bb.y*dc-cc.y*db, cc.x*db-bb.x*dc) / d;
 }
 
+// return 1 = ccw, 0 = colinear, -1 = cw
+int ccw(point p, point q, point r) {
+  point pq = q - p, pr = r-p;
+  ld crs = pq % pr;
+  if (fabs(crs) < EPS) return 0;
+  return crs > 0 ? 1 : -1;
+}
+
 point vp[N+N];
 
 int main() {
-  int t;
-  scanf("%d", &t);
-  while (t--) {
-    int n, m;
-    scanf("%d %d", &n, &m);
-    for (int i = 0; i < n; ++i) {
-      int x, y;
-      scanf("%d %d", &x, &y);
-      vp[i] = point(x, y); // putih
+  int n, m;
+  scanf("%d %d", &n, &m);
+  for (int i = 0; i < n; ++i) {
+    int x, y;
+    scanf("%d %d", &x, &y);
+    vp[i] = point(x, y); // putih
+  }
+  for (int i = 0; i < m; ++i) {
+    int x, y;
+    scanf("%d %d", &x, &y);
+    vp[n+i] = point(x, y); // hitam
+  }
+  int all = n + m;
+  int ans = min(n, m);
+  for (int i = 0; i < all; ++i) {
+    for (int j = i+1; j < all; ++j) {
+      point center = (vp[i] + vp[j])/2.0;
+      ld R2 = dist2(center, vp[i]);
+      int cnt = 0;
+      for (int l = 0; l < all; ++l) {
+        if (l == i || l == j) continue;
+        ld d2 = dist2(center, vp[l]);
+        if (l >= n)
+          cnt += (d2 + EPS < R2);
+        else
+          cnt += (R2 + EPS < d2);
+      }
+      ans = min(ans, cnt);        
     }
-    for (int i = 0; i < m; ++i) {
-      int x, y;
-      scanf("%d %d", &x, &y);
-      vp[n+i] = point(x, y); // hitam
-    }
-    int all = n + m;
-    int ans = min(n, m);
-    for (int i = 0; i < all; ++i) {
-      for (int j = i+1; j < all; ++j) {
-        point center = (vp[i] + vp[j])/2.0;
+  }
+  for (int i = 0; i < all; ++i) {
+    for (int j = i+1; j < all; ++j) {
+      for (int k = j+1; k < all; ++k) {
+        if (ccw(vp[i], vp[j], vp[k]) == 0) continue;
+        point center = circumCenter(vp[i], vp[j], vp[k]);
         ld R2 = dist2(center, vp[i]);
         int cnt = 0;
         for (int l = 0; l < all; ++l) {
-          if (l == i || l == j) continue;
+          if (l == i || l == j || l == k) continue;
           ld d2 = dist2(center, vp[l]);
           if (l >= n)
             cnt += (d2 + EPS < R2);
           else
             cnt += (R2 + EPS < d2);
         }
-        ans = min(ans, cnt);        
+        ans = min(ans, cnt);
       }
     }
-    for (int i = 0; i < all; ++i) {
-      for (int j = i+1; j < all; ++j) {
-        for (int k = j+1; k < all; ++k) {
-          point center = circumCenter(vp[i], vp[j], vp[k]);
-          ld R2 = dist2(center, vp[i]);
-          int cnt = 0;
-          for (int l = 0; l < all; ++l) {
-            if (l == i || l == j || l == k) continue;
-            ld d2 = dist2(center, vp[l]);
-            if (l >= n)
-              cnt += (d2 + EPS < R2);
-            else
-              cnt += (R2 + EPS < d2);
-          }
-          ans = min(ans, cnt);
-        }
-      }
-    }
-    printf("%d\n", ans);
   }
+  printf("%d\n", ans);
   return 0;
 }
