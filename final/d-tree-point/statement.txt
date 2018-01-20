@@ -1,0 +1,35 @@
+D. Hari Gajian
+
+Time Limit : 2 Detik
+Memory Limit : 256 MB
+
+[Deskripsi]
+
+Bocan bekerja di PT. Humble dengan N buah karyawan. Perusahaan Bocan unik, karena semua karyawannya rendah hati, sampai-sampai seorang bos tidak mau gajinya lebih banyak dari gaji anak buahnya.
+
+Di bulan Februari ini, PT. Humble mendapat keuntungan X dollar. Keuntungan ini dibagi sepenuhnya pada seluruh karyawan di PT. Humble. Tentukan berapa kemungkinan pembagian gaji yang mungkin. Dua pembagian gaji dikatakan berbeda jika setidaknya ada satu orang yang mendapat gaji berbeda.
+
+Semua gaji berupa bilangan bulat.
+
+[Format Input]
+Baris pertama berisi bilangan N dan X.
+Baris ke-2 sampai N+1 terdiri dari sebuah bilangan bulat. Baris ke-i menyatakan bos dari karyawan ke-(i-1). Bos besar perusahaan PT. Humble dianggap sebagai karyawan nomor 0.
+
+[Format Output]
+Satu baris berisi jumlah kemungkinan pembagian gaji yang mungkin, dimodulo 10^9+7.
+
+[Contoh Input]
+3 3
+0
+0
+
+[Contoh Output]
+6
+
+[Batasan]
+- 1 <= N, X <= 5000
+- 0 <= u <= N-1
+
+[Penjelasan]
+Semua kemungkinan pembagian gaji yang mungkin:
+![](sample-1.jpg)
