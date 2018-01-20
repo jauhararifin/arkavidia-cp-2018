@@ -1,0 +1,57 @@
+H. Kotak Coklat
+
+Time Limit : 2 Detik
+Memory Limit : 256 MB
+
+[Deskripsi]
+
+![](http://www.lazybite.com/82-large_default/signature-wooden-chocolate-box.jpg)
+
+Bocan suka coklat. Turpa, sebagai fans berat Bocan, memberi hadiah sekotak coklat berukuran N x N. Tiap coklat berada pada koordinat (x,y) yang berbeda. Supaya tidak cepat habis, Bocan ingin bermain-main terlebih dahulu dengan coklatnya.
+
+Bocan melakukan Q aksi. Tiap aksi, ia dapat:
+* mengambil permen di koordinat (x,y)
+* menaruh permen di koordinat (x,y)
+* menghitung permen di segiempat yang kedua ujungnya koordinat (x_1,y_1) dan (x_2,y_2)
+
+Setiap koordinat di kotak coklat hanya dapat menampung 1 buah coklat.
+
+[Format Input]
+Input diawali sebuah bilangan T yang menyatakan banyaknya kasus.
+Untuk setiap kasus, baris pertama berisi sebuah bilangan bulat N dan Q.
+Q baris berikutnya berisi salah satu dari:
+* 1 x y, menaruh coklat di x,y
+* 2 x y, mengambil coklat di x,y
+* 3 x_1 y_1 x_2 y_2, menghitung coklat di segiempat (x_1,y_1) hingga (x_2,y_2)
+Untuk setiap aksi ambil x y, dijamin ada coklat di koordinat (x,y). Begitu pula untuk setiap aksi taruh x y, dijamin tdak ada coklat di koordinat (x,y).
+
+[Format Output]
+Untuk tiap query hitung, keluarkan sebuah baris berisi jumlah coklat di segiempat yang kedua ujungnya (x_1,y_1) dan (x_2,y_2).
+
+[Contoh Input]
+1
+10 7
+1 1 1
+1 2 1
+1 3 3
+1 6 5
+3 1 1 5 4
+2 2 1
+3 1 1 4 5
+
+[Contoh Output]
+3
+2
+
+[Batasan]
+- 1 <= T <= ?
+- 1 <= N <= 10^9
+- 1 <= Q <= 10^5
+- 1 <= x, y, x_1, y_1, x_2, y_2 <= N
+
+[Penjelasan]
+Sebelum aksi hitung pertama, sudah ada 4 coklat, di (1,1), (2,1), dan (3,3), dan (6,5). Tiga coklat pertama berada di dalam segiempat yang ujungnya (1,1) dan (4,5), sehingga dikeluarkan 3.
+
+Sebelum aksi hitung kedua, coklat pada koordinat (2,1) diambil sehingga tersisa 2 coklat pada hasil perhitungan.
+
+Sumber gambar: http://www.lazybite.com/82-large_default/signature-wooden-chocolate-box.jpg
