@@ -10,9 +10,9 @@ Memory Limit : 256 MB
 Bocan suka coklat. Turpa, sebagai fans berat Bocan, memberi hadiah sekotak coklat berukuran N x N. Tiap coklat berada pada koordinat (x,y) yang berbeda. Supaya tidak cepat habis, Bocan ingin bermain-main terlebih dahulu dengan coklatnya.
 
 Bocan melakukan Q aksi. Tiap aksi, ia dapat:
-* mengambil permen di koordinat (x,y)
-* menaruh permen di koordinat (x,y)
-* menghitung permen di segiempat yang kedua ujungnya koordinat (x_1,y_1) dan (x_2,y_2)
+* mengambil coklat di koordinat (x,y)
+* menaruh coklat di koordinat (x,y)
+* menghitung coklat di segiempat yang kedua ujungnya koordinat (x_1,y_1) dan (x_2,y_2)
 
 Setiap koordinat di kotak coklat hanya dapat menampung 1 buah coklat.
 
