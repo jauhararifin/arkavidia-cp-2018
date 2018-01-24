@@ -7,16 +7,16 @@ Memory Limit : 256 MB
 
 Bocan iseng membuat formula untuk random generator buatannya, yakni menggunakan rekurens:
 
-a_n = p * a_n-1 + q
+a_n = p * a_{n-1} + q
 
 Kini, ia memiliki bilangan x. Bocan penasaran, berapa n terkecil supaya a_n mod m = x?
 
 [Format Input]
-Baris pertama berisi bilangan p, q, dan a_0 dipisahkan dengan spasi.
-Baris kedua berii bilangan m dan x.
+Baris pertama berisi bilangan bulat p, q, dan a_0 dipisahkan dengan spasi.
+Baris kedua berisi bilangan bulat m dan x.
 
 [Format Output]
-Keluarkan satu baris berisi bilangan n terkecil yang mungkin. Jika tidak ada, keluarkan -1.
+Keluarkan satu baris berisi bilangan bulat n terkecil yang mungkin. Jika tidak ada, keluarkan -1.
 
 [Contoh Input 1]
 2 1 5
