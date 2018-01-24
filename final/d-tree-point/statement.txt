@@ -7,9 +7,9 @@ Memory Limit : 256 MB
 
 Bocan bekerja di PT. Humble dengan N buah karyawan. Perusahaan Bocan unik, karena semua karyawannya rendah hati, sampai-sampai seorang bos tidak mau gajinya lebih banyak dari gaji anak buahnya.
 
-Di bulan Februari ini, PT. Humble mendapat keuntungan X dollar. Keuntungan ini dibagi sepenuhnya pada seluruh karyawan di PT. Humble. Tentukan berapa kemungkinan pembagian gaji yang mungkin. Dua pembagian gaji dikatakan berbeda jika setidaknya ada satu orang yang mendapat gaji berbeda.
+Di bulan Februari ini, PT. Humble mendapat keuntungan X gold, mata uang setempat. Keuntungan ini dibagi sepenuhnya pada seluruh karyawan di PT. Humble. Tentukan berapa kemungkinan pembagian gaji yang mungkin. Dua pembagian gaji dikatakan berbeda jika setidaknya ada satu orang yang mendapat gaji berbeda.
 
-Semua gaji berupa bilangan bulat.
+Mata uang gold berupa integer dan tidak mengenal pecahan, sehingga X berupa bilangan bulat.
 
 [Format Input]
 Baris pertama berisi bilangan N dan X.
@@ -24,7 +24,7 @@ Satu baris berisi jumlah kemungkinan pembagian gaji yang mungkin, dimodulo 10^9+
 0
 
 [Contoh Output]
-6
+5
 
 [Batasan]
 - 1 <= N, X <= 5000
