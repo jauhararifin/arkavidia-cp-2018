@@ -13,8 +13,8 @@ Turpa ingin tahu berapa jumlah orang minimum yang perlu dipindahkan supaya terda
 
 [Format Input]
 Baris pertama berisi dua buah bilangan bulat N dan M.
-N baris selanjutnya berisi 2 bilangan x dan y, koordinat orang taken.
-M baris selanjutnya berisi 2 bilangan x dan y, koordinat orang jomblo.
+N baris selanjutnya berisi 2 bilangan bulat x dan y, yang menyatakan koordinat orang taken.
+M baris selanjutnya berisi 2 bilangan bulat x dan y, yang menyatakan koordinat orang jomblo.
 
 [Format Output]
 Sebuah baris berisi bilangan, jumlah orang minimum yang dipindahkan supaya memenuhi kriteria Turpa.
@@ -30,10 +30,10 @@ Sebuah baris berisi bilangan, jumlah orang minimum yang dipindahkan supaya memen
 1
 
 [Contoh Input 2]
-4 0
+3 1
 1 0
 0 1
-1 1
+0 -1
 -1 0
 
 [Contoh Output 2]
@@ -46,6 +46,9 @@ Sebuah baris berisi bilangan, jumlah orang minimum yang dipindahkan supaya memen
 [Penjelasan]
 Contoh letak bom untuk contoh input 1:
 ![](sample-1.jpg)
+Kita dapat menaruh bom supaya memiliki ledakan seperti gambar (lingkaran abu-abu) dan memindahkan titik di (5,0) ke titik berwarna hijau.
+Ada beberapa cara lain, namun semuanya butuh memindahkan tidak kurang dari 1 titik.
 
 Contoh letak bom untuk contoh input 2:
 ![](sample-2.jpg)
+Kita dapat menaruh bom di (0,0) dengan radius 1 satuan. Perhatikan bahwa orang yang ada di garis radius boleh jomblo dan boleh taken.
