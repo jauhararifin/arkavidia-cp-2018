@@ -11,9 +11,9 @@ Bocan memiliki Q pertanyaan. Pada pertanyaan ke-i, ia ingin tahu di antara lapto
 
 [Format Input]
 Baris pertama berisi sebuah bilangan bulat N.
-N baris berikutnya berisi dua buah bilangan dengan baris ke-i mengandung nilai s_i dan d_i.
+N baris berikutnya berisi dua buah bilangan dengan baris ke-i menyatakan nilai s_i dan d_i.
 Pada baris berikutnya terdapat bilangan Q menyatakan jumlah pertanyaan.
-Q baris berikutnya berisi pertanyaan dengan baris ke-i mengandung l_i, r_i, dan t_i.
+Q baris berikutnya berisi pertanyaan, dengan setiap baris berisi tiga buah bilangan bulat l_i, r_i, dan t_i seperti yang dijelaskan pada deskripsi soal.
 
 [Format Output]
 Keluarkan Q baris dengan baris ke-i menyatakan nomor laptop antar l_i sampai r_i yang mencoba password terbanyak pada detik ke-t_i.
