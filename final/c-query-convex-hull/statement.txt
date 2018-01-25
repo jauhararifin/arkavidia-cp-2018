@@ -1,4 +1,4 @@
-A. Menutup Meriam
+C. Menutup Meriam
 
 Time Limit : 2 Detik
 Memory Limit : 256 MB
