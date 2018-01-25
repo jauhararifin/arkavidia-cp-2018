@@ -52,6 +52,6 @@ Perhatikan gambar berikut:
 ![](meriam-sample2.png)
 
 [Batasan]
-- 1 <= N <= 100000
+- 1 <= N, Q <= 100000
 - 1 <= H_i <= 100000
 - 1 <= L_i < R_i <= N
