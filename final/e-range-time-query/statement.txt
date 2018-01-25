@@ -1,0 +1,40 @@
+E. Meretas Password Wifi
+
+Time Limit : 2 Detik
+Memory Limit : 256 MB
+
+[Deskripsi]
+
+Bocan sedang mencoba meretas password wifi temannya dengan bruteforce. Agar lebih cepat, Bocan menggunakan N buah laptop yang dinomori dari 1 sampai N. Program di tiap laptop tidak dijalankan pada waktu yang bersamaan. Setelah semua laptop menjalankan program, Bocan mencatat jumlah password yang sudah dicoba oleh laptop ke-i sebagai s_i pada waktu yang bersamaan. Kecepatan masing-masing laptop berbeda. Tepatnya, laptop ke-i dapat mencoba d_i password tiap detik.
+
+Bocan memiliki Q pertanyaan. Pada pertanyaan ke-i, ia ingin tahu di antara laptop bernomor l_i sampai r_i, laptop nomor berapa yang mencoba password terbanyak pada detik t_i, bila waktu pencatatan dianggap sebagai detik ke-0. Dijamin program Bocan belum selesai pada t_i untuk tiap i.
+
+[Format Input]
+Baris pertama berisi sebuah bilangan bulat N.
+N baris berikutnya berisi dua buah bilangan dengan baris ke-i menyatakan nilai s_i dan d_i.
+Pada baris berikutnya terdapat bilangan Q menyatakan jumlah pertanyaan.
+Q baris berikutnya berisi pertanyaan, dengan setiap baris berisi tiga buah bilangan bulat l_i, r_i, dan t_i seperti yang dijelaskan pada deskripsi soal.
+
+[Format Output]
+Keluarkan Q baris dengan baris ke-i menyatakan nomor laptop antar l_i sampai r_i yang mencoba password terbanyak pada detik ke-t_i.
+
+[Contoh Input]
+4
+30 2
+15 4
+10 4
+1 5
+3
+1 4 1
+2 4 1
+1 4 20
+
+[Contoh Output]
+1
+2
+4
+
+[Batasan]
+- 1 <= N <= 10^5
+- 1 <= l_i, r_i <= N
+- 1 <= s_i, d_i, t_i <= 10^9
