@@ -1,0 +1,67 @@
+
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\pagenumbering{gobble}
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.7}
+ 
+\begin{document}
+
+\section*{\hfil A. Mengurutkan Bilangan\hfil}
+
+\begin{center}
+\begin{tabular}{ |cc| } 
+ \hline
+ Time Limit & 2 detik \\
+ \hline 
+ Memory Limit & 256 MB \\
+ \hline
+\end{tabular}
+\end{center}
+
+\subsection*{Deskripsi}
+
+\par\noindent Sebuah array $A$ memili elemen berupa pasangan bilangan bulat. Pasangan bilangan dinyatakan dalam notasi $(X,Y)$. Nilai dari sebuah pasangan bilangan $(X,Y)$ adalah $X \times Y$. Pasangan bilangan $(2,3)$ memiliki nilai $6$, sedangkan pasangan bilangan $(7,3)$ memiliki nilai $21$. $A_i = (X_i, Y_i)$ menyatakan pasangan bilangan ke-$i$ pada array $A$.
+
+\par\noindent Diberikan array $A$ dengan $N$ buah elemen dimulai dari $1$ hingga $N$. Urutkan array $A$ sehingga nilai dari setiap pasangan bilangan terurut menaik. Jika ada pasangan bilangan yang nilainya sama, pasangan bilangan yang lebih kecil ditentukan berdasarkan index awal pasangan bilangan pada array $A$.
+
+\subsection*{Format Masukan}
+
+\par\noindent Baris pertama berisi sebuah bilangan bulat $N$ yang menyatakan banyaknya elemen pada array $A$.
+\par\noindent $N$ baris berikutnya berisi dua buah bilangan yang menyatakan nilai $X_i$ dan $Y_i$.
+
+\subsection*{Format Keluaran}
+
+\par\noindent Keluarkan $N$ baris dengan baris ke-$i$ menyatakan posisi pasangan bilangan ke-$i$ setelah diurutkan.
+
+\subsection*{Contoh Masukan}
+
+\begin{lstlisting}
+4
+1 4
+2 3
+3 2
+4 1
+\end{lstlisting}
+
+\subsection*{Contoh Keluaran}
+
+\begin{lstlisting}
+3
+1
+2
+4
+\end{lstlisting}
+
+\subsection*{Batasan}
+
+\begin{itemize}
+	\item $1 \leq N \leq 50000$
+	\item $1 \leq X_i, Y_i \leq 10^{100}$
+	\item Terdapat suatu bilangan $C$ sehingga untuk setiap $i$ berlaku $X_i + Y_i = C$
+\end{itemize}
+
+\end{document}

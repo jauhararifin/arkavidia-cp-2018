@@ -10,15 +10,16 @@ Sebuah array A memili elemen berupa pasangan bilangan bulat. Pasangan bilangan d
 Diberikan array A dengan N buah elemen dimulai dari 1 hingga N. Urutkan array A sehingga nilai dari setiap pasangan bilangan terurut menaik. Jika ada pasangan bilangan yang nilainya sama, pasangan bilangan yang lebih kecil ditentukan berdasarkan index awal pasangan bilangan pada array A.
 
 [Format Input]
-Input diawali dengan sebuah baris berisi sebuah bilangan T yang menyatakan banyaknya kasus.
-Untuk setiap kasus, baris pertama berisi sebuah bilangan bulat N yang menyatakan banyaknya elemen pada array A.
+
+Baris pertama berisi sebuah bilangan bulat N yang menyatakan banyaknya elemen pada array A.
 N baris berikutnya berisi dua buah bilangan yang menyatakan nilai X_i dan Y_i.
 
 [Format Output]
-Untuk setiap kasus, keluarkan N baris dengan baris ke-i menyatakan posisi pasangan bilangan ke-i setelah diurutkan.
+
+Keluarkan N baris dengan baris ke-i menyatakan posisi pasangan bilangan ke-i setelah diurutkan.
 
 [Contoh Input]
-1
+
 4
 1 4
 2 3
@@ -26,13 +27,13 @@ Untuk setiap kasus, keluarkan N baris dengan baris ke-i menyatakan posisi pasang
 4 1
 
 [Contoh Output]
+
 3
 1
 2
 4
 
 [Batasan]
-- 1 <= T <= 100
 - 1 <= N <= 50000
 - 1 <= X_i, Y_i <= 10^100
-- Terdapat suatu bilangan C sehingga untuk setiap i X_i + Y_i = C
+- Terdapat suatu bilangan C sehingga untuk setiap i berlaku X_i + Y_i = C
