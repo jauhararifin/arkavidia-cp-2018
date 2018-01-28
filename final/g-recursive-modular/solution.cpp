@@ -72,57 +72,53 @@ struct matrix {
 
 
 int main() {
-  int t;
-  scanf("%d", &t);
-  while (t--) {
-    long long p, q, a0;
-    long long an;
-    scanf("%lld %lld %lld", &p, &q, &a0);
-    scanf("%lld %lld", &mod, &an);
-    p %= mod;
-    if (p < 0) p += mod;
-    q %= mod;
-    if (q < 0) q += mod;
-    a0 %= mod;
-    if (a0 < 0) a0 += mod;
-    an %= mod;
-    if (an < 0) an += mod;
-    long long sq = sqrt(mod) + 1;
-    map<long long, int> mp;
-    long long now = a0;
-    for (int i = 0; i < sq; ++i) {
-      if (mp.find(now) == mp.end()) {
-        mp[now] = i;
-      }
-      now = add(largemul(now, p), q);
+  long long p, q, a0;
+  long long an;
+  scanf("%lld %lld %lld", &p, &q, &a0);
+  scanf("%lld %lld", &mod, &an);
+  p %= mod;
+  if (p < 0) p += mod;
+  q %= mod;
+  if (q < 0) q += mod;
+  a0 %= mod;
+  if (a0 < 0) a0 += mod;
+  an %= mod;
+  if (an < 0) an += mod;
+  long long sq = sqrt(mod) + 1;
+  map<long long, int> mp;
+  long long now = a0;
+  for (int i = 0; i < sq; ++i) {
+    if (mp.find(now) == mp.end()) {
+      mp[now] = i;
     }
-    matrix mat;
-    mat.m[0][0] = p;
-    mat.m[0][1] = q;
-    mat.m[1][0] = 0;
-    mat.m[1][1] = 1;
-    long long ans = mod + 1;
-    mat = mat^sq;
-    matrix cur;
-    for (int i = 0; i < 2; ++i)
-      for (int j = 0; j < 2; ++j)
-        cur.m[i][j] = (i == j);
-    for (int i = 0; i < sq; ++i) {
-      long long a = cur.m[0][0], b = (an + mod - cur.m[0][1]) % mod;
-      if (a == 0) {
-        if (b == 0)
-          ans = min(ans, i * sq);
-      }
-      else {
-        b = largemul(b, powmod(a, mod-2));
-        auto it = mp.find(b);
-        if (it != mp.end())
-          ans = min(ans, sq * i + it->second);
-      }
-      cur = cur * mat;
-    }
-    if (ans > mod) ans = -1;
-    printf("%lld\n", ans);
+    now = add(largemul(now, p), q);
   }
+  matrix mat;
+  mat.m[0][0] = p;
+  mat.m[0][1] = q;
+  mat.m[1][0] = 0;
+  mat.m[1][1] = 1;
+  long long ans = mod + 1;
+  mat = mat^sq;
+  matrix cur;
+  for (int i = 0; i < 2; ++i)
+    for (int j = 0; j < 2; ++j)
+      cur.m[i][j] = (i == j);
+  for (int i = 0; i < sq; ++i) {
+    long long a = cur.m[0][0], b = (an + mod - cur.m[0][1]) % mod;
+    if (a == 0) {
+      if (b == 0)
+        ans = min(ans, i * sq);
+    }
+    else {
+      b = largemul(b, powmod(a, mod-2));
+      auto it = mp.find(b);
+      if (it != mp.end())
+        ans = min(ans, sq * i + it->second);
+    }
+    cur = cur * mat;
+  }
+  if (ans > mod) ans = -1;
+  printf("%lld\n", ans);
   return 0;
 }
