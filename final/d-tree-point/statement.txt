@@ -13,7 +13,7 @@ Mata uang gold berupa integer dan tidak mengenal pecahan, sehingga X berupa bila
 
 [Format Input]
 Baris pertama berisi bilangan N dan X.
-Baris ke-2 sampai N+1 terdiri dari sebuah bilangan bulat. Baris ke-i menyatakan bos dari karyawan ke-(i-1). Bos besar perusahaan PT. Humble dianggap sebagai karyawan nomor 0.
+Baris ke-2 sampai N+1 terdiri dari sebuah bilangan bulat p. Baris ke-i menyatakan bos dari karyawan ke-(i-1). Bos besar perusahaan PT. Humble dianggap sebagai karyawan nomor 0.
 
 [Format Output]
 Satu baris berisi jumlah kemungkinan pembagian gaji yang mungkin, dimodulo 10^9+7.
@@ -28,7 +28,8 @@ Satu baris berisi jumlah kemungkinan pembagian gaji yang mungkin, dimodulo 10^9+
 
 [Batasan]
 - 1 <= N, X <= 5000
-- 0 <= u <= N-1
+- 0 <= p <= N-1
+- Seorang karyawan tidak mungkin menjadi bos bagi dirinya sendiri
 
 [Penjelasan]
 Semua kemungkinan pembagian gaji yang mungkin:
