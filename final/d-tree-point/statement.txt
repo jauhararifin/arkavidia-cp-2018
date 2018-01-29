@@ -11,19 +11,19 @@ Di bulan Februari ini, PT. Humble mendapat keuntungan X gold, mata uang setempat
 
 Mata uang gold berupa integer dan tidak mengenal pecahan, sehingga X berupa bilangan bulat.
 
-[Format Input]
+[Format Masukan]
 Baris pertama berisi bilangan N dan X.
 Baris ke-2 sampai N+1 terdiri dari sebuah bilangan bulat p. Baris ke-i menyatakan bos dari karyawan ke-(i-1). Bos besar perusahaan PT. Humble dianggap sebagai karyawan nomor 0.
 
-[Format Output]
+[Format Keluaran]
 Satu baris berisi jumlah kemungkinan pembagian gaji yang mungkin, dimodulo 10^9+7.
 
-[Contoh Input]
+[Contoh Masukan]
 3 3
 0
 0
 
-[Contoh Output]
+[Contoh Keluaran]
 5
 
 [Batasan]
