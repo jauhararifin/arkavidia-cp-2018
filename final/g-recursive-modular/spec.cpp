@@ -50,17 +50,17 @@ protected:
   void SampleTestCase1() {
     Input({
       "2 1 5",
-      "5 7"
+      "7 2"
     });
     Output({
-      "3"
+      "2"
     });
   }
 
   void SampleTestCase2() {
     Input({
-      "2 0 6",
-      "1 2"
+      "2 0 2",
+      "7 3"
     });
     Output({
       "-1"
@@ -69,7 +69,7 @@ protected:
 
   void SampleTestCase3() {
     Input({
-      "7 9 16",
+      "7 9 5",
       "11 5"
     });
     Output({
