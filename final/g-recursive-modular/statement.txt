@@ -11,41 +11,41 @@ a_n = p * a_{n-1} + q
 
 Kini, ia memiliki bilangan x. Bocan penasaran, berapa n terkecil supaya a_n mod m = x?
 
-[Format Input]
+[Format Masukan]
 Baris pertama berisi bilangan bulat p, q, dan a_0 dipisahkan dengan spasi.
 Baris kedua berisi bilangan bulat m dan x.
 
-[Format Output]
+[Format Keluaran]
 Keluarkan satu baris berisi bilangan bulat n terkecil yang mungkin. Jika tidak ada, keluarkan -1.
 
-[Contoh Input 1]
+[Contoh Masukan 1]
 2 1 5
-5 7
+7 1
 
-[Contoh Output 1]
-3
+[Contoh Keluaran 1]
+4
 
-[Contoh Input 2]
-2 0 6
-1 2
+[Contoh Masukan 2]
+2 0 2
+4 1
 
-[Contoh Output 2]
+[Contoh Keluaran 2]
 -1
 
-[Contoh Input 3]
-7 9 16
+[Contoh Masukan 3]
+7 9 5
 11 5
 
-[Contoh Output 3]
+[Contoh Keluaran 3]
 0
 
 [Batasan]
 - 2 <= m <= 10^12
-- 0 <= p, q, a_0, a_n <= m-1
+- 0 <= p, q, a_0, x <= m-1
 - m dijamin merupakan bilangan prima
 
 [Penjelasan]
-Pada contoh pertama, barisan yang terbentuk adalah 5, 11, 23, 47, 99, dst. Pada n = 3, 47 mod 7 = 5. Tidak ada nilai n lebih kecil yang memenuhi.
+Pada contoh pertama, barisan yang terbentuk adalah 5, 11, 23, 47, 99, dst. Pada n = 4, 99 mod 7 = 1. Tidak ada nilai n lebih kecil yang memenuhi.
 
 Pada contoh kedua, tidak ada n yang memenuhi.
 
