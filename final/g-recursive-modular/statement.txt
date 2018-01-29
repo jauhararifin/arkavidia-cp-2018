@@ -20,14 +20,14 @@ Keluarkan satu baris berisi bilangan bulat n terkecil yang mungkin. Jika tidak a
 
 [Contoh Masukan 1]
 2 1 5
-7 1
+7 5
 
 [Contoh Keluaran 1]
-4
+3
 
 [Contoh Masukan 2]
 2 0 2
-4 1
+7 3
 
 [Contoh Keluaran 2]
 -1
@@ -45,7 +45,7 @@ Keluarkan satu baris berisi bilangan bulat n terkecil yang mungkin. Jika tidak a
 - m dijamin merupakan bilangan prima
 
 [Penjelasan]
-Pada contoh pertama, barisan yang terbentuk adalah 5, 11, 23, 47, 99, dst. Pada n = 4, 99 mod 7 = 1. Tidak ada nilai n lebih kecil yang memenuhi.
+Pada contoh pertama, barisan yang terbentuk adalah 5, 11, 23, 47, 95, dst. Pada n = 3, 47 mod 7 = 5. Tidak ada nilai n lebih kecil yang memenuhi.
 
 Pada contoh kedua, tidak ada n yang memenuhi.
 
