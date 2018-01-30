@@ -3,15 +3,15 @@
 using namespace tcframe;
 using namespace std;
 typedef long long LL;
-const LL MAXM = 1000000000000LL;
+const int MAXM = 2000000000;
 const int AKAR = (int)sqrt(MAXM);
 
 class ProblemSpec : public BaseProblemSpec {
 protected:
-  LL P, Q, A_0;
-  LL M, X;
+  int P, Q, A_0;
+  int M, X;
 
-  LL result;
+  int result;
   void InputFormat() {
     LINE(P, Q, A_0);
     LINE(M, X);
@@ -38,9 +38,9 @@ protected:
 
 
 private:
-  bool isPrime(LL n){
-    LL akar = (int) sqrt(n);
-    for(LL i = 2;i <= akar; ++i) if(n % i == 0) return false;
+  bool isPrime(int n){
+    int akar = (int) sqrt(n);
+    for(int i = 2;i <= akar; ++i) if(n % i == 0) return false;
     return true; 
   }
 };
@@ -79,26 +79,51 @@ protected:
 
   void TestCases() {
     sieve();
-    CASE(M = 2; randomP(); randomQ(); randomInitialA(); randomX());
-    CASE(M = 3; randomP(); randomQ(); randomInitialA(); randomX());
-    CASE(M = 999999999989LL; randomP(); randomQ(); randomInitialA(); randomX());
+    manual();
+
+    ValidCases();
+    InvalidCases();
+    RandomCases();
     CASE(M = 999983; randomP(); randomQ(); randomInitialA(); randomX());
-    CASE(M = 2147483647; randomP(); randomQ(); randomInitialA(); randomX());
-    CASE(M = 1000000007; randomP(); randomQ(); randomInitialA(); randomX());
-    CASE(M = 2147483659LL; randomP(); randomQ(); randomInitialA(); randomX());
-    CASE(M = 127; P = 0; Q = 0; A_0 = 0; X = 0);
-    CASE(M = 999999999989LL; P = 0; Q = 0LL; A_0 = 0; X = 0);
-    CASE(M = 999999999989LL; P = 0; Q = 0LL; randomX(); A_0 = X);
-    CASE(M = 2; P = 0; Q = 0LL; randomX(); A_0 = X);    
-    for(int i = 0;i <= 10; ++i) CASE(randomMSmall(); randomP(); randomQ(); randomInitialA(); randomX());
+    CASE(M = 1999999973; randomP(); randomQ(); randomInitialA(); randomX());
 
   }
 
+  void ValidCases(){
+    CASE(M = 2; P = 0; Q = 0; X = 0; A_0 = 0);
+    CASE(M = 2; P = 0; Q = 0; X = 0; A_0 = 1);
+    CASE(M = 3; P = 0; Q = 1; X = 1; A_0 = 0);
+    CASE(M = 2; P = 1; Q = 1; X = 1; A_0 = 1);
+    CASE(M = 2; P = 1; Q = 0; X = 1; A_0 = 1);
+    CASE(M = 1999999973; P = M - 1; Q = M - 1; X = 0; A_0 = 1);
+    CASE(randomMBig(); P = M - 1; Q = M - 1; randomX(); A_0 = M - 2);
+    CASE(M = 1999999973; P = 939711378; Q = 638950699; A_0 = 1915067939; X = 121790188);
+  }
+
+  void InvalidCases(){
+    CASE(M = 2; P = 0; Q = 0; X = 1; A_0 = 0);
+    CASE(M = 2; P = 0; Q = 1; X = 0; A_0 = 0);
+    CASE(M = 1999999973; P = 0; Q = 1; X = 2; A_0 = 1);
+    CASE(M = 999983; P = 423651; Q = 623558; A_0 = 645889; X = 384378);
+  }
+
+  void RandomCases(){
+    for(int i = 0;i <= 20; ++i) {
+      CASE(randomMSmall(); randomP(); randomQ(); randomInitialA(); randomX());
+    }
+    for(int i = 0;i <= 20; ++i) {
+      CASE(randomMBig(); randomP(); randomQ(); randomInitialA(); randomX());
+    }
+    CASE(M = 1000000007; randomP(); randomQ(); randomInitialA(); randomX());
+  }
+
+
 private:
-  vector<int> pnum;
+  vector<int> pnum_small;
+  vector<int> pnum_big;
   bitset<AKAR + 5> prim;
   void sieve(){
-    pnum.clear();
+    pnum_small.clear();
     prim.set();
     prim[0] = prim[1] = false;
     for(int i = 2;i <= AKAR; ++i){
@@ -111,9 +136,14 @@ private:
             now += i;
           }
         }
-        pnum.push_back(i);
+        pnum_small.push_back(i);
       }
     }
+  }
+
+  void manual(){
+    vector<int> v_prime = {103054759,1036815239,1731205687,949365763,231710569,1781653871,384535201,910816493,166809557,1788229561,75991417,1749838897,1234060573,1264055227,1165896401,1125943957,481714627,1107907763,180115931,1835501963,1361691623,1642037591,122769707,4226939,642338803,1440528769,1604799877,377420093,558246803,524304241,610851407,992749333,582106631,1225861081,25127087,1711305727,285014123,1304550983,1832856587,1380609869,1882316393,1475375047,420910453,1506771389,477464527,286665811,1514128559,81141491,275270197,56520253,1525353113,668610497,1157761279,697469243,1577039993,1486285649,78292147,1965424039,403435727,213977789,1697364041,936116527,1183685147,1992015679,563628641,1380426919,6499903,1581205469,803060969,1647747653,434803079,76722637,628202557,606314179,1805530561,1444801273,166726363,1696785199,1090315631,898940281,1846786597,570014287,1760830843,1241887133,765831761,1058775383,674738747,363046003,866417159,506081711,1863437959,1980853619,1539007199,107874587,90227833,1007937991,1251995429,643349051,109777817,842499113,1710245179,714893723};
+    pnum_big = v_prime;
   }
 
   void randomP(){
@@ -130,8 +160,13 @@ private:
   }
 
   void randomMSmall(){
-    int idx = rnd.nextInt((int)pnum.size());
-    M = pnum[idx];
+    int idx = rnd.nextInt((int)pnum_small.size());
+    M = pnum_small[idx];
+  }
+
+  void randomMBig(){
+    int idx = rnd.nextInt((int)pnum_big.size());
+    M = pnum_big[idx];
   }
 
 };
