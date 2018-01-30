@@ -15,7 +15,7 @@ protected:
 
   void InputFormat() {
     LINE(N);
-    LINE(H);
+    LINE(H % SIZE(N));
     LINE(Q);
     LINES(L, R) % SIZE(Q); 
   }
