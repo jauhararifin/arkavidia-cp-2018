@@ -73,7 +73,7 @@ int main() {
           int le = offset, ri = nrhull-1;
           while (le < ri) {
             int mid = (le + ri) >> 1;
-            if (ccw(vp[il], lhull[mid], lhull[mid+1]) > 0)
+            if (ccw(vp[il], rhull[mid], rhull[mid+1]) > 0)
               le = mid+1;
             else
               ri = mid;
