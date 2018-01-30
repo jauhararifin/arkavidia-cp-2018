@@ -1,0 +1,57 @@
+A. Menutup Meriam
+
+Time Limit : 2 Detik
+Memory Limit : 256 MB
+
+[Deskripsi]
+
+Bocan sedang berperang melawan Turpa. Untuk memertahankan bentengnya, Bocan membuat N buah meriam yang diletakkan pada sebuah garis lurus. Meriam tersebut diletakkan secara berjejer-jejer sehingga meriam ke-i terletak pada petak ke-i. Setiap meriam memiliki tinggi masing-masing, meriam ke-i memiliki tinggi H_i. Berikut adalah contoh 5 buah meriam yang memiliki tinggi 3, 5, 2, 1, 3 secara berturut-turut.
+
+![](meriam1.png)
+
+Karena tidak ingin meriamnya dilihat oleh Turpa, Bocan berusaha menutup meriamnya dengan terpal. Karena uang Bocan sudah habis untuk membuat meriam, Ia ingin agar terpal yang digunakan untuk menutup meriam sekecil mungkin. Akan tetapi, meriam yang dimiliki Bocan sangat sensitif sehingga bila tersentuh sedikit saja bisa membuatnya menjadi rusak dan akurasinya berkurang. Oleh karena itu Bocan meminta bantuan Anda untuk menjawah Q buah pertanyaan. Setiap pertanyaan, Bocan akan memberikan dua buah bilangan yaitu L dan R kemudian menanyakan berapa banyak meriam yang akan rusak jika ia menutup meriam ke-L hingga R (meriam ke-i dimana L ≤ i ≤ r) dengan terpal sekecil mungkin.
+
+Proses penutupan pada meriam dilakukan dengan memasang terpal pada ujung-ujung meriam. Gambar dibawah ini menunjukkan cara penutupan meriam ke-2 hingga 5.
+
+![](meriam2.png)
+
+[Format Input]
+
+Baris pertama dari input berisi sebuah bilangan bulat N yang menyatakan banyaknya meriam yang dimiliki bocan.
+Baris kedua berisi N buah bilangan bulat. Bilangan ke-i menyatakan nilai H_i yaitu tinggi meriam ke-i.
+Baris ketiga berisi sebuah bilangan bulat Q yang menyatakan banyaknya pertanyaan yang diajukan Bocan.
+Q baris berikutnya berisi dua buah bilangan bulat L dan R seperti yang dijelaskan pada deskripsi soal.
+
+[Format Output]
+
+Output berisi Q baris dimana setiap baris ke-i berisi sebuah bilangan bulat yang merupakan jawaban dari pertanyaan Bocan yang ke-i.
+
+[Contoh Input]
+
+7
+4 1 2 3 2 3 1
+2
+2 5
+1 7
+
+[Contoh Output]
+
+4
+3
+
+[Penjelasan]
+
+Meriam pada contoh tersebut dapat digambarkan seperti berikut:
+
+![](meriam_sample1.png)
+
+Untuk pertanyaan pertama, meriam ke-dua, tiga, empat dan lima akan terkena terpal.
+Sedangkan untuk pertanyaan ke-dua, meriam pertama ke-enam dan ke-tujuh akan terkena terpal.
+Perhatikan gambar berikut:
+
+![](meriam-sample2.png)
+
+[Batasan]
+- 1 ≤ N, Q ≤ 50000
+- 1 ≤ H_i ≤ 50000
+- 1 ≤ L_i < R_i ≤ N
