@@ -9,16 +9,16 @@ Sebuah array A memili elemen berupa pasangan bilangan bulat. Pasangan bilangan d
 
 Diberikan array A dengan N buah elemen dimulai dari 1 hingga N. Urutkan array A sehingga nilai dari setiap pasangan bilangan terurut mengecil. Jika ada pasangan bilangan yang nilainya sama, pasangan bilangan yang lebih dulu ditentukan berdasarkan index awal pasangan bilangan pada array A.
 
-[Format Input]
+[Format Masukan]
 
 Baris pertama berisi sebuah bilangan bulat N yang menyatakan banyaknya elemen pada array A.
 N baris berikutnya berisi dua buah bilangan yang menyatakan nilai X_i dan Y_i.
 
-[Format Output]
+[Format Keluaran]
 
 Keluarkan N baris dengan baris ke-i menyatakan posisi pasangan bilangan ke-i setelah diurutkan.
 
-[Contoh Input]
+[Contoh Masukan]
 
 4
 1 4
@@ -26,7 +26,7 @@ Keluarkan N baris dengan baris ke-i menyatakan posisi pasangan bilangan ke-i set
 3 2
 4 1
 
-[Contoh Output]
+[Contoh Keluaran]
 
 3
 1
