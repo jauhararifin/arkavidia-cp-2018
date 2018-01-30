@@ -6,17 +6,8 @@ using namespace std;
 long long mod;
 
 inline long long largemul(long long a, long long b) {
-  if (max(a, b) <= 1000000000)
-    return a * b % mod;
-  long long r = 0;
-  for (; b; b >>= 1) {
-    if (b & 1) {
-      r += a;
-      if (r >= mod) r -= mod;
-    }
-    a += a;
-    if (a >= mod) a -= mod;
-  }
+  long long r = a * b % mod;
+  if (r < 0) r += mod;
   return r;
 }
 
