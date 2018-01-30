@@ -5,34 +5,47 @@ Memory Limit : 256 MB
 
 [Deskripsi]
 
-Sebuah array A memili elemen berupa pasangan bilangan bulat. Pasangan bilangan dinyatakan dalam notasi (X,Y). Nilai dari sebuah pasangan bilangan (X,Y) adalah X * Y. Pasangan bilangan (2,3) memiliki nilai 6, sedangkan pasangan bilangan (7,3) memiliki nilai 21. A_i = (X_i, Y_i) menyatakan pasangan bilangan ke-i pada array A.
+Diberikan suatu array A yang berisi N elemen. Elemen ke-i pada A dinyatakan dengan A_i. Setiap A_i terdiri dari 2 bilangan bulat X_i dan Y_i. 
 
-Diberikan array A dengan N buah elemen dimulai dari 1 hingga N. Urutkan array A sehingga nilai dari setiap pasangan bilangan terurut menaik. Jika ada pasangan bilangan yang nilainya sama, pasangan bilangan yang lebih kecil ditentukan berdasarkan index awal pasangan bilangan pada array A.
+Terdapat fungsi F(a, b) yang mengembalikan hasil perkalian dari a dan b. Sebagai contoh, F(2, 3) mengembalikan nilai 6, sedangkan F(7, 3) mengembalikan nilai 21.
+
+Terdapat juga array B yang berisi elemen-elemen array A yang telah diurutkan. A_i memiliki posisi lebih awal dari A_j pada B apabila salah satu hal berikut terpenuhi:
+1. F(X_i, Y_i) > F(X_j, Y_j).
+2. F(X_i, Y_i) = F(X_j, Y_j) dan i < j.
+
+Terdapat juga fungsi G(i) yang mengembalikan posisi A_i pada B. Hitung nilai dari G(1), G(2), ... , G(N). 
 
 [Format Input]
-Input diawali dengan sebuah baris berisi sebuah bilangan T yang menyatakan banyaknya kasus.
-Untuk setiap kasus, baris pertama berisi sebuah bilangan bulat N yang menyatakan banyaknya elemen pada array A.
-N baris berikutnya berisi dua buah bilangan yang menyatakan nilai X_i dan Y_i.
+Baris pertama berisi sebuah bilangan bulat N.
+N baris berikutnya masing-masing berisi dua buah bilangan bulat yang menyatakan nilai X_i dan Y_i.
 
 [Format Output]
-Untuk setiap kasus, keluarkan N baris dengan baris ke-i menyatakan posisi pasangan bilangan ke-i setelah diurutkan.
+Keluarkan N baris. Baris ke-i menyatakan nilai G(i).
 
 [Contoh Input]
-1
-4
-1 4
-2 3
-3 2
-4 1
+5
+1 5
+2 4
+3 3
+4 2
+5 1
 
 [Contoh Output]
-3
-1
-2
 4
+2
+1
+3
+5
+
+[Penjelasan]
+Array B pada contoh input diatas:
+3 3
+2 4
+4 2
+1 5
+5 1
 
 [Batasan]
-- 1 <= T <= 100
-- 1 <= N <= 50000
-- 1 <= X_i, Y_i <= 10^100
-- Terdapat suatu bilangan C sehingga untuk setiap i X_i + Y_i = C
+- 1 ≤ N ≤ 5000
+- 0 ≤ X_i, Y_i ≤ 10^5000
+- Terdapat suatu bilangan C sehingga untuk setiap i, X_i + Y_i = C
