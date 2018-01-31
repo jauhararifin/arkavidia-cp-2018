@@ -24,7 +24,7 @@
 
 \subsection*{Deskripsi}
 
-\par\noindent Bocan bekerja di PT. Humble dengan $N$ buah karyawan. Perusahaan Bocan unik, karena semua karyawannya rendah hati, sampai-sampai seorang bos tidak mau gajinya lebih banyak dari gaji anak buahnya.
+\par\noindent Bocan bekerja di PT. Humble dengan $N$ buah karyawan. Para karyawan dinomori dari $0$ sampai $N-1$. Perusahaan Bocan unik, karena semua karyawannya rendah hati, sampai-sampai seorang bos tidak mau gajinya lebih banyak dari gaji anak buahnya.
 
 \par\noindent Di bulan Februari ini, PT. Humble mendapat keuntungan $X$ gold, mata uang setempat. Keuntungan ini dibagi sepenuhnya pada seluruh karyawan di PT. Humble. Tentukan berapa kemungkinan pembagian gaji yang mungkin. Dua pembagian gaji dikatakan berbeda jika setidaknya ada satu orang yang mendapat gaji berbeda.
 
@@ -33,7 +33,7 @@
 \subsection*{Format Masukan}
 
 \par\noindent Baris pertama berisi bilangan $N$ dan $X$.
-\par\noindent Baris ke-$2$ sampai $N+1$ terdiri dari sebuah bilangan bulat $p$. Baris ke-$i$ menyatakan bos dari karyawan ke-$(i-1)$. Bos besar perusahaan PT. Humble dianggap sebagai karyawan nomor $0$.
+\par\noindent Baris ke-$2$ sampai $N$ terdiri dari sebuah bilangan bulat $p$. Baris ke-$i$ menyatakan bos dari karyawan ke-$(i-1)$. Bos besar perusahaan PT. Humble dianggap sebagai karyawan nomor $0$.
 
 \subsection*{Format Keluaran}
 
@@ -57,8 +57,15 @@
 
 \begin{itemize}
   \item $1 \leq N, X \leq 5000$
-  \item $0 \leq p \leq N-1$
+  \item $0 \leq p < N$
   \item Seorang karyawan tidak mungkin menjadi bos bagi dirinya sendiri
+  \item Bos dari karyawan ke-$i$ tidak mungkin bernomor lebih dari sama dengan $i$.
 \end{itemize}
+
+\subsection*{Penjelasan}
+
+\par\noindent Semua kemungkinan pembagian gaji yang mungkin:
+
+\includegraphics[width=10cm]{sample-1}
 
 \end{document}
