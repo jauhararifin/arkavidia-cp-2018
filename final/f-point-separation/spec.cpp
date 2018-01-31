@@ -22,7 +22,7 @@ protected:
   }
 
   void GradingConfig() {
-    TimeLimit(2.5);
+    TimeLimit(2);
     MemoryLimit(256);
   }
 
@@ -60,6 +60,19 @@ protected:
     });
     Output({
       "1"
+    });
+  }
+
+  void SampleTestCase2() {
+    Input({
+      "2 2",
+      "0 1",
+      "0 -1",
+      "1 0",
+      "-1 0",
+    });
+    Output({
+      "0"
     });
   }
 
