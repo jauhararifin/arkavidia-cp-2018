@@ -3,6 +3,8 @@
 using namespace std;
 using namespace tcframe;
 
+const int MAXN = 100, MAXX = 1000;
+
 class ProblemSpec : public BaseProblemSpec {
 protected:
   int N, M;
@@ -20,15 +22,15 @@ protected:
   }
 
   void GradingConfig() {
-    TimeLimit(2);
+    TimeLimit(2.5);
     MemoryLimit(256);
   }
 
   void Constraints() {
-    CONS(0 <= N && N <= 75);
-    CONS(0 <= M && M <= 75);
+    CONS(0 <= N && N <= MAXN);
+    CONS(0 <= M && M <= MAXN);
     CONS(X.size() == N + M && Y.size() == N + M);
-    CONS(eachElementBetween(X, -1000, 1000) && eachElementBetween(Y, -1000, 1000));
+    CONS(eachElementBetween(X, -MAXX, MAXX) && eachElementBetween(Y, -MAXX, MAXX));
     CONS(distinctPoints(N+M, X, Y));
   }
 private:
@@ -73,59 +75,59 @@ protected:
     CASE(N = 0, M = 0, X = {}, Y = {});
 
     // small N, M
-    CASE(N = 1, M = 1, randomPoints(N+M, X, Y, -1000, 1000));
-    CASE(N = 2, M = 2, randomPoints(N+M, X, Y, -1000, 1000));
-    CASE(N = 1, M = 3, randomPoints(N+M, X, Y, -1000, 1000));
-    CASE(N = 3, M = 2, randomPoints(N+M, X, Y, -1000, 1000));
+    CASE(N = 1, M = 1, randomPoints(N+M, X, Y, -MAXX, MAXX));
+    CASE(N = 2, M = 2, randomPoints(N+M, X, Y, -MAXX, MAXX));
+    CASE(N = 1, M = 3, randomPoints(N+M, X, Y, -MAXX, MAXX));
+    CASE(N = 3, M = 2, randomPoints(N+M, X, Y, -MAXX, MAXX));
 
     // satu garis
     CASE(N = 2, M = 3, X = {4, 5, 1, 2, 6}, Y = {9, 10, 6, 7, 11});
     CASE(N = 3, M = 3, X = {4, 5, 1, 2, 3, 6}, Y = {9, 10, 6, 7, 8, 11});
-    CASE(N = rnd.nextInt(1, 25), M = rnd.nextInt(1, 75), randomLinear(N+M, X, Y));
-    CASE(N = rnd.nextInt(25, 50), M = rnd.nextInt(1, 75), randomLinear(N+M, X, Y, rnd.nextInt(0, 5)));
-    CASE(N = rnd.nextInt(50, 75), M = rnd.nextInt(1, 75), randomLinear(N+M, X, Y, rnd.nextInt(0, 5)));
-    CASE(N = 75, M = 75, randomLinear(N+M, X, Y, rnd.nextInt(0, 5)));
+    CASE(N = rnd.nextInt(1, MAXN/3), M = rnd.nextInt(1, MAXN), randomLinear(N+M, X, Y));
+    CASE(N = rnd.nextInt(MAXN/3, MAXN*2/3), M = rnd.nextInt(1, MAXN), randomLinear(N+M, X, Y, rnd.nextInt(0, 5)));
+    CASE(N = rnd.nextInt(MAXN*2/3, MAXN), M = rnd.nextInt(1, MAXN), randomLinear(N+M, X, Y, rnd.nextInt(0, 5)));
+    CASE(N = MAXN, M = MAXN, randomLinear(N+M, X, Y, rnd.nextInt(0, 5)));
 
     // ANS = 0
-    CASE(N = rnd.nextInt(1, 25), M = rnd.nextInt(1, 25), generateAns0(N+M, X, Y, -1000, 1000));
-    CASE(N = rnd.nextInt(25, 50), M = rnd.nextInt(25, 50), generateAns0(N+M, X, Y, -1000, 1000));
-    CASE(N = rnd.nextInt(50, 75), M = rnd.nextInt(50, 75), generateAns0(N+M, X, Y, -1000, 1000));
-    CASE(N = rnd.nextInt(1, 75), M = rnd.nextInt(1, 75), generateAns0(N+M, X, Y, -1000, 1000));
-    CASE(N = 75, M = 75, generateAns0(N+M, X, Y, -1000, 1000));
-    CASE(N = 75, M = 75, generateAns0(N+M, X, Y, -1000, 1000));
+    CASE(N = rnd.nextInt(1, MAXN/3), M = rnd.nextInt(1, MAXN/3), generateAns0(N+M, X, Y, -MAXX, MAXX));
+    CASE(N = rnd.nextInt(MAXN/3, MAXN*2/3), M = rnd.nextInt(MAXN/3, MAXN*2/3), generateAns0(N+M, X, Y, -MAXX, MAXX));
+    CASE(N = rnd.nextInt(MAXN*2/3, MAXN), M = rnd.nextInt(MAXN*2/3, MAXN), generateAns0(N+M, X, Y, -MAXX, MAXX));
+    CASE(N = rnd.nextInt(1, MAXN), M = rnd.nextInt(1, MAXN), generateAns0(N+M, X, Y, -MAXX, MAXX));
+    CASE(N = MAXN, M = MAXN, generateAns0(N+M, X, Y, -MAXX, MAXX));
+    CASE(N = MAXN, M = MAXN, generateAns0(N+M, X, Y, -MAXX, MAXX));
 
     // random
-    CASE(N = rnd.nextInt(1, 25), M = rnd.nextInt(1, 25), randomPoints(N+M, X, Y, -1000, 1000));
-    CASE(N = rnd.nextInt(1, 25), M = rnd.nextInt(25, 50), randomPoints(N+M, X, Y, -1000, 1000));
-    CASE(N = rnd.nextInt(1, 25), M = rnd.nextInt(50, 75), randomPoints(N+M, X, Y, -1000, 1000));
-    CASE(N = rnd.nextInt(25, 50), M = rnd.nextInt(1, 25), randomPoints(N+M, X, Y, -1000, 1000));
-    CASE(N = rnd.nextInt(25, 50), M = rnd.nextInt(25, 50), randomPoints(N+M, X, Y, -1000, 1000));
-    CASE(N = rnd.nextInt(25, 50), M = rnd.nextInt(50, 75), randomPoints(N+M, X, Y, -1000, 1000));
-    CASE(N = rnd.nextInt(50, 75), M = rnd.nextInt(1, 25), randomPoints(N+M, X, Y, -1000, 1000));
-    CASE(N = rnd.nextInt(50, 75), M = rnd.nextInt(25, 50), randomPoints(N+M, X, Y, -1000, 1000));
-    CASE(N = rnd.nextInt(50, 75), M = rnd.nextInt(50, 75), randomPoints(N+M, X, Y, -1000, 1000));
-    CASE(N = 75, M = 75, randomPoints(N+M, X, Y, -1000, 1000));
-    CASE(N = 75, M = 75, randomPoints(N+M, X, Y, -1000, 1000));
-    CASE(N = 75, M = 75, randomPoints(N+M, X, Y, -1000, 1000));
+    CASE(N = rnd.nextInt(1, MAXN/3), M = rnd.nextInt(1, MAXN/3), randomPoints(N+M, X, Y, -MAXX, MAXX));
+    CASE(N = rnd.nextInt(1, MAXN/3), M = rnd.nextInt(MAXN/3, MAXN*2/3), randomPoints(N+M, X, Y, -MAXX, MAXX));
+    CASE(N = rnd.nextInt(1, MAXN/3), M = rnd.nextInt(MAXN*2/3, MAXN), randomPoints(N+M, X, Y, -MAXX, MAXX));
+    CASE(N = rnd.nextInt(MAXN/3, MAXN*2/3), M = rnd.nextInt(1, MAXN/3), randomPoints(N+M, X, Y, -MAXX, MAXX));
+    CASE(N = rnd.nextInt(MAXN/3, MAXN*2/3), M = rnd.nextInt(MAXN/3, MAXN*2/3), randomPoints(N+M, X, Y, -MAXX, MAXX));
+    CASE(N = rnd.nextInt(MAXN/3, MAXN*2/3), M = rnd.nextInt(MAXN*2/3, MAXN), randomPoints(N+M, X, Y, -MAXX, MAXX));
+    CASE(N = rnd.nextInt(MAXN*2/3, MAXN), M = rnd.nextInt(1, MAXN/3), randomPoints(N+M, X, Y, -MAXX, MAXX));
+    CASE(N = rnd.nextInt(MAXN*2/3, MAXN), M = rnd.nextInt(MAXN/3, MAXN*2/3), randomPoints(N+M, X, Y, -MAXX, MAXX));
+    CASE(N = rnd.nextInt(MAXN*2/3, MAXN), M = rnd.nextInt(MAXN*2/3, MAXN), randomPoints(N+M, X, Y, -MAXX, MAXX));
+    CASE(N = MAXN, M = MAXN, randomPoints(N+M, X, Y, -MAXX, MAXX));
+    CASE(N = MAXN, M = MAXN, randomPoints(N+M, X, Y, -MAXX, MAXX));
+    CASE(N = MAXN, M = MAXN, randomPoints(N+M, X, Y, -MAXX, MAXX));
   }
 
 private:
   void randomLinear(int sz, vector<int> & x, vector<int> & y, int mul = 0) {
-    int offsetx = rnd.nextInt(-1000, 0);
-    int offsety = rnd.nextInt(-1000, 0);
+    int offsetx = rnd.nextInt(-MAXX, 0);
+    int offsety = rnd.nextInt(-MAXX, 0);
     set<int> st;
     while (st.size() < sz)
-      st.insert(rnd.nextInt(0, 400));
+      st.insert(rnd.nextInt(0, MAXX * 4 / 10));
     x.clear();
     for (int v : st) {
       x.push_back(v);
-      offsetx = min(offsetx, 1000-v);
+      offsetx = min(offsetx, MAXX-v);
     }
     rnd.shuffle(x.begin(), x.end());
     y.clear();
     for (int v : x) {
       y.push_back(v * mul);
-      offsety = min(offsety, 1000-v*mul);
+      offsety = min(offsety, MAXX-v*mul);
     }
     for (int & v : x)
       v += offsetx;
