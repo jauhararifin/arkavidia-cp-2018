@@ -27,10 +27,10 @@
 \par\noindent Bocan iseng membuat formula untuk random generator buatannya, yakni menggunakan rekurens:
 
 \begin{center}
-$a_n = p \times a_{n-1} + q$
+$a_n = (p \times a_{n-1} + q) \mod m$
 \end{center}
 
-\par\noindent Kini, ia memiliki bilangan $x$. Bocan penasaran, berapa $n$ terkecil supaya $a_n \mod m = x$?
+\par\noindent Kini, ia memiliki bilangan $x$. Bocan penasaran, berapa $n$ terkecil supaya $a_n  x$?
 
 \subsection*{Format Masukan}
 
@@ -83,14 +83,14 @@ $a_n = p \times a_{n-1} + q$
 \subsection*{Batasan}
 
 \begin{itemize}
-  \item $2 \leq m \leq 10^{12}$
+  \item $2 \leq m \leq 2^9$
   \item $0 \leq p, q, a_0, x < m$
   \item $m$ dijamin merupakan bilangan prima
 \end{itemize}
 
 \subsection*{Penjelasan}
 
-\par\noindent Pada contoh pertama, barisan yang terbentuk adalah $5, 11, 23, 47, 95,$ dst. Pada $n = 3$, $47 \mod 7 = 5$. Tidak ada nilai $n$ lebih kecil yang memenuhi.
+\par\noindent Pada contoh pertama, barisan yang terbentuk adalah $5, 4, 2, 5, 4,$ dst. Pada $n = 2$, $a_n = 2$. Tidak ada nilai $n$ lebih kecil yang memenuhi.
 
 \par\noindent Pada contoh kedua, tidak ada $n$ yang memenuhi.
 
