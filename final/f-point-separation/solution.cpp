@@ -50,6 +50,13 @@ bool cmpCenter(int il, int ir) {
   return dir < 0;
 }
 
+bool cmpCenterx(int il, int ir) {
+  return centers[il].x < centers[ir].x;
+}
+bool cmpCentery(int il, int ir) {
+  return centers[il].y < centers[ir].y;
+}
+
 int main() {
   int n, m;
   scanf("%d %d", &n, &m);
@@ -87,7 +94,17 @@ int main() {
         idx[sisa++] = k;
       }
       pivot = vp[i];
-      sort(idx, idx+sisa, cmpCenter);
+      // sort(idx, idx+sisa, cmpCenter);
+      if (fabs(vp[i].x-vp[j].x) > fabs(vp[i].y-vp[j].y)) {
+        sort(idx, idx+sisa, cmpCentery);
+      }
+      else {
+        sort(idx, idx+sisa, cmpCenterx);
+      }
+      if (sisa > 1) {
+        if (!cmpCenter(idx[0], idx[sisa-1]))
+          reverse(idx, idx+sisa);
+      }
       for (int k = 0; k <= sisa; ++k) {
         addBlack[k] = addWhite[k] = 0;
       }
