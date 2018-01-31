@@ -101,8 +101,8 @@ protected:
     CASE(N = MAXN; Q = MAXQ; largestQuery(MAXQ); allSameHeight(N, MAXH/2+rand()%100));
 
     // always traverse to the right
-    CASE(N = MAXN; Q = MAXQ; allSameHeight(3, MAXH); heightSameAsIndex(N - 3); largestQuery(Q));
-    CASE(N = MAXN, Q = MAXQ; allSameHeight(3, MAXH); heightSameAsIndex(N - 3); reverse(H.begin(), H.end()); largestQuery(Q));
+    CASE(N = MAXN; Q = MAXQ; allSameHeight(3, MAXH); heightSameAsIndex(N - 3); largestQuery(Q, 3));
+    CASE(N = MAXN, Q = MAXQ; allSameHeight(3, MAXH); heightSameAsIndex(N - 3); reverse(H.begin(), H.end()); largestQuery(Q, N, N-2));
   }
 
 private:
@@ -122,9 +122,9 @@ private:
     while (changes--)
       H[rand() % N] = 1 + rand() % MAXH;
   }
-  void largestQuery(int Q) {
+  void largestQuery(int Q, int maxL = MAXN, int minR = 0) {
     for (int width = N; Q > 0 && width > 1; width--)
-      for (int i = 0; Q > 0 && i <= N - width; i++) {
+      for (int i = max(0, minR-width); Q > 0 && i <= N - width && i+1 <= maxL; i++) {
         L.push_back(i+1);
         R.push_back(i+width);
         Q--;
