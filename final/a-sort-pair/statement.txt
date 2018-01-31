@@ -7,32 +7,33 @@ Memory Limit : 256 MB
 
 Sebuah array A memili elemen berupa pasangan bilangan bulat. Pasangan bilangan dinyatakan dalam notasi (X,Y). Nilai dari sebuah pasangan bilangan (X,Y) adalah X * Y. Pasangan bilangan (2,3) memiliki nilai 6, sedangkan pasangan bilangan (7,3) memiliki nilai 21. A_i = (X_i, Y_i) menyatakan pasangan bilangan ke-i pada array A.
 
-Diberikan array A dengan N buah elemen dimulai dari 1 hingga N. Urutkan array A sehingga nilai dari setiap pasangan bilangan terurut menaik. Jika ada pasangan bilangan yang nilainya sama, pasangan bilangan yang lebih kecil ditentukan berdasarkan index awal pasangan bilangan pada array A.
+Diberikan array A dengan N buah elemen dimulai dari 1 hingga N. Urutkan array A sehingga nilai dari setiap pasangan bilangan terurut mengecil. Jika ada pasangan bilangan yang nilainya sama, pasangan bilangan yang lebih dulu ditentukan berdasarkan index awal pasangan bilangan pada array A.
 
-[Format Input]
-Input diawali dengan sebuah baris berisi sebuah bilangan T yang menyatakan banyaknya kasus.
-Untuk setiap kasus, baris pertama berisi sebuah bilangan bulat N yang menyatakan banyaknya elemen pada array A.
+[Format Masukan]
+
+Baris pertama berisi sebuah bilangan bulat N yang menyatakan banyaknya elemen pada array A.
 N baris berikutnya berisi dua buah bilangan yang menyatakan nilai X_i dan Y_i.
 
-[Format Output]
-Untuk setiap kasus, keluarkan N baris dengan baris ke-i menyatakan posisi pasangan bilangan ke-i setelah diurutkan.
+[Format Keluaran]
 
-[Contoh Input]
-1
+Keluarkan N baris dengan baris ke-i menyatakan posisi pasangan bilangan ke-i setelah diurutkan.
+
+[Contoh Masukan]
+
 4
 1 4
 2 3
 3 2
 4 1
 
-[Contoh Output]
+[Contoh Keluaran]
+
 3
 1
 2
 4
 
 [Batasan]
-- 1 <= T <= 100
 - 1 <= N <= 50000
 - 1 <= X_i, Y_i <= 10^100
-- Terdapat suatu bilangan C sehingga untuk setiap i X_i + Y_i = C
+- Terdapat suatu bilangan C sehingga untuk setiap i berlaku X_i + Y_i = C
