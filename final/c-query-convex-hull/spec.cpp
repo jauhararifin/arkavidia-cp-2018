@@ -99,6 +99,10 @@ protected:
     CASE(N = MAXN; Q = MAXQ; largestQuery(MAXQ); allSameHeight(N, 1));
     CASE(N = MAXN; Q = MAXQ; largestQuery(MAXQ); allSameHeight(N, MAXH));
     CASE(N = MAXN; Q = MAXQ; largestQuery(MAXQ); allSameHeight(N, MAXH/2+rand()%100));
+
+    // always traverse to the right
+    CASE(N = MAXN; Q = MAXQ; allSameHeight(3, MAXH); heightSameAsIndex(N - 3); largestQuery(Q));
+    CASE(N = MAXN, Q = MAXQ; allSameHeight(3, MAXH); heightSameAsIndex(N - 3); reverse(H.begin(), H.end()); largestQuery(Q));
   }
 
 private:
