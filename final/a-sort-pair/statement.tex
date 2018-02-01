@@ -24,44 +24,61 @@
 
 \subsection*{Deskripsi}
 
-\par\noindent Sebuah array $A$ memili elemen berupa pasangan bilangan bulat. Pasangan bilangan dinyatakan dalam notasi $(X,Y)$. Nilai dari sebuah pasangan bilangan $(X,Y)$ adalah $X \times Y$. Pasangan bilangan $(2,3)$ memiliki nilai $6$, sedangkan pasangan bilangan $(7,3)$ memiliki nilai $21$. $A_i = (X_i, Y_i)$ menyatakan pasangan bilangan ke-$i$ pada array $A$.
+\par\noindent Diberikan suatu array $A$ yang berisi $N$ elemen. Elemen ke-$i$ pada $A$ dinyatakan dengan $A_i$. Setiap $A_i$ terdiri dari $2$ bilangan bulat $X_i$ dan $Y_i$. Terdapat fungsi $F(a,b)$ yang mengembalikan hasil perkalian dari $a$ dan $b$. Sebagai contoh, $F(2,3)$ mengembalikan nilai $6$, sedangkan $F(7,3)$ mengembalikan nilai $21$. Terdapat juga array $B$ yang berisi elemen-elemen array $A$ yang telah diurutkan. $A_i$ memiliki posisi lebih awal dari $A_j$ pada $B$ apabila salah satu hal berikut terpenuhi:
 
-\par\noindent Diberikan array $A$ dengan $N$ buah elemen dimulai dari $1$ hingga $N$. Urutkan array $A$ sehingga nilai dari setiap pasangan bilangan terurut mengecil. Jika ada pasangan bilangan yang nilainya sama, pasangan bilangan yang lebih dulu ditentukan berdasarkan index awal pasangan bilangan pada array $A$.
+\begin{itemize}
+	\item $F(X_i,Y_i) > F(X_j, Y_j)$.
+	\item $F(X_i,Y_i) = F(X_j, Y_j)$ dan $i < j$.
+\end{itemize}
+
+\par\noindent Terdapat juga fungsi $G(i)$ yang mengembalikan posisi $A_i$ pada $B$. Hitung nilai dari $G(1), G(2), ... , G(N)$. 
 
 \subsection*{Format Masukan}
 
-\par\noindent Baris pertama berisi sebuah bilangan bulat $N$ yang menyatakan banyaknya elemen pada array $A$.
-\par\noindent $N$ baris berikutnya berisi dua buah bilangan yang menyatakan nilai $X_i$ dan $Y_i$.
+\par\noindent Baris pertama berisi sebuah bilangan bulat $N$. $N$ baris berikutnya masing-masing berisi dua buah bilangan bulat yang menyatakan nilai $X_i$ dan $Y_i$.
 
 \subsection*{Format Keluaran}
 
-\par\noindent Keluarkan $N$ baris dengan baris ke-$i$ menyatakan posisi pasangan bilangan ke-$i$ setelah diurutkan.
+\par\noindent Keluarkan $N$ baris. Baris ke-$i$ menyatakan nilai $G(i)$.
 
 \subsection*{Contoh Masukan}
 
 \begin{lstlisting}
-4
-1 4
-2 3
-3 2
-4 1
+5
+1 5
+2 4
+3 3
+4 2
+5 1
 \end{lstlisting}
 
 \subsection*{Contoh Keluaran}
 
 \begin{lstlisting}
-3
-1
-2
 4
+2
+1
+3
+5
+\end{lstlisting}
+
+\subsection*{Penjelasan}
+
+\par\noindent Array $B$ pada contoh input diatas:
+\begin{lstlisting}
+3 3
+2 4
+4 2
+1 5
+5 1
 \end{lstlisting}
 
 \subsection*{Batasan}
 
 \begin{itemize}
-	\item $1 \leq N \leq 50000$
-	\item $1 \leq X_i, Y_i \leq 10^{100}$
-	\item Terdapat suatu bilangan $C$ sehingga untuk setiap $i$ berlaku $X_i + Y_i = C$
+	\item $1 \leq N \leq 5000$
+	\item $1 \leq X_i, Y_i \leq 10^{5000}$
+	\item Terdapat suatu bilangan $C$ sehingga untuk setiap $i$, $X_i + Y_i = C$
 \end{itemize}
 
 \end{document}
