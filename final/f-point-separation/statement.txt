@@ -40,7 +40,7 @@ Sebuah baris berisi bilangan, jumlah orang minimum yang dipindahkan supaya memen
 0
 
 [Batasan]
-- 0 <= N,M <= 75
+- 0 <= N,M <= 100
 - -10^3 <= x, y <= 10^3
 
 [Penjelasan]
