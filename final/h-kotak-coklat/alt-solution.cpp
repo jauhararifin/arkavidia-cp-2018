@@ -99,6 +99,7 @@ int get(int le, int ri, int down, int up, int id = 1, int l = 0, int r = vx.size
 }
 
 int main() {
+  srand(time(0));
   int n, q;
   scanf("%d %d", &n, &q);
   for (int i = 0; i < q; ++i) {
