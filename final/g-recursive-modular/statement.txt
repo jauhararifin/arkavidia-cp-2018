@@ -40,7 +40,7 @@ Keluarkan satu baris berisi bilangan bulat n terkecil yang mungkin. Jika tidak a
 0
 
 [Batasan]
-- 2 <= m <= 2^9
+- 2 <= m <= 2x10^9
 - 0 <= p, q, a_0, x <= m-1
 - m dijamin merupakan bilangan prima
 
