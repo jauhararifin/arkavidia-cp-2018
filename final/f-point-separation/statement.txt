@@ -9,7 +9,7 @@ Ada dua tipe orang di dunia ini, yang taken dan yang jomblo. Bocan yang jomblo s
 
 Di ITB, ada N orang taken dan M orang jomblo. Mereka semua berada di kampus ITB yang dipetakan ke titik koordinat kartesian. Meskipun semua orang taken harus musnah, Turpa tidak mau menumpahkan darah orang jomblo. Untuk itu, ia dapat memaksa beberapa orang pindah ke koordinat lain. Namun agar tidak dicurigai, ia ingin memindahkan orang sesedikit mungkin.
 
-Turpa ingin tahu berapa jumlah orang minimum yang perlu dipindahkan supaya terdapat lokasi bom dan semua orang taken tidak berada di luar radius bom, serta semua orang jomblo tidak berada di dalam radius bom. Ingat jika radius bom Turpa sangat fleksibel dan dapat ia ubah sesuka hati.
+Turpa ingin tahu berapa jumlah orang minimum yang perlu dipindahkan supaya terdapat lokasi bom dan semua orang taken tidak berada di luar radius bom, serta semua orang jomblo tidak berada di dalam radius bom. Orang yang ada tepat di radius bom hanya akan terbunuh bila ia taken. Ingat jika radius bom Turpa sangat fleksibel dan dapat ia ubah sesuka hati.
 
 [Format Input]
 Baris pertama berisi dua buah bilangan bulat N dan M.
@@ -30,17 +30,17 @@ Sebuah baris berisi bilangan, jumlah orang minimum yang dipindahkan supaya memen
 1
 
 [Contoh Input 2]
-3 1
-1 0
+2 2
 0 1
 0 -1
+1 0
 -1 0
 
 [Contoh Output 2]
 0
 
 [Batasan]
-- 0 <= N,M <= 10^5
+- 0 <= N,M <= 100
 - -10^3 <= x, y <= 10^3
 
 [Penjelasan]
