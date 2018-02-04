@@ -1,0 +1,99 @@
+
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\pagenumbering{gobble}
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.7}
+ 
+\begin{document}
+
+\section*{\hfil G. Random Generator\hfil}
+
+\begin{center}
+\begin{tabular}{ |cc| } 
+ \hline
+ Time Limit & 2 detik \\
+ \hline 
+ Memory Limit & 256 MB \\
+ \hline
+\end{tabular}
+\end{center}
+
+\subsection*{Deskripsi}
+
+\par\noindent Bocan iseng membuat formula untuk random generator buatannya, yakni menggunakan rekurens:
+
+\begin{center}
+$a_n = (p \times a_{n-1} + q) \mod m, n \geq 1$
+\end{center}
+
+\par\noindent Kini, ia memiliki bilangan $a_0$ dan $x$. Bocan penasaran, berapakah nilai $n$ terkecil agar $a_n = x$?
+
+\subsection*{Format Masukan}
+
+\par\noindent Baris pertama berisi tiga bilangan bulat $p$, $q$, dan $a_0$ dipisahkan dengan spasi.
+\par\noindent Baris kedua berisi dua bilangan bulat $m$ dan $x$.
+
+\subsection*{Format Keluaran}
+
+\par\noindent Keluarkan satu baris berisi bilangan bulat $n$ terkecil yang mungkin. Jika tidak ada n yang memenuhi, keluarkan $-1$.
+
+\subsection*{Contoh Masukan 1}
+
+\begin{lstlisting}
+2 1 5
+7 2
+\end{lstlisting}
+
+\subsection*{Contoh Keluaran 1}
+
+\begin{lstlisting}
+2
+\end{lstlisting}
+
+\subsection*{Contoh Masukan 2}
+
+\begin{lstlisting}
+2 0 2
+7 3
+\end{lstlisting}
+
+\subsection*{Contoh Keluaran 2}
+
+\begin{lstlisting}
+-1
+\end{lstlisting}
+
+\subsection*{Contoh Masukan 3}
+
+\begin{lstlisting}
+7 9 5
+11 5
+\end{lstlisting}
+
+\subsection*{Contoh Keluaran 3}
+
+\begin{lstlisting}
+0
+\end{lstlisting}
+
+\subsection*{Batasan}
+
+\begin{itemize}
+  \item $2 \leq m \leq 2 \times {10}^9$
+  \item $0 \leq p, q, a_0, x < m$
+  \item $m$ dijamin merupakan bilangan prima
+\end{itemize}
+
+\subsection*{Penjelasan}
+
+\par\noindent Pada contoh pertama, barisan yang terbentuk adalah $5, 4, 2, 5, 4,$ dst. Pada $n = 2$, $a_n = 2$. Tidak ada nilai $n$ lebih kecil yang memenuhi.
+
+\par\noindent Pada contoh kedua, tidak ada $n$ yang memenuhi.
+
+\par\noindent Pada contoh ketiga, nilai $a_0$ sudah memenuhi.
+
+\end{document}

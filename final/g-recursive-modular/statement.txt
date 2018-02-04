@@ -7,45 +7,45 @@ Memory Limit : 256 MB
 
 Bocan iseng membuat formula untuk random generator buatannya, yakni menggunakan rekurens:
 
-a_n = p * a_{n-1} + q
+a_n = (p * a_{n-1} + q) mod m, n >= 1
 
-Kini, ia memiliki bilangan x. Bocan penasaran, berapa n terkecil supaya a_n mod m = x?
+Kini, ia memiliki bilangan a_0 dan x. Bocan penasaran, berapakah nilai n terkecil agar a_n = x?
 
-[Format Input]
-Baris pertama berisi bilangan bulat p, q, dan a_0 dipisahkan dengan spasi.
-Baris kedua berisi bilangan bulat m dan x.
+[Format Masukan]
+Baris pertama berisi bilangan tiga bulat p, q, dan a_0 dipisahkan dengan spasi.
+Baris kedua berisi bilangan dua bulat m dan x.
 
-[Format Output]
-Keluarkan satu baris berisi bilangan bulat n terkecil yang mungkin. Jika tidak ada, keluarkan -1.
+[Format Keluaran]
+Keluarkan satu baris berisi bilangan bulat n terkecil yang mungkin. Jika tidak ada n yang memenuhi, keluarkan -1.
 
-[Contoh Input 1]
+[Contoh Masukan 1]
 2 1 5
-5 7
+7 2
 
-[Contoh Output 1]
-3
+[Contoh Keluaran 1]
+2
 
-[Contoh Input 2]
-2 0 6
-1 2
+[Contoh Masukan 2]
+2 0 2
+7 3
 
-[Contoh Output 2]
+[Contoh Keluaran 2]
 -1
 
-[Contoh Input 3]
-7 9 16
+[Contoh Masukan 3]
+7 9 5
 11 5
 
-[Contoh Output 3]
+[Contoh Keluaran 3]
 0
 
 [Batasan]
-- 2 <= m <= 10^12
-- 0 <= p, q, a_0, a_n <= m-1
+- 2 <= m <= 2 x 10^9
+- 0 <= p, q, a_0, x <= m-1
 - m dijamin merupakan bilangan prima
 
 [Penjelasan]
-Pada contoh pertama, barisan yang terbentuk adalah 5, 11, 23, 47, 99, dst. Pada n = 3, 47 mod 7 = 5. Tidak ada nilai n lebih kecil yang memenuhi.
+Pada contoh pertama, barisan yang terbentuk adalah 5, 4, 2, 5, 4, dst. Pada n = 2, a_n = 2. Tidak ada nilai n lebih kecil yang memenuhi.
 
 Pada contoh kedua, tidak ada n yang memenuhi.
 
