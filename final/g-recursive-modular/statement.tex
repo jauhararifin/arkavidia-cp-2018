@@ -27,19 +27,19 @@
 \par\noindent Bocan iseng membuat formula untuk random generator buatannya, yakni menggunakan rekurens:
 
 \begin{center}
-$a_n = (p \times a_{n-1} + q) \mod m$
+$a_n = (p \times a_{n-1} + q) \mod m, n \geq 1$
 \end{center}
 
-\par\noindent Kini, ia memiliki bilangan $x$. Bocan penasaran, berapa $n$ terkecil supaya $a_n = x$?
+\par\noindent Kini, ia memiliki bilangan $a_0$ dan $x$. Bocan penasaran, berapakah nilai $n$ terkecil agar $a_n = x$?
 
 \subsection*{Format Masukan}
 
-\par\noindent Baris pertama berisi bilangan bulat $p$, $q$, dan $a_0$ dipisahkan dengan spasi.
-\par\noindent Baris kedua berisi bilangan bulat $m$ dan $x$.
+\par\noindent Baris pertama berisi tiga bilangan bulat $p$, $q$, dan $a_0$ dipisahkan dengan spasi.
+\par\noindent Baris kedua berisi dua bilangan bulat $m$ dan $x$.
 
 \subsection*{Format Keluaran}
 
-\par\noindent Keluarkan satu baris berisi bilangan bulat $n$ terkecil yang mungkin. Jika tidak ada, keluarkan $-1$.
+\par\noindent Keluarkan satu baris berisi bilangan bulat $n$ terkecil yang mungkin. Jika tidak ada n yang memenuhi, keluarkan $-1$.
 
 \subsection*{Contoh Masukan 1}
 
