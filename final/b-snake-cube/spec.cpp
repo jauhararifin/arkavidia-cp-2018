@@ -73,6 +73,11 @@ protected:
     for (int i = 0; i < 50; ++i) {
       CASE(randomSnake());
     }
+
+    // RANDOM YES CASES
+    for (int i = 0; i < 30; ++i) {
+      CASE(randomHamiltonianPath());
+    }
   }
 
 private:
@@ -88,5 +93,68 @@ private:
         N++;
       }
     }
+  }
+
+  void randomHamiltonianPath() {
+    int dx[6], dy[6], dz[6];
+    dx[0] = 0; dy[0] = 0; dz[0] = 1;
+    dx[1] = 0; dy[1] = 0; dz[1] = -1;
+    dx[2] = 0; dy[2] = 1; dz[2] = 0;
+    dx[3] = 0; dy[3] = -1; dz[3] = 0;
+    dx[4] = 1; dy[4] = 0; dz[4] = 0;
+    dx[5] = -1; dy[5] = 0; dz[5] = 0;
+
+    vector<int> dirs;
+    int x, y, z;
+    bool found = false;
+    while (!found) {
+      int vis[3][3][3] = {0}, c;
+      for (int i = 0; i < 3; ++i) {
+        for (int j = 0; j < 3; ++j) {
+          for (int k = 0; k < 3; ++k) {
+            vis[i][j][k] = 0;
+          }
+        }
+      }
+      x = rnd.nextInt(3), y = rnd.nextInt(3), z = rnd.nextInt(3);
+      vis[x][y][z] = 1, c = 1;
+      found = true;
+      dirs.clear();
+      while (c < 27) {
+        vector<int> candidates;
+        for (int d = 0; d < 6; ++d) {
+          int nx = x + dx[d];
+          int ny = y + dy[d];
+          int nz = z + dz[d];
+          if (0 <= nx && nx < 3 && 0 <= ny && ny < 3 && 0 <= nz && nz < 3 && !vis[nx][ny][nz]) {
+            candidates.push_back(d);
+          }
+        }
+        if (candidates.empty()) {
+          found = false;
+          break;
+        }
+        c++;
+        int d = candidates[rnd.nextInt((int)candidates.size())];
+        dirs.push_back(d);
+        x += dx[d];
+        y += dy[d];
+        z += dz[d];
+        assert(0 <= x && x < 3 && 0 <= y && y < 3 && 0 <= z && z < 3);
+        vis[x][y][z] = 1;
+      }
+    }
+
+    int len = 2;
+    for (int i = 1; i < (int)dirs.size(); ++i) {
+      if (dirs[i] == dirs[i - 1]) {
+        len++;
+      } else {
+        A.push_back(len);
+        len = 2;
+      }
+    }
+    A.push_back(len);
+    N = (int)A.size();
   }
 };
