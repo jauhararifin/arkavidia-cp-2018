@@ -105,18 +105,10 @@ private:
     dx[5] = -1; dy[5] = 0; dz[5] = 0;
 
     vector<int> dirs;
-    int x, y, z;
     bool found = false;
     while (!found) {
       int vis[3][3][3] = {0}, c;
-      for (int i = 0; i < 3; ++i) {
-        for (int j = 0; j < 3; ++j) {
-          for (int k = 0; k < 3; ++k) {
-            vis[i][j][k] = 0;
-          }
-        }
-      }
-      x = rnd.nextInt(3), y = rnd.nextInt(3), z = rnd.nextInt(3);
+      int x = rnd.nextInt(3), y = rnd.nextInt(3), z = rnd.nextInt(3);
       vis[x][y][z] = 1, c = 1;
       found = true;
       dirs.clear();
@@ -140,7 +132,6 @@ private:
         x += dx[d];
         y += dy[d];
         z += dz[d];
-        assert(0 <= x && x < 3 && 0 <= y && y < 3 && 0 <= z && z < 3);
         vis[x][y][z] = 1;
       }
     }
