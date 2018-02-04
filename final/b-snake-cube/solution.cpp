@@ -118,7 +118,7 @@ int main() {
                 continue;
             }
             if (newmask == (1 << 27) - 1) {
-                puts("YES");
+                puts("Ya");
                 // printf("STATE SIZE: %lu\n", visited.size());
                 // backtracking, construct solution
                 vector<int> dirs(n);
@@ -144,6 +144,6 @@ int main() {
             }
         }
     }
-    puts("NO");
+    puts("Tidak");
     // printf("STATE SIZE: %lu\n", visited.size());
 }
