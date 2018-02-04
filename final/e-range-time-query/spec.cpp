@@ -108,6 +108,11 @@ protected:
     // random computer, with some same LR query
     CASE(N = MAXN; randomRestComputer(); Q = MAXQ; ; sameLRQuery(); randomRestQuery());
 
+    // all in convex hull
+    CASE(N = MAXN; allInConvexHull(); allInConvexHull(); randomRestComputer(); Q = MAXQ; sameLRQuery(); randomRestQuery());
+    CASE(N = MAXN; allInConvexHull(); allInConvexHull(); randomRestComputer(); Q = MAXQ; randomRestQuery());
+    CASE(N = MAXN; allInConvexHull(); allInConvexHull(); randomRestComputer(); Q = MAXQ; worstRestQuery(); randomRestQuery());
+
     // random computer with random query
     CASE(N = MAXN; randomRestComputer(); Q = MAXQ; randomRestQuery());
     CASE(N = MAXN; randomRestComputer(); Q = MAXQ; randomRestQuery());
@@ -142,6 +147,34 @@ private:
     while (A.size() < N) {
       A.push_back(rnd() % MAXS + 1);
       B.push_back(rnd() % MAXD + 1);
+    }
+  }
+
+  void allInConvexHull() {
+    int initial_size = A.size();
+    int offset = 0;
+
+    if (A.size() < N) {
+      A.push_back(0); B.push_back(1);
+      int time_r = 1;
+      while (A.size() < N) {
+        int last_a = A[A.size() - 1];
+        int last_b = B[B.size() - 1]; 
+
+        long long b = last_a + 1;
+        long long a = last_a - time_r*(b - last_b);
+
+        A.push_back(a);
+        B.push_back(b);
+
+        offset = -a + 1;
+        if (offset > MAXS)
+          break; 
+
+        time_r++;
+      }
+      for (int i = initial_size; i < A.size(); ++i)
+        A[i] += offset;
     }
   }
 
