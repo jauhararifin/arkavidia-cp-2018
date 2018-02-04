@@ -19,7 +19,7 @@ protected:
   }
 
   void GradingConfig() {
-    TimeLimit(2);
+    TimeLimit(1);
     MemoryLimit(256);
   }
 
@@ -77,6 +77,13 @@ protected:
     // RANDOM YES CASES
     for (int i = 0; i < 30; ++i) {
       CASE(randomHamiltonianPath());
+    }
+
+    // BRUTE FORCE KILLER
+    // NO SOLUTION WITH HUGE SEARCH SPACE
+    CASE(N = 26, A = {2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2});
+    for (int i = 0; i < 25; ++i) {
+      CASE(oneThreeSegment(i));
     }
   }
 
@@ -147,5 +154,17 @@ private:
     }
     A.push_back(len);
     N = (int)A.size();
+  }
+
+  // include a single segment of length tree at position k
+  void oneThreeSegment(int k) {
+    N = 25;
+    for (int i = 0; i < 25; ++i) {
+      if (i == k) {
+        A.push_back(3);
+      } else {
+        A.push_back(2);
+      }
+    }
   }
 };
