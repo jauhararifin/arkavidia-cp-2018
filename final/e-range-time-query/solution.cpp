@@ -7,6 +7,7 @@ const int N = 1e5 + 5;
 
 struct line {
   int m, c;
+  line(int m = 0, int c = 0) : m(m), c(c) {}
   long long get(int x) {
     return 1LL * m * x + c;
   }
@@ -22,12 +23,12 @@ int a[N], b[N];
 vector<line> convex[N << 2];
 
 bool isBad(line & prev, line & cur, line & next) {
-  return 1LL * (prev.m - cur.m) * (next.c - cur.c) >= 1LL * (cur.m - next.m) * (cur.c - prev.c);
+  return 1LL * (prev.m - cur.m) * (next.c - cur.c) <= 1LL * (cur.m - next.m) * (cur.c - prev.c);
 }
 
 void build(int id = 1, int l = 0, int r = n) {
   if (r-l < 2) {
-    convex[id].push_back((line){b[l], a[l]});
+    convex[id].push_back(line(b[l], a[l]));
     return;
   }
   int mid = (l + r) >> 1, il = id << 1, ir = il | 1;
