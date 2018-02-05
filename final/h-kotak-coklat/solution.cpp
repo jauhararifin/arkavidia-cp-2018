@@ -26,6 +26,7 @@ struct segtree {
       y[p][i-l] = all[i].second;
       a[p][i-l] = 0;
     }
+    sort(y[p].begin(), y[p].end());
     if (l == r) return;
     int mid = (l + r) >> 1;
     build(p + p, l, mid);
@@ -51,7 +52,8 @@ struct segtree {
     update(1, 0, all.size() - 1, at, val);
   }
   void update(int p, int l, int r, int at, int val) {
-    add_bit(p, at - l, val);
+    int v = lower_bound(y[p].begin(), y[p].end(), all[at].second) - y[p].begin();
+    add_bit(p, v, val);
     if (l == r) return;
     int mid = (l + r) >> 1;
     if (at <= mid) {
@@ -82,6 +84,7 @@ int t[N], p1[N], q1[N], p2[N], q2[N];
 int main() {
   int n, q;
   scanf("%d %d", &n, &q);
+  all.emplace_back(0, 0);
   for (int i = 0; i < q; i++) {
     scanf("%d", t + i);
     if (t[i] <= 2) {
@@ -89,8 +92,6 @@ int main() {
       all.emplace_back(p1[i], q1[i]);
     } else {
       scanf("%d %d %d %d", p1 + i, q1 + i, p2 + i, q2 + i);
-      all.emplace_back(p1[i], q1[i]);
-      all.emplace_back(p2[i], q2[i]);
     }
   }
   sort(all.begin(), all.end());
