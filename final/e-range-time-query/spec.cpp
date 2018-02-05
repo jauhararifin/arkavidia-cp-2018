@@ -5,9 +5,9 @@ using namespace std;
 
 const int MAXN = 100000;
 const int MAXQ = 100000;
-const int MAXS = 1000;
-const int MAXD = 1000;
-const int MAXT = 1000;
+const int MAXS = 1000000000;
+const int MAXD = 1000000000;
+const int MAXT = 1000000000;
 
 class ProblemSpec : public BaseProblemSpec {
 protected:
