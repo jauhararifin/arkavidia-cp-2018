@@ -45,6 +45,7 @@ Untuk tiap query hitung, keluarkan sebuah baris berisi jumlah coklat di segiempa
 - 1 <= N <= 10^9
 - 1 <= Q <= 10^5
 - 1 <= x, y, x_1, y_1, x_2, y_2 <= N
+- x_1 <= x_2 dan y_1 <= y_2
 
 [Penjelasan]
 Sebelum aksi hitung pertama, sudah ada 4 coklat, di (1,1), (2,1), dan (3,3), dan (6,5). Tiga coklat pertama berada di dalam segiempat yang ujungnya (1,1) dan (4,5), sehingga dikeluarkan 3.
