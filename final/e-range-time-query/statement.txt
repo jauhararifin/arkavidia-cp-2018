@@ -35,6 +35,6 @@ Keluarkan Q baris dengan baris ke-i berisi jawaban pertanyaan ke-i menyatakan ju
 101
 
 [Batasan]
-- 1 <= N <= 10^5
-- 1 <= l_i, r_i <= N
+- 1 <= N, Q <= 10^5
+- 1 <= l_i <= r_i <= N
 - 1 <= s_i, d_i, t_i <= 10^9
