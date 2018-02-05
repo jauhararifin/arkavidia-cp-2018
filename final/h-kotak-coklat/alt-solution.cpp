@@ -2,7 +2,7 @@
 
 using namespace std;
 
-const int N = 1e5 + 5;
+const int N = 2e5 + 5;
 
 // Treap
 struct item;
@@ -35,9 +35,9 @@ void merge(pitem & t, pitem l, pitem r) {
   if (!l || !r)
     t = l ? l : r;
   else if (l->prior > r->prior)
-    merge(l->r, l->r, r), t = r;
+    merge(l->r, l->r, r), t = l;
   else
-    merge(r->l, l, r->l), t = l;
+    merge(r->l, l, r->l), t = r;
   upd_cnt(t);
 }
 void insert(pitem & t, pitem it) {
