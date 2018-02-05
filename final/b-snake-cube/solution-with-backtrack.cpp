@@ -3,7 +3,7 @@ using namespace std;
 
 int dx[6], dy[6], dz[6];
 int m[3][3][3], mx[27], my[27], mz[27];
-int t[27][6], tmask[27][6][4], tc[27][6][4];
+int t[27][6];
 
 int n, a[30];
 
@@ -64,35 +64,17 @@ int main() {
             }
         }
     }
-    // state transition
-    for (int i = 0; i < 27; ++i) {
-        for (int d = 0; d < 6; ++d) {
-            int s = t[i][d];
-            if (s == -1) {
-                tmask[i][d][2] = -1;
-                tmask[i][d][3] = -1;
-            } else {
-                tmask[i][d][2] = 1 << s;
-                tc[i][d][2] = s;
-                if (t[s][d] == -1) {
-                    tmask[i][d][3] = -1;
-                } else {
-                    s = t[s][d];
-                    tmask[i][d][3] = tmask[i][d][2] ^ (1 << s);
-                    tc[i][d][3] = s;
-                }
-            }
-        }
-    }
+    
 
     scanf("%d", &n);
     for (int i = 0; i < n; ++i) {
         scanf("%d", &a[i]);
     }
 
-    // perform bfs
-    queue<long long> q;
+    // perform bfs (?)
+    queue<long long> q; // q
     set<long long> visited;
+    // map<long long, long long> prev;
     // due to symmetry, starting points are restricted to the following:
     // (0, 0, 0), (1, 0, 0), (1, 1, 0), (1, 1, 1)
     int starting_points[] = {m[0][0][0], m[1][0][0], m[1][1][0], m[1][1][1]};
@@ -107,34 +89,61 @@ int main() {
         int i = get_i(state);
         int c = get_c(state);
         int dir = get_d(state);
-        int mask = get_mask(state);
-
-        // handle first segment
-        // - any direction will do
-        // - include the first cube to the mask
+        // if it is the first segment, any direction will do
         if (i == 0) {
             dir = -1;
-            mask ^= 1 << c;
         }
+        int mask = get_mask(state);
 
         // for all directions, fill the cube with current segment
         for (int d = 0; d < 6; ++d) {
             if (d == dir) continue;
-            if (mask & tmask[c][d][a[i]]) continue;
-            int newmask = mask ^ tmask[c][d][a[i]];
-            int newc = tc[c][d][a[i]];
+            int newmask = mask;
+            int newc = c;
+            // for the first segment, fill the first block
+            if (i == 0) {
+                assert(newmask == 0);
+                newmask ^= 1 << newc;
+            }
+            bool found = true;
+            for (int j = 1; j < a[i]; ++j) {
+                newc = t[newc][d];
+                if (newc == -1 || (newmask & (1 << newc))) {
+                    found = false;
+                    break;
+                }
+                newmask ^= 1 << newc;
+            }
+            if (!found) {
+                continue;
+            }
             if (newmask == (1 << 27) - 1) {
                 puts("Ya");
-                // printf("STATE SIZE: %lu\n", visited.size());
+                printf("STATE SIZE: %lu\n", visited.size());
+                // backtracking, construct solution
+                vector<int> dirs(n);
+                dirs[n - 1] = d;
+                long long current_state = state;
+                for (int ii = n - 1; ii > 0; ii--) {
+                    assert(ii == get_i(current_state));
+                    int dd = get_d(current_state);
+                    dirs[ii - 1] = dd;
+                    current_state = prev[current_state];
+                }
+                for (int ii = 0; ii < n; ++ii) {
+                    printf("DIR %2d: (%2d, %2d, %2d)\n", ii + 1, dx[dirs[ii]], dy[dirs[ii]], dz[dirs[ii]]);
+                }
                 return 0;
             }
             long long newstate = make_state(i + 1, newc, d, newmask);
             if (visited.find(newstate) == visited.end()) {
                 visited.insert(newstate);
+                // prev[newstate] = state;
                 q.push(newstate);
+                unsigned long size = visited.size();
             }
         }
     }
     puts("Tidak");
-    // printf("STATE SIZE: %lu\n", visited.size());
+    printf("STATE SIZE: %lu\n", visited.size());
 }
