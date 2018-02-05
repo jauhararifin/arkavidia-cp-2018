@@ -89,6 +89,8 @@ int main() {
       all.emplace_back(p1[i], q1[i]);
     } else {
       scanf("%d %d %d %d", p1 + i, q1 + i, p2 + i, q2 + i);
+      all.emplace_back(p1[i], q1[i]);
+      all.emplace_back(p2[i], q2[i]);
     }
   }
   sort(all.begin(), all.end());
