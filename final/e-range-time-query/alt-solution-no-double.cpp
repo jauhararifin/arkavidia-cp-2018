@@ -13,11 +13,17 @@ inline long long fpb(long long a, long long b) {
 struct frac {
   frac() : a(0), b(1) {}
   frac(long long a, long long b) {
-    a = abs(a);
-    b = abs(b);
     long long g = fpb(a, b);
     a /= g;
     b /= g;
+    if (a < 0 && b < 0) {
+      a = abs(a);
+      b = abs(b);
+    } else if (a < 0 || b < 0) {
+      a = abs(a);
+      b = abs(b);
+      a = -a;
+    }
     this->a = a;
     this->b = b;
   }
