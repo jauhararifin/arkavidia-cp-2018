@@ -1,8 +1,5 @@
 H. Kotak Coklat
 
-Time Limit : 2 Detik
-Memory Limit : 256 MB
-
 [Deskripsi]
 
 ![](http://www.lazybite.com/82-large_default/signature-wooden-chocolate-box.jpg)

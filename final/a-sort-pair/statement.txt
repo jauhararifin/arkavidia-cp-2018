@@ -1,8 +1,5 @@
 A. Mengurutkan Bilangan
 
-Time Limit : 2 Detik
-Memory Limit : 256 MB
-
 [Deskripsi]
 
 Diberikan suatu array A yang berisi N elemen. Elemen ke-i pada A dinyatakan dengan A_i. Setiap A_i terdiri dari 2 bilangan bulat X_i dan Y_i. 

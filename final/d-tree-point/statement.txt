@@ -1,8 +1,5 @@
 D. Hari Gajian
 
-Time Limit : 2 Detik
-Memory Limit : 256 MB
-
 [Deskripsi]
 
 Bocan bekerja di PT. Humble dengan N buah karyawan. Para karyawan dinomori dari 0 sampai N-1. Perusahaan Bocan unik, karena semua karyawannya rendah hati, sampai-sampai seorang bos tidak mau gajinya lebih banyak dari gaji anak buahnya.

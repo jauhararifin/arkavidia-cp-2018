@@ -1,8 +1,5 @@
 A. Menutup Meriam
 
-Time Limit : 2 Detik
-Memory Limit : 256 MB
-
 [Deskripsi]
 
 Bocan sedang berperang melawan Turpa. Untuk memertahankan bentengnya, Bocan membuat N buah meriam yang diletakkan pada sebuah garis lurus. Meriam tersebut diletakkan secara berjejer-jejer sehingga meriam ke-i terletak pada petak ke-i. Setiap meriam memiliki tinggi masing-masing, meriam ke-i memiliki tinggi H_i. Berikut adalah contoh 5 buah meriam yang memiliki tinggi 3, 5, 2, 1, 3 secara berturut-turut.

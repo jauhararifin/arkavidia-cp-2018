@@ -1,8 +1,5 @@
 E. Meretas Password Wifi
 
-Time Limit : 2 Detik
-Memory Limit : 256 MB
-
 [Deskripsi]
 
 Bocan sedang mencoba meretas password wifi temannya dengan bruteforce. Agar lebih cepat, Bocan menggunakan N buah laptop yang dinomori dari 1 sampai N. Program di tiap laptop tidak dijalankan pada waktu yang bersamaan. Setelah semua laptop menjalankan program, Bocan mencatat jumlah password yang sudah dicoba oleh laptop ke-i sebagai s_i pada waktu yang bersamaan. Kecepatan masing-masing laptop berbeda. Tepatnya, laptop ke-i dapat mencoba d_i password tiap detik.

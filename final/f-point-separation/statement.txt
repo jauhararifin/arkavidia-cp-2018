@@ -1,8 +1,5 @@
 F. Jomblo dan Taken
 
-Time Limit : 2 Detik
-Memory Limit : 256 MB
-
 [Deskripsi]
 
 Ada dua tipe orang di dunia ini, yang taken dan yang jomblo. Bocan yang jomblo sangat kesal jika melihat orang yang taken. Karena tidak mau Bocan sedih, Turpa ingin membunuh semua orang taken dengan bom. Namun, Turpa hanya mempunyai satu bom.

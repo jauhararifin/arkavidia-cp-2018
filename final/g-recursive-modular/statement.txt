@@ -1,8 +1,5 @@
 G. Random Generator
 
-Time Limit : 2 Detik
-Memory Limit : 256 MB
-
 [Deskripsi]
 
 Bocan iseng membuat formula untuk random generator buatannya, yakni menggunakan rekurens:
