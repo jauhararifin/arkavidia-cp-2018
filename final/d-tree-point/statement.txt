@@ -6,7 +6,7 @@ Bocan bekerja di PT. Humble dengan N buah karyawan. Para karyawan dinomori dari 
 
 Di bulan Februari ini, PT. Humble mendapat keuntungan X gold, mata uang setempat. Keuntungan ini dibagi sepenuhnya pada seluruh karyawan di PT. Humble. Tentukan berapa kemungkinan pembagian gaji yang mungkin. Dua pembagian gaji dikatakan berbeda jika setidaknya ada satu orang yang mendapat gaji berbeda.
 
-Mata uang gold berupa integer dan tidak mengenal pecahan, sehingga X beserta pembagiannya berupa bilangan bulat.
+Mata uang gold berupa bilangan bulat dan tidak mengenal pecahan, sehingga X beserta pembagiannya berupa bilangan bulat.
 
 [Format Masukan]
 Baris pertama berisi bilangan N dan X.

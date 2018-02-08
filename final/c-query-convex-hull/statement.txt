@@ -6,7 +6,7 @@ Bocan sedang berperang melawan Turpa. Untuk memertahankan bentengnya, Bocan memb
 
 ![](meriam1.png)
 
-Karena tidak ingin meriamnya dilihat oleh Turpa, Bocan berusaha menutup meriamnya dengan terpal. Karena uang Bocan sudah habis untuk membuat meriam, Ia ingin agar terpal yang digunakan untuk menutup meriam sependek mungkin. Akan tetapi, meriam yang dimiliki Bocan sangat sensitif sehingga bila tersentuh sedikit saja bisa membuatnya menjadi rusak dan akurasinya berkurang. Oleh karena itu Bocan meminta bantuan Anda untuk menjawah Q buah pertanyaan. Setiap pertanyaan, Bocan akan memberikan dua buah
+Karena tidak ingin meriamnya dilihat oleh Turpa, Bocan berusaha menutup meriamnya dengan terpal. Karena uang Bocan sudah habis untuk membuat meriam, Ia ingin agar terpal yang digunakan untuk menutup meriam sependek mungkin. Akan tetapi, meriam yang dimiliki Bocan sangat sensitif sehingga bila tersentuh sedikit saja bisa membuatnya menjadi rusak dan akurasinya berkurang. Oleh karena itu Bocan meminta bantuan Anda untuk menjawab Q buah pertanyaan. Setiap pertanyaan, Bocan akan memberikan dua buah
 bilangan yaitu L dan R kemudian menanyakan berapa banyak meriam yang akan rusak jika ia menutup meriam ke-L hingga R (meriam ke-i dimana L ≤ i ≤ r) dengan terpal sependek mungkin.
 
 Proses penutupan pada meriam dilakukan dengan memasang terpal pada ujung-ujung meriam. Gambar dibawah ini menunjukkan cara penutupan meriam ke-2 hingga 5.

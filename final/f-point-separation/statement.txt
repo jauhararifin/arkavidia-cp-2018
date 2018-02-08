@@ -45,7 +45,7 @@ Sebuah baris berisi bilangan, jumlah orang minimum yang dipindahkan supaya memen
 [Penjelasan]
 Contoh letak bom untuk contoh input 1:
 ![](sample-1.jpg)
-Kita dapat menaruh bom supaya memiliki ledakan seperti gambar (lingkaran abu-abu) dan memindahkan titik di (5,0) ke titik berwarna hijau.
+Kita dapat menaruh bom supaya memiliki ledakan seperti gambar (lingkaran abu-abu) dan memindahkan titik di (10,0) ke titik berwarna hijau.
 Ada beberapa cara lain, namun semuanya butuh memindahkan tidak kurang dari 1 titik.
 
 Contoh letak bom untuk contoh input 2:
