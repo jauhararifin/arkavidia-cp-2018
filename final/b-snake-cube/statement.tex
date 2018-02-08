@@ -7,33 +7,40 @@
 \pagenumbering{gobble}
 \setlength{\tabcolsep}{10pt}
 \renewcommand{\arraystretch}{1.7}
- 
+
 \begin{document}
 
-\section*{\hfil A. Mengurutkan Bilangan\hfil}
+\section*{\hfil B. Snake Cube\hfil}
 
 \subsection*{Deskripsi}
 
-\par\noindent Arka, seorang perancang puzzle terkenal, sedang merancang puzzle baru yang ia namakan Snake Cube. Berikut adalah detail tentang puzzle yang ia buat:
+\par\noindent Amalia, seorang perancang puzzle terkenal, sedang merancang puzzle baru yang ia namakan Snake Cube. Berikut adalah detail tentang puzzle yang ia buat:
 
 \begin{itemize}
 	\item Terdapat 27 kubus kecil yang memiliki ukuran yang sama.
 	\item Kubus-kubus kecil tersebut akan dirangkai sedemikian sehingga setiap kubus kecil akan menempel dengan dua kubus kecil lain, kecuali dua kubus kecil yang hanya menempel dengan satu kubus kecil lain. Kedua kubus kecil tersebut disebut sebagai ujung rangkaian.
 	\item Setiap kubus kecil dapat diputar terhadap kubus kecil yang menempel dengan kubus tersebut. Untuk lebih jelasnya, silakan lihat contoh putaran di bawah ini.
 
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=0.5\linewidth]{contoh-1.jpg}
-		\caption{https://www.jedicreations.com/wholesale-games-puzzles/snake-cube.php}
-	\end{figure}
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.4\linewidth]{putaran.jpg}
+    \caption{Contoh putaran.}
+  \end{figure}
 
-	\item Tidak boleh ada lebih dari tiga kubus dalam satu jajaran. Jajaran didefinisikan sebagai subrangkaian yang diawali dan diakhiri oleh ujung jajaran. Ujung jajaran dapat berupa ujung rangkaian atau sendi. Sendi didefinisikan sebagai kubus kecil yang menempel kepada dua kubus kecil lain dan bersama dua kubus kecil tersebut membentuk sudut 90 derajat. Pada gambar di atas, sendi adalah kubus yang ditunjuk oleh panah berwarna merah sedangkan jajaran adalah yang berwarna biru.
+
+	\item Tidak boleh ada lebih dari tiga kubus dalam satu jajaran. Jajaran didefinisikan sebagai subrangkaian yang diawali dan diakhiri oleh ujung jajaran. Ujung jajaran dapat berupa ujung rangkaian atau sendi. Sendi didefinisikan sebagai kubus kecil yang menempel kepada dua kubus kecil lain dan bersama dua kubus kecil tersebut membentuk sudut 90 derajat. Pada gambar di bawah ini, sendi adalah kubus yang ditunjuk oleh panah berwarna merah sedangkan jajaran adalah yang berwarna biru.
+
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.4\linewidth]{contoh-1.jpg}
+    \caption{https://www.jedicreations.com/wholesale-games-puzzles/snake-cube.php}
+  \end{figure}
 
 \end{itemize}
 
 \par\noindent Adapun tujuan dari puzzle ini adalah merangkai rangkaian kubus-kubus kecil tersebut menjadi sebuah kubus besar berukuran 3x3x3.
 
-\par\noindent Agar puzzle ini terjual banyak, Arka ingin membuat banyak versi rangkaian puzzle yang berbeda. Namun, ada rangkaian-rangkaian yang memenuhi syarat di atas, namun tidak mungkin dapat dirangkai menjadi kubus besar berukuran 3x3x3. Oleh karena itu, Arka membutuhkan bantuan Anda untuk menentukan apakah suatu rangkaian dapat dibuat menjadi kubus besar atau tidak.
+\par\noindent Agar puzzle ini terjual banyak, Amalia ingin membuat banyak versi rangkaian puzzle yang berbeda. Namun, ada rangkaian-rangkaian yang memenuhi syarat di atas, namun tidak mungkin dapat dirangkai menjadi kubus besar berukuran 3x3x3. Oleh karena itu, Amalia membutuhkan bantuan Anda untuk menentukan apakah suatu rangkaian dapat dibuat menjadi kubus besar atau tidak.
 
 \subsection*{Format Masukan}
 
@@ -41,7 +48,7 @@
 
 \subsection*{Format Keluaran}
 
-\par\noindent Keluarkan "Ya" jika rangkaian tersebut dapat membentuk kubus besar berukuran 3x3x3, keluarkan "Tidak" jika tidak.
+\par\noindent KeluAmalian "Ya" jika rangkaian tersebut dapat membentuk kubus besar berukuran 3x3x3, keluAmalian "Tidak" jika tidak.
 
 \subsection*{Contoh Masukan}
 
@@ -58,11 +65,12 @@ Ya
 
 \subsection*{Penjelasan}
 
-\par\noindent Contoh input tersebut merepresentasikan rangkaian berikut ini, dengan rangkaian pertama adalah rangkaian paling bawah.
+\par\noindent Contoh input tersebut merepresentasikan rangkaian berikut ini, dengan jajaran pertama adalah jajaran paling bawah.
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.4\linewidth]{sample-input.jpg}
+	\includegraphics[width=0.2\linewidth]{sample-input.jpg}
+  \caption{Rangkaian pada input.}
 \end{figure}
 
 \par\noindent Ini adalah rangkaian standar yang dijual di pasaran dan dapat dibentuk menjadi kubus besar.
