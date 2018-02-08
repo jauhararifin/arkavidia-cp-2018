@@ -2,7 +2,7 @@ G. Random Generator
 
 [Deskripsi]
 
-Bocan iseng membuat formula untuk random generator buatannya, yakni menggunakan rekurens:
+Bocan iseng membuat formula untuk random generator buatannya, yakni menggunakan relasi rekurens:
 
 a_n = (p * a_{n-1} + q) mod m, n >= 1
 
