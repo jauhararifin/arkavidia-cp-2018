@@ -1,28 +1,28 @@
-H. Kotak Coklat
+H. Kotak Cokelat
 
 [Deskripsi]
 
 ![](http://www.lazybite.com/82-large_default/signature-wooden-chocolate-box.jpg)
 
-Bocan suka coklat. Turpa, sebagai fans berat Bocan, memberi hadiah sekotak coklat berukuran N x N. Tiap coklat berada pada koordinat (x,y) yang berbeda. Supaya tidak cepat habis, Bocan ingin bermain-main terlebih dahulu dengan coklatnya.
+Bocan suka cokelat. Turpa, sebagai fans berat Bocan, memberi hadiah sekotak cokelat berukuran N x N. Tiap cokelat berada pada koordinat (x,y) yang berbeda. Supaya tidak cepat habis, Bocan ingin bermain-main terlebih dahulu dengan cokelatnya.
 
 Bocan melakukan Q aksi. Tiap aksi, ia dapat:
-* mengambil coklat di koordinat (x,y)
-* menaruh coklat di koordinat (x,y)
-* menghitung coklat di segiempat yang kedua ujungnya koordinat (x_1,y_1) dan (x_2,y_2)
+* mengambil cokelat di koordinat (x,y)
+* menaruh cokelat di koordinat (x,y)
+* menghitung cokelat di segiempat yang kedua ujungnya koordinat (x_1,y_1) dan (x_2,y_2)
 
-Setiap koordinat di kotak coklat hanya dapat menampung 1 buah coklat.
+Setiap koordinat di kotak cokelat hanya dapat menampung 1 buah cokelat.
 
 [Format Masukan]
 Baris pertama berisi sebuah bilangan bulat N dan Q.
 Q baris berikutnya berisi salah satu dari:
-* 1 x y, menaruh coklat di (x,y)
-* 2 x y, mengambil coklat di (x,y)
-* 3 x_1 y_1 x_2 y_2, menghitung coklat di segiempat (x_1,y_1) hingga (x_2,y_2)
-Untuk setiap aksi ambil x y, dijamin ada coklat di koordinat (x,y). Begitu pula untuk setiap aksi taruh x y, dijamin tdak ada coklat di koordinat (x,y).
+* 1 x y, menaruh cokelat di (x,y)
+* 2 x y, mengambil cokelat di (x,y)
+* 3 x_1 y_1 x_2 y_2, menghitung cokelat di segiempat (x_1,y_1) hingga (x_2,y_2)
+Untuk setiap aksi ambil x y, dijamin ada cokelat di koordinat (x,y). Begitu pula untuk setiap aksi taruh x y, dijamin tidak ada cokelat di koordinat (x,y).
 
 [Format Keluaran]
-Untuk tiap query hitung, keluarkan sebuah baris berisi jumlah coklat di segiempat yang kedua ujungnya (x_1,y_1) dan (x_2,y_2).
+Untuk tiap query hitung, keluarkan sebuah baris berisi jumlah cokelat di segiempat yang kedua ujungnya (x_1,y_1) dan (x_2,y_2).
 
 [Contoh Masukan]
 10 7
@@ -45,8 +45,8 @@ Untuk tiap query hitung, keluarkan sebuah baris berisi jumlah coklat di segiempa
 - x_1 <= x_2 dan y_1 <= y_2
 
 [Penjelasan]
-Sebelum aksi hitung pertama, sudah ada 4 coklat, di (1,1), (2,1), dan (3,3), dan (6,5). Tiga coklat pertama berada di dalam segiempat yang ujungnya (1,1) dan (4,5), sehingga dikeluarkan 3.
+Sebelum aksi hitung pertama, sudah ada 4 cokelat, di (1,1), (2,1), dan (3,3), dan (6,5). Tiga cokelat pertama berada di dalam segiempat yang ujungnya (1,1) dan (4,5), sehingga dikeluarkan 3.
 
-Sebelum aksi hitung kedua, coklat pada koordinat (2,1) diambil sehingga tersisa 2 coklat pada hasil perhitungan.
+Sebelum aksi hitung kedua, cokelat pada koordinat (2,1) diambil sehingga tersisa 2 cokelat pada hasil perhitungan.
 
 Sumber gambar: http://www.lazybite.com/82-large_default/signature-wooden-chocolate-box.jpg
