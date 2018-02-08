@@ -1,0 +1,45 @@
+B. Snake Cube
+
+Time Limit : 2 Detik
+Memory Limit : 256 MB
+
+[Deskripsi]
+
+Arka, seorang perancang puzzle terkenal, sedang merancang puzzle baru yang ia namakan Snake Cube. Berikut adalah detail tentang puzzle yang ia buat:
+
+1. Terdapat 27 kubu kecil yang memiliki ukuran yang sama.
+2. Kubus-kubus kecil tersebut akan dirangkai sedemikian sehingga setiap kubus kecil akan menempel dengan dua kubus kecil lain, kecuali dua kubus kecil yang hanya menempel dengan satu kubus kecil lain. Kedua kubus kecil tersebut disebut sebagai ujung rangkaian.
+3. Setiap kubus kecil dapat diputar terhadap kubus kecil yang menempel dengan kubus tersebut. Untuk lebih jelasnya, silakan lihat contoh putaran di bawah ini.
+
+[putaran.jpg]
+
+4. Tidak boleh ada lebih dari tiga kubus dalam satu jajaran. Jajaran didefinisikan sebagai subrangkaian yang diawali dan diakhiri oleh ujung jajaran. Ujung jajaran dapat berupa ujung rangkaian atau sendi. Sendi didefinisikan sebagai kubus kecil yang menempel kepada dua kubus kecil lain dan bersama dua kubus kecil tersebut membentuk sudut 90 derajat.
+
+Adapun tujuan dari puzzle ini adalah merangkai rangkaian kubus-kubus kecil tersebut menjadi sebuah kubus besar berukuran 3x3x3.
+
+Agar puzzle ini terjual banyak, Arka ingin membuat banyak versi rangkaian puzzle yang berbeda. Namun demikian, ada rangkaian-rangkaian yang memenuhi syarat di atas, namun tidak mungkin dapat dirangkai menjadi kubus besar berukuran 3x3x3. Oleh karena itu, Arka membutuhkan bantuan Anda untuk menentukan apakah suatu rangkaian dapat dibuat menjadi kubus besar atau tidak.
+
+[Format Input]
+Baris pertama berisi sebuah bilangan bulat N yang menyatakan banyaknya jajaran dalam suatu rangkaian.
+Baris kedua berisi N buah bilangan A_i yang menyatakan banyaknya kubus kecil pada jajaran ke-i. Kubus kecil terakhir dari jajaran ke-i akan menjadi kubus kecil pertama dari jajaran ke-i+1.
+
+[Format Output]
+Keluarkan "Ya" jika rangkaian tersebut dapat membentuk kubus besar berukuran 3x3x3, keluarkan "Tidak" jika tidak.
+
+[Contoh Input]
+17
+3 2 2 3 2 3 2 2 3 3 2 2 2 3 3 3 3
+
+[Contoh Output]
+Ya
+
+[Penjelasan]
+Contoh input tersebut merepresentasikan rangkaian berikut ini, dengan rangkaian pertama adalah rangkaian paling bawah.
+
+[sample-input.jpg]
+
+Ini adalah rangkaian standar yang dijual di pasaran dan dapat dibentuk menjadi kubus besar.
+
+[Batasan]
+- 2 <= A_i <= 3
+- sum(A_i) = 27 + N - 1
