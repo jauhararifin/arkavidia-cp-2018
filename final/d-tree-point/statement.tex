@@ -33,7 +33,7 @@
 \subsection*{Format Masukan}
 
 \par\noindent Baris pertama berisi bilangan $N$ dan $X$.
-\par\noindent Baris ke-$2$ sampai $N$ terdiri dari sebuah bilangan bulat $p$. Baris ke-$i$ menyatakan bos dari karyawan ke-$(i-1)$. Bos besar perusahaan PT. Humble dianggap sebagai karyawan nomor $0$.
+\par\noindent $N-1$ baris berikutnya masing-masing terdiri dari sebuah bilangan bulat, yang mana baris ke-$i$ menyatakan $p_{i}$, yaitu bos dari karyawan ke-$(i)$. Bos besar perusahaan PT. Humble dianggap sebagai karyawan nomor $0$.
 
 \subsection*{Format Keluaran}
 
@@ -56,10 +56,8 @@
 \subsection*{Batasan}
 
 \begin{itemize}
-  \item $1 \leq N, X \leq 5000$
-  \item $0 \leq p < N$
-  \item Seorang karyawan tidak mungkin menjadi bos bagi dirinya sendiri
-  \item Bos dari karyawan ke-$i$ tidak mungkin bernomor lebih dari sama dengan $i$.
+  \item $1 \leq N, X \leq 5.000$
+  \item $0 \leq p_{i} < i$, untuk $1 \leq i < N$
 \end{itemize}
 
 \subsection*{Penjelasan}

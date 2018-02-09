@@ -25,16 +25,19 @@
 \subsection*{Deskripsi}
 
 \par\noindent Bocan iseng membuat formula untuk random generator buatannya, yakni menggunakan relasi rekurens:
+\begin{equation*}
+  a_n=\begin{cases}
+    (p \times a_{n-1} + q) \mod m, & \text{jika $n>0$}.\\
+    c, & \text{jika $n=0$}.
+  \end{cases}
+\end{equation*}
 
-\begin{center}
-$a_n = (p \times a_{n-1} + q) \mod m, n \geq 1$
-\end{center}
 
-\par\noindent Kini, ia memiliki bilangan $a_0$ dan $x$. Bocan penasaran, berapakah nilai $n$ terkecil agar $a_n = x$?
+\par\noindent Kini, Bocan memiliki bilangan bulat $x$. Ia penasaran, berapakah nilai $n$ terkecil agar $a_n = x$?
 
 \subsection*{Format Masukan}
 
-\par\noindent Baris pertama berisi tiga bilangan bulat $p$, $q$, dan $a_0$ dipisahkan dengan spasi.
+\par\noindent Baris pertama berisi tiga bilangan bulat $p$, $q$, dan $c$ dipisahkan dengan spasi.
 \par\noindent Baris kedua berisi dua bilangan bulat $m$ dan $x$.
 
 \subsection*{Format Keluaran}
@@ -84,7 +87,7 @@ $a_n = (p \times a_{n-1} + q) \mod m, n \geq 1$
 
 \begin{itemize}
   \item $2 \leq m \leq 2 \times {10}^9$
-  \item $0 \leq p, q, a_0, x < m$
+  \item $0 \leq p, q, c, x < m$
   \item $m$ dijamin merupakan bilangan prima
 \end{itemize}
 
@@ -94,6 +97,6 @@ $a_n = (p \times a_{n-1} + q) \mod m, n \geq 1$
 
 \par\noindent Pada contoh kedua, tidak ada $n$ yang memenuhi.
 
-\par\noindent Pada contoh ketiga, nilai $a_0$ sudah memenuhi.
+\par\noindent Pada contoh ketiga, nilai $d$ sudah memenuhi.
 
 \end{document}
