@@ -8,7 +8,7 @@ Bocan memiliki Q pertanyaan. Pada pertanyaan ke-i, ia ingin tahu di antara lapto
 
 [Format Masukan]
 Baris pertama berisi sebuah bilangan bulat N.
-N baris berikutnya berisi dua buah bilangan dengan baris ke-i menyatakan nilai s_i dan d_i.
+N baris berikutnya berisi dua buah bilangan bulat dengan baris ke-i menyatakan nilai s_i dan d_i.
 Pada baris berikutnya terdapat bilangan Q menyatakan jumlah pertanyaan.
 Q baris berikutnya berisi pertanyaan, dengan setiap baris berisi tiga buah bilangan bulat l_i, r_i, dan t_i seperti yang dijelaskan pada deskripsi soal.
 
