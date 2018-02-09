@@ -8,7 +8,7 @@
 \usepackage{fancyhdr}
 \setlength{\tabcolsep}{10pt}
 \renewcommand{\arraystretch}{1.7}
-
+\renewcommand{\figurename}{Gambar}
 \begin{document}
 
 \pagestyle{fancy}
@@ -29,7 +29,7 @@
 
   \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.4\linewidth]{putaran.jpg}
+    \includegraphics[width=0.2\linewidth]{putaran.jpg}
     \caption{Contoh putaran.}
   \end{figure}
 
@@ -38,7 +38,7 @@
 
   \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.4\linewidth]{contoh-1.jpg}
+    \includegraphics[width=0.6\linewidth]{contoh-1.jpg}
     \caption{https://www.jedicreations.com/wholesale-games-puzzles/snake-cube.php}
   \end{figure}
 
@@ -56,22 +56,50 @@
 
 \par\noindent Keluarkan "Ya" jika rangkaian tersebut dapat membentuk kubus besar berukuran 3x3x3, keluarkan "Tidak" jika tidak.
 
-\subsection*{Contoh Masukan}
+\subsection*{Contoh Masukan 1}
+
+\begin{lstlisting}
+21
+2 2 3 3 2 2 2 2 2 2 2 2 2 2 2 2 3 3 2 2 3
+\end{lstlisting}
+
+\subsection*{Contoh Keluaran 1}
+
+\begin{lstlisting}
+Ya
+\end{lstlisting}
+
+
+\subsection*{Contoh Masukan 2}
 
 \begin{lstlisting}
 17
 3 2 2 3 2 3 2 2 3 3 2 2 2 3 3 3 3
 \end{lstlisting}
 
-\subsection*{Contoh Keluaran}
+\subsection*{Contoh Keluaran 2}
 
 \begin{lstlisting}
 Ya
 \end{lstlisting}
 
+\subsection*{Contoh Masukan 3}
+
+\begin{lstlisting}
+15
+3 2 2 3 2 3 2 3 3 3 3 3 3 3 3
+\end{lstlisting}
+
+\subsection*{Contoh Keluaran 3}
+
+\begin{lstlisting}
+Tidak
+\end{lstlisting}
+
+
 \subsection*{Penjelasan}
 
-\par\noindent Contoh masukan tersebut merepresentasikan rangkaian seperti pada gambar di atas, dengan jajaran pertama adalah jajaran paling bawah. Ini adalah rangkaian standar yang dijual di pasaran dan dapat dibentuk menjadi kubus besar.
+\par\noindent Contoh masukan 1 merepresentasikan rangkaian seperti pada Gambar 2 di atas, dengan jajaran pertama adalah jajaran paling kiri. Ini adalah rangkaian standar yang dijual di pasaran dan dapat dibentuk menjadi kubus besar.
 
 \subsection*{Batasan}
 

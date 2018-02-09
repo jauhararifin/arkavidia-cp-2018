@@ -56,11 +56,31 @@ class TestSpec : public BaseTestSpec<ProblemSpec> {
 protected:
   void SampleTestCase1() {
     Input({
+      "21",
+      "2 2 3 3 2 2 2 2 2 2 2 2 2 2 2 2 3 3 2 2 3"
+    });
+    Output({
+      "Ya"
+    });
+  }
+
+  void SampleTestCase2() {
+    Input({
       "17",
       "3 2 2 3 2 3 2 2 3 3 2 2 2 3 3 3 3"
     });
     Output({
       "Ya"
+    });
+  }
+
+  void SampleTestCase3() {
+    Input({
+      "15",
+      "3 2 2 3 2 3 2 3 3 3 3 3 3 3 3"
+    });
+    Output({
+      "Tidak"
     });
   }
 
@@ -85,6 +105,7 @@ protected:
     for (int i = 0; i < 25; ++i) {
       CASE(oneThreeSegment(i));
     }
+    CASE(N = 13; A = {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3});
   }
 
 private:
