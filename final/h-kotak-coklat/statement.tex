@@ -28,7 +28,7 @@
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.5\linewidth]{box-of-chocolate}
-	% \caption{Contoh Meriam 1}
+	\caption{\url{http://www.lazybite.com/82-large_default/signature-wooden-chocolate-box.jpg}}
 \end{figure}
 
 \par\noindent Bocan suka cokelat. Turpa, sebagai fans berat Bocan, memberi hadiah sekotak cokelat berukuran $N \times N$. Tiap cokelat berada pada koordinat $(x,y)$ yang berbeda. Supaya tidak cepat habis, Bocan ingin bermain-main terlebih dahulu dengan cokelatnya.
@@ -48,9 +48,9 @@
 \par\noindent Baris pertama berisi dua buah bilangan bulat $N$ dan $Q$.
 \par\noindent $Q$ baris berikutnya berisi salah satu dari:
 \begin{itemize}
-	\item \lstinline{1 x y}, menaruh cokelat di $(x,y)$
-	\item \lstinline{2 x y}, mengambil cokelat di $(x,y)$
-	\item \lstinline{3 x1 y1 x2 y2}, menghitung cokelat di segiempat $(x_1,y_1)$ hingga $(x_2,y_2)$
+	\item 1 $x$ $y$, menaruh cokelat di $(x,y)$
+	\item 2 $x$ $y$, mengambil cokelat di $(x,y)$
+	\item 3 $x_{1}$ $y_{1}$ $x_{2}$ $y_{2}$, menghitung cokelat di segiempat $(x_1,y_1)$ hingga $(x_2,y_2)$
 \end{itemize}
 \par\noindent Untuk setiap aksi ambil \lstinline{x y}, dijamin ada cokelat di koordinat $(x,y)$. Begitu pula untuk setiap aksi taruh \lstinline{x y}, dijamin tidak ada cokelat di koordinat $(x,y)$.
 
@@ -92,7 +92,5 @@
 \par\noindent Sebelum aksi hitung pertama, sudah ada $4$ cokelat, di $(1,1)$, $(2,1)$, dan $(3,3)$, dan $(6,5)$. Tiga cokelat pertama berada di dalam segiempat yang ujungnya $(1,1)$ dan $(5,4)$, sehingga dikeluarkan $3$.
 
 \par\noindent Sebelum aksi hitung kedua, cokelat pada koordinat $(2,1)$ diambil sehingga tersisa $2$ cokelat pada hasil perhitungan.
-
-\par\noindent Sumber gambar:\url{http://www.lazybite.com/82-large_default/signature-wooden-chocolate-box.jpg}
 
 \end{document}
