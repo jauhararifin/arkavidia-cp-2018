@@ -1,3 +1,3 @@
-# arkavidia-cp-2017
+# arkavidia-cp-2018
 
-Repositori untuk Arkavidia 2017 cabang Competitive Programming
+Repository Arkavidia 2018 Competitive Programming
