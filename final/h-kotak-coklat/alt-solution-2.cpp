@@ -9,13 +9,13 @@
 using namespace std;
 struct AVL{
     int size, heig;
-    long long val;
+    int val;
     int idx;
-    long long jumlah;
+    int jumlah;
     AVL *l;
 		AVL *r;
     AVL(){}
-    AVL(long long va, int id){val = va;jumlah = va;idx = id;size=1;heig=1;l=NULL;r =NULL;}
+    AVL(int va, int id){val = va;jumlah = va;idx = id;size=1;heig=1;l=NULL;r =NULL;}
    
 };
 int SIZ(AVL *now)
@@ -33,7 +33,7 @@ int getbal(AVL *now)
 	if(now==NULL) return 0;
 	return height(now->l) - height(now->r);
 }
-long long getjumlah(AVL *a)
+int getjumlah(AVL *a)
 {
 	if(a==NULL) return 0;
 	return a->jumlah;
@@ -67,7 +67,7 @@ AVL *rotateleft(AVL *&now)
 	tmp->jumlah = getjumlah(tmp->l) + getjumlah(tmp->r) + tmp->val;
 	return tmp;
 }
-AVL *insert(AVL *&now, int ke, long long va)
+AVL *insert(AVL *&now, int ke, int va)
 {
 	if(now==NULL) return new AVL(va, ke);
 	else if(ke > now->idx) now->r = insert(now->r, ke,va);
@@ -100,21 +100,21 @@ void init(int R, int C) {
 	N = R;
 	M = C;
 }
-inline long long conv2(AVL *a)
+inline int conv2(AVL *a)
 {
 	if(a==NULL) return 0;
 	return a->val;
 }
-inline long long segquery2(int kiri, int kanan, int l, int r, AVL *now)
+inline int segquery2(int kiri, int kanan, int l, int r, AVL *now)
 {
 	if(now==NULL) return 0;
 	if(kiri>=l && kanan<=r) return now->jumlah;
 	else if(kiri>r || kanan<l) return 0;
-	long long ans = segquery2(kiri,now->idx - 1,l,r,now->l) + segquery2(now->idx + 1, kanan, l,r,now->r);
+	int ans = segquery2(kiri,now->idx - 1,l,r,now->l) + segquery2(now->idx + 1, kanan, l,r,now->r);
 	if(now->idx >=l && now->idx <=r) ans += now->val;
 	return ans;
 }
-inline void segupdate(int kiri, int kanan, int target, int Q, long long K, POI *&now)
+inline void segupdate(int kiri, int kanan, int target, int Q, int K, POI *&now)
 {
 	//printf("%d %d\n", kiri, kanan);
 	if(now==NULL) now = new POI();
@@ -136,11 +136,11 @@ inline void segupdate(int kiri, int kanan, int target, int Q, long long K, POI *
 	}
 	now->dalem = insert(now->dalem,Q, segquery2(0,M-1,Q,Q,now->l->dalem) + segquery2(0,M-1,Q, Q, now->r->dalem));
 }
-void update(int P, int Q, long long K) {
+void update(int P, int Q, int K) {
 	segupdate(0,N-1,P,Q,K,tree);
 	return;	
 }
-inline long long segquery(int kiri, int kanan, int r1, int c1, int r2, int c2, POI *now)
+inline int segquery(int kiri, int kanan, int r1, int c1, int r2, int c2, POI *now)
 {
 	if(now==NULL) return 0;
 	if(kiri>=r1 && kanan<=r2) return segquery2(0,M-1,c1,c2,now->dalem);
@@ -148,7 +148,7 @@ inline long long segquery(int kiri, int kanan, int r1, int c1, int r2, int c2, P
 	int m = (kiri+kanan)>>1;
 	return segquery(kiri,m,r1,c1,r2,c2,now->l) + segquery(m+1,kanan, r1,c1,r2,c2,now->r);
 }
-long long calculate(int P, int Q, int U, int V) {
+int calculate(int P, int Q, int U, int V) {
 	return segquery(0,N-1,min(P,U),min(Q,V),max(P,U),max(Q,V),tree);
 }
 
@@ -179,7 +179,7 @@ int main()
 			int a,b,c,d;
 			scanf("%d %d %d %d",&a,&b,&c,&d);
 			a--; b--; c--; d--;
-			printf("%lld\n",calculate(a,b,c,d));
+			printf("%d\n",calculate(a,b,c,d));
 		}
 	}
 	return 0;
