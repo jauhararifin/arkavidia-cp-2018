@@ -3,7 +3,7 @@
 using namespace std;
 using namespace tcframe;
 
-const int MAXN = 100, MAXX = 1000;
+const int MAXN = 200, MAXX = 2000;
 
 class ProblemSpec : public BaseProblemSpec {
 protected:
@@ -22,7 +22,7 @@ protected:
   }
 
   void GradingConfig() {
-    TimeLimit(2);
+    TimeLimit(9);
     MemoryLimit(256);
   }
 
