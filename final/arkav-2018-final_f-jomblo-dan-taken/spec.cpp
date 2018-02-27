@@ -3,7 +3,7 @@
 using namespace std;
 using namespace tcframe;
 
-const int MAXN = 200, MAXX = 2000;
+const int MAXN = 200, MAXX = 1000;
 
 class ProblemSpec : public BaseProblemSpec {
 protected:
